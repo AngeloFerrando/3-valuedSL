@@ -1,0 +1,80 @@
+{
+   "states": [
+      {
+         "name": "sI",
+         "labels": [],
+         "initial" : true
+      },
+      {
+          "name": "swin",
+          "labels": ["win"]
+      },
+      {
+          "name": "slose",
+          "labels": []
+      }
+   ],
+   "agents": [
+      {
+         "name": "a1",
+         "actions": [
+            "a"
+         ]
+      }
+   ],
+   "transitions": [
+      {
+         "fromState": "sI",
+         "toState": "swin",
+         "defaultTransition": true,
+         "multipleAgentActions" : [
+            {
+               "agent": "a1",
+               "actions" : ["a"]
+            }
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "slose",
+         "defaultTransition": true,
+         "multipleAgentActions" : [
+            {
+               "agent": "a1",
+               "actions" : ["a"]
+            }
+         ]
+      },
+      {
+         "fromState": "swin",
+         "toState": "swin",
+         "defaultTransition": true,
+         "multipleAgentActions" : [
+            {
+               "agent": "a1",
+               "actions" : ["a"]
+            }
+         ]
+      },
+      {
+         "fromState": "slose",
+         "toState": "slose",
+         "defaultTransition": true,
+         "multipleAgentActions" : [
+            {
+               "agent": "a1",
+               "actions" : ["a"]
+            }
+         ]
+      }
+   ],
+   "groups": [
+      {
+         "name": "g",
+         "agents": [
+            "a1"
+         ]
+      }
+   ],
+   "formula": "<<x>> <<e>> (a1, x) (Environment, e) F(win)"
+  }

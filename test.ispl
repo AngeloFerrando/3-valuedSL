@@ -1,0 +1,147 @@
+
+Agent Environment
+	Vars :
+		sI : boolean;
+		b : boolean;
+		s1 : boolean;
+		l1 : boolean;
+		l2 : boolean;
+		s2 : boolean;
+		s3 : boolean;
+		r1 : boolean;
+		s4 : boolean;
+		r2 : boolean;
+		s5 : boolean;
+		g : boolean;
+		s6 : boolean;
+		s7 : boolean;
+	end Vars
+	Actions = {};
+	Protocol :
+	end Protocol
+	Evolution :
+		sI = true and b = true  if sI = true and b = true and ((Train1.Action = l) and 
+					(Train2.Action = l) and 
+					(Controller.Action = r));
+		sI = true and b = true  if sI = true and b = true and ((Train1.Action = r) and 
+					(Train2.Action = r) and 
+					(Controller.Action = l));
+		sI = false and b = false and s6 = true and l2 = true  if sI = true and b = true and s6 = false and l2 = false and (Train1.Action = r and Train2.Action = l and Controller.Action = l);
+		sI = false and b = false and s7 = true and r2 = true  if sI = true and b = true and s7 = false and r2 = false and (Train1.Action = l and Train2.Action = r and Controller.Action = r);
+		sI = false and b = false and s1 = true and l1 = true and l2 = true  if sI = true and b = true and s1 = false and l1 = false and l2 = false and (Train1.Action = l and Train2.Action = l and Controller.Action = l);
+		sI = false and b = false and s2 = true and l1 = true  if sI = true and b = true and s2 = false and l1 = false and (Train1.Action = l and Train2.Action = r and Controller.Action = l);
+		sI = false and b = false and s3 = true and r1 = true  if sI = true and b = true and s3 = false and r1 = false and (Train1.Action = r and Train2.Action = l and Controller.Action = r);
+		sI = false and b = false and s4 = true and r1 = true and r2 = true  if sI = true and b = true and s4 = false and r1 = false and r2 = false and (Train1.Action = r and Train2.Action = r and Controller.Action = r);
+		s1 = false and l1 = false and l2 = false and sI = true and b = true  if s1 = true and l1 = true and l2 = true and sI = false and b = false and (Train1.Action = i and Train2.Action = i and Controller.Action = a);
+		s4 = false and r1 = false and r2 = false and sI = true and b = true  if s4 = true and r1 = true and r2 = true and sI = false and b = false and (Train1.Action = i and Train2.Action = i and Controller.Action = a);
+		s6 = false and l2 = false and s5 = true and g = true  if s6 = true and l2 = true and s5 = false and g = false and (Train1.Action = i and Train2.Action = i and Controller.Action = o);
+		s1 = false and l1 = false and l2 = false and s5 = true and g = true  if s1 = true and l1 = true and l2 = true and s5 = false and g = false and (Train1.Action = i and Train2.Action = i and Controller.Action = o);
+		s2 = false and l1 = false and s5 = true and g = true  if s2 = true and l1 = true and s5 = false and g = false and (Train1.Action = i and Train2.Action = i and Controller.Action = o);
+		s3 = false and r1 = false and s5 = true and g = true  if s3 = true and r1 = true and s5 = false and g = false and (Train1.Action = i and Train2.Action = i and Controller.Action = o);
+		s4 = false and r1 = false and r2 = false and s5 = true and g = true  if s4 = true and r1 = true and r2 = true and s5 = false and g = false and (Train1.Action = i and Train2.Action = i and Controller.Action = o);
+		s7 = false and r2 = false and s5 = true and g = true  if s7 = true and r2 = true and s5 = false and g = false and (Train1.Action = i and Train2.Action = i and Controller.Action = o);
+		s5 = false and g = false and sI = true and b = true  if s5 = true and g = true and sI = false and b = false and ((Train1.Action = m or Train1.Action = l or Train1.Action = r or Train1.Action = i) and 
+					(Train2.Action = l or Train2.Action = r or Train2.Action = i) and 
+					(Controller.Action = l or Controller.Action = r or Controller.Action = i or Controller.Action = e or Controller.Action = a or Controller.Action = o));
+	end Evolution
+end Agent
+Agent Train1
+	Lobsvars = {sI, b, l1, l2, r1, r2, s5, g, s6, s7};
+	Vars : 
+		imp_s1_s2: boolean;		imp_s3_s4: boolean;
+		play : boolean;
+	end Vars
+	Actions = {i,l,r,m};
+	Protocol : 
+		Environment.s3 = true and Environment.r1 = true : {i};
+		Environment.s4 = true and Environment.r1 = true and Environment.r2 = true : {i};
+		Environment.s5 = true and Environment.g = true : {m,l,r,i};
+		Environment.s6 = true and Environment.l2 = true : {i};
+		Environment.s7 = true and Environment.r2 = true : {i};
+		Environment.sI = true and Environment.b = true : {l,r};
+		Environment.s1 = true and Environment.l1 = true and Environment.l2 = true : {i};
+		Environment.s2 = true and Environment.l1 = true : {i};
+	end Protocol
+	Evolution : 
+		play = true if play = true;
+		(imp_s1_s2 = true ) if (Environment.sI = true )and (Environment.b = true )and (imp_s1_s2 = false )and (Environment.l1 = false )and (Environment.l2 = false )and (Environment.l1 = false )and (Train1.Action = l and Train2.Action = l and Controller.Action = l);
+		(imp_s1_s2 = true ) if (Environment.sI = true )and (Environment.b = true )and (imp_s1_s2 = false )and (Environment.l1 = false )and (Environment.l2 = false )and (Environment.l1 = false )and (Train1.Action = l and Train2.Action = r and Controller.Action = l);
+		(imp_s3_s4 = true ) if (Environment.sI = true )and (Environment.b = true )and (imp_s3_s4 = false )and (Environment.r1 = false )and (Environment.r2 = false )and (Environment.r1 = false )and (Train1.Action = r and Train2.Action = l and Controller.Action = r);
+		(imp_s3_s4 = true ) if (Environment.sI = true )and (Environment.b = true )and (imp_s3_s4 = false )and (Environment.r1 = false )and (Environment.r2 = false )and (Environment.r1 = false )and (Train1.Action = r and Train2.Action = r and Controller.Action = r);
+	end Evolution
+end Agent
+Agent Train2
+	Lobsvars = {sI, b, s1, l1, l2, s2, s3, r1, s4, r2, s5, g, s6, s7};
+	Vars : 
+
+		play : boolean;
+	end Vars
+	Actions = {i,l,r};
+	Protocol : 
+		Environment.s3 = true and Environment.r1 = true : {i};
+		Environment.s4 = true and Environment.r1 = true and Environment.r2 = true : {i};
+		Environment.s5 = true and Environment.g = true : {l,r,i};
+		Environment.s6 = true and Environment.l2 = true : {i};
+		Environment.s7 = true and Environment.r2 = true : {i};
+		Environment.sI = true and Environment.b = true : {l,r};
+		Environment.s1 = true and Environment.l1 = true and Environment.l2 = true : {i};
+		Environment.s2 = true and Environment.l1 = true : {i};
+	end Protocol
+	Evolution : 
+		play = true if play = true;
+	end Evolution
+end Agent
+Agent Controller
+	Lobsvars = {sI, b, s1, l1, l2, r1, s4, r2, s5, g, s6, s7};
+	Vars : 
+		imp_s2_s3: boolean;
+		play : boolean;
+	end Vars
+	Actions = {l,r,a,e,o,i};
+	Protocol : 
+		Environment.s3 = true and Environment.r1 = true : {o};
+		Environment.s4 = true and Environment.r1 = true and Environment.r2 = true : {a,o};
+		Environment.s5 = true and Environment.g = true : {l,r,i,e,a,o};
+		Environment.s6 = true and Environment.l2 = true : {o};
+		Environment.s7 = true and Environment.r2 = true : {o};
+		Environment.sI = true and Environment.b = true : {r,l};
+		Environment.s1 = true and Environment.l1 = true and Environment.l2 = true : {a,o};
+		Environment.s2 = true and Environment.l1 = true : {o};
+	end Protocol
+	Evolution : 
+		play = true if play = true;
+		(imp_s2_s3 = true ) if (Environment.sI = true )and (Environment.b = true )and (imp_s2_s3 = false )and (Environment.l1 = false )and (Environment.r1 = false )and (Train1.Action = l and Train2.Action = r and Controller.Action = l);
+		(imp_s2_s3 = true ) if (Environment.sI = true )and (Environment.b = true )and (imp_s2_s3 = false )and (Environment.l1 = false )and (Environment.r1 = false )and (Train1.Action = r and Train2.Action = l and Controller.Action = r);
+	end Evolution
+end Agent
+Evaluation
+	l1 if (Environment.l1 = true);
+	b if (Environment.b = true);
+	g if (Environment.g = true);
+	end Evaluation
+	InitStates
+		Environment.sI = true and 
+		Environment.s1 = false and 
+		Environment.s2 = false and 
+		Environment.s3 = false and 
+		Environment.s4 = false and 
+		Environment.s5 = false and 
+		Environment.s6 = false and 
+		Environment.s7 = false and 
+		Train1.imp_s1_s2 = false and 
+		Train1.imp_s3_s4 = false and 
+		Controller.imp_s2_s3 = false and 
+		Environment.r2 = false and 
+		Environment.b = true and 
+		Environment.l1 = false and 
+		Environment.l2 = false and 
+		Environment.g = false and 
+		Environment.r1 = false;
+	end InitStates
+Groups
+	g1={Train1,Controller};
+	g2={Controller};
+end Groups
+Formulae
+	<g1>X((l1 and <g1>X((!(b) or <g1>F(g)))));
+end Formulae

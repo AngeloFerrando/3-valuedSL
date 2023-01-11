@@ -1,0 +1,501 @@
+{
+   "states": [
+      {
+         "name": "sI",
+         "labels": [
+            "p",
+            "q"
+         ],
+         "initial" : true
+      },
+      {
+         "name": "s1",
+         "labels": [
+            "b"
+         ]
+      },
+      {
+         "name": "s2",
+         "labels": [
+            "b"
+         ]
+      },
+      {
+         "name": "s3"
+      },
+      {
+         "name": "s4",
+         "labels": [
+            "d"
+         ]
+      },
+      {
+         "name": "s5"
+      },
+      {
+         "name": "s6"
+      },
+      {
+         "name": "s7"
+      }
+   ],
+   "agents": [
+      {
+         "name": "Train1",
+         "actions": [
+            "i",
+            "l",
+            "r"
+         ],
+         "indistinguishableStates": [
+            [
+               "s1",
+               "s2"
+            ],
+            [
+               "s5",
+               "s6"
+            ]
+         ]
+      },
+      {
+         "name": "Train2",
+         "actions": [
+            "i",
+            "l",
+            "r",
+            "s"
+         ]
+      },
+      {
+         "name": "Controller",
+         "actions": [
+            "a1",
+            "a2",
+            "a3",
+            "a4",
+            "a5",
+            "a6",
+            "a",
+            "e",
+            "o"
+         ],
+         "indistinguishableStates": [
+            [
+               "s2",
+               "s3"
+            ]
+         ]
+      }
+   ],
+   "transitions": [
+      {
+         "fromState": "sI",
+         "toState": "s1",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "l"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "s"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "a1"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "s2",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "l"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "l"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "a2"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "s3",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "r"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "l"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "a3"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "s5",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "r"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "s"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "a4"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "s6",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "l"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "r"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "a5"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "sI",
+         "defaultTransition": true,
+         "multipleAgentActions" : [
+            {
+               "agent": "Train1",
+               "actions" : ["l", "r"]
+            },
+            {
+               "agent": "Train2",
+               "actions" : ["l", "r", "s"]
+            },
+            {
+               "agent": "Controller",
+               "actions" : ["a1", "a2", "a3", "a4", "a5", "a6", "a", "e", "o"]
+            }
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "s7",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "r"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "r"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "a6"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "sI",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "a"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "s4",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "o"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s2",
+         "toState": "s4",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "o"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s2",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "e"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s4",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "o"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s4",
+         "toState": "s4",
+         "defaultTransition": true,
+         "multipleAgentActions" : [
+            {
+               "agent": "Train1",
+               "actions" : ["l", "r"]
+            },
+            {
+               "agent": "Train2",
+               "actions" : ["l", "r", "s"]
+            },
+            {
+               "agent": "Controller",
+               "actions" : ["a1", "a2", "a3", "a4", "a5", "a6", "a", "e", "o"]
+            }
+         ]
+      },
+      {
+         "fromState": "s5",
+         "toState": "sI",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "a"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s5",
+         "toState": "s4",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "o"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s6",
+         "toState": "sI",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "a"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s6",
+         "toState": "s4",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "o"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s6",
+         "toState": "s5",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "e"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s7",
+         "toState": "s4",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "o"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s7",
+         "toState": "s6",
+         "agentActions": [
+            [
+               {
+                  "agent": "Train1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Train2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Controller",
+                  "action": "e"
+               }
+            ]
+         ]
+      }
+   ],
+   "formula": "<g1>(F(s4))",
+   "groups": [
+      {
+         "name": "g1",
+         "agents": [
+            "Train1",
+            "Controller"
+         ]
+      }
+   ]
+}

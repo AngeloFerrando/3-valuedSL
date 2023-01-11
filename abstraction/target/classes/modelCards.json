@@ -1,0 +1,3541 @@
+{
+   "states": [
+      {
+         "name": "s0",
+         "labels": [],
+         "initial" : true
+      },
+      {
+         "name":"s1",
+         "labels": []
+      },
+      {
+         "name":"s2",
+         "labels": []
+      },
+      {
+         "name":"s3",
+         "labels": []
+      },
+      {
+         "name":"s4",
+         "labels": []
+      },
+      {
+         "name":"s5",
+         "labels": []
+      },
+      {
+         "name":"s6",
+         "labels": []
+      },
+      {
+         "name":"s7",
+         "labels": []
+      },
+      {
+         "name":"s8",
+         "labels": []
+      },
+      {
+         "name":"s9",
+         "labels": []
+      },
+      {
+         "name":"s10",
+         "labels": []
+      },
+      {
+         "name":"s11",
+         "labels": []
+      },
+      {
+         "name":"s12",
+         "labels": []
+      },
+      {
+         "name":"s13",
+         "labels": []
+      },
+      {
+         "name":"s14",
+         "labels": []
+      },
+      {
+         "name":"s15",
+         "labels": []
+      },
+      {
+         "name":"s16",
+         "labels": []
+      },
+      {
+         "name":"s17",
+         "labels": []
+      },
+      {
+         "name":"s18",
+         "labels": []
+      },
+      {
+         "name":"s19",
+         "labels": []
+      },
+      {
+         "name":"s20",
+         "labels": []
+      },
+      {
+         "name":"s21",
+         "labels": []
+      },
+      {
+         "name":"s22",
+         "labels": []
+      },
+      {
+         "name":"s23",
+         "labels": []
+      },
+      {
+         "name":"s24",
+         "labels": []
+      },
+      {
+         "name":"s25",
+         "labels": []
+      },
+      {
+         "name":"s26",
+         "labels": []
+      },
+      {
+         "name":"s27",
+         "labels": []
+      },
+      {
+         "name":"s28",
+         "labels": []
+      },
+      {
+         "name":"s29",
+         "labels": []
+      },
+      {
+         "name":"s30",
+         "labels": []
+      },
+      {
+         "name":"s31",
+         "labels": []
+      },
+      {
+         "name":"s32",
+         "labels": []
+      },
+      {
+         "name":"s33",
+         "labels": []
+      },
+      {
+         "name":"s34",
+         "labels": []
+      },
+      {
+         "name":"s35",
+         "labels": []
+      },
+      {
+         "name":"s36",
+         "labels": []
+      },
+      {
+         "name":"s37",
+         "labels": []
+      },
+      {
+         "name":"s38",
+         "labels": []
+      },
+      {
+         "name":"s39",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s40",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s41",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s42",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s43",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s44",
+         "labels": []
+      },
+      {
+         "name":"s45",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s46",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s47",
+         "labels": []
+      },
+      {
+         "name":"s48",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s49",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s50",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s51",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s52",
+         "labels": []
+      },
+      {
+         "name":"s53",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s54",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s55",
+         "labels": []
+      },
+      {
+         "name":"s56",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s57",
+         "labels": []
+      },
+      {
+         "name":"s58",
+         "labels": []
+      },
+      {
+         "name":"s59",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s60",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s61",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s62",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s63",
+         "labels": []
+      },
+      {
+         "name":"s64",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s65",
+         "labels": []
+      },
+      {
+         "name":"s66",
+         "labels": []
+      },
+      {
+         "name":"s67",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s68",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s69",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s70",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s71",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s72",
+         "labels": []
+      },
+      {
+         "name":"s73",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s74",
+         "labels": []
+      },
+      {
+         "name":"s75",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s76",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s77",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s78",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s79",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s80",
+         "labels": []
+      },
+      {
+         "name":"s81",
+         "labels": []
+      },
+      {
+         "name":"s82",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s83",
+         "labels": []
+      },
+      {
+         "name":"s84",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s85",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s86",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s87",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s88",
+         "labels": []
+      },
+      {
+         "name":"s89",
+         "labels": []
+      },
+      {
+         "name":"s90",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s91",
+         "labels": []
+      },
+      {
+         "name":"s92",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s93",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s94",
+         "labels": []
+      },
+      {
+         "name":"s95",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s96",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s97",
+         "labels": []
+      },
+      {
+         "name":"s98",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s99",
+         "labels": []
+      },
+      {
+         "name":"s100",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s101",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s102",
+         "labels": []
+      },
+      {
+         "name":"s103",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s104",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s105",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s106",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s107",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s108",
+         "labels": []
+      },
+      {
+         "name":"s109",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s110",
+         "labels": []
+      },
+      {
+         "name":"s111",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s112",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s113",
+         "labels": []
+      },
+      {
+         "name":"s114",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s115",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s116",
+         "labels": []
+      },
+      {
+         "name":"s117",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s118",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s119",
+         "labels": []
+      },
+      {
+         "name":"s120",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s121",
+         "labels": []
+      },
+      {
+         "name":"s122",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s123",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s124",
+         "labels": []
+      },
+      {
+         "name":"s125",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s126",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s127",
+         "labels": []
+      },
+      {
+         "name":"s128",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s129",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s130",
+         "labels": []
+      },
+      {
+         "name":"s131",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s132",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s133",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s134",
+         "labels": ["win3"]
+      },
+      {
+         "name":"s135",
+         "labels": []
+      },
+      {
+         "name":"s136",
+         "labels": ["win1", "win3"]
+      },
+      {
+         "name":"s137",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s138",
+         "labels": []
+      },
+      {
+         "name":"s139",
+         "labels": ["win1", "win2"]
+      },
+      {
+         "name":"s140",
+         "labels": ["win2"]
+      },
+      {
+         "name":"s141",
+         "labels": []
+      },
+      {
+         "name":"s142",
+         "labels": ["win2", "win3"]
+      },
+      {
+         "name":"s143",
+         "labels": ["win1"]
+      },
+      {
+         "name":"s144",
+         "labels": []
+      }
+   ],
+   "agents": [
+      {
+         "name": "Ag1",
+         "actions": [
+            "a",
+            "k",
+            "q",
+            "i"
+         ],
+         "indistinguishableStates": [
+            [
+               "s1",
+               "s2",
+               "s3"
+            ],
+            [
+               "s4",
+               "s5",
+               "s6"
+            ],
+            [
+               "s7",
+               "s8",
+               "s9"
+            ]
+         ]
+      },
+      {
+         "name": "Ag2",
+         "actions": [
+            "a",
+            "k",
+            "q",
+            "i"
+         ],
+         "indistinguishableStates": [
+            [
+               "s1",
+               "s4",
+               "s7"
+            ],
+            [
+               "s2",
+               "s5",
+               "s8"
+            ],
+            [
+               "s3",
+               "s6",
+               "s9"
+            ]
+         ]
+      },
+      {
+         "name": "Ag3",
+         "actions": [
+            "a",
+            "k",
+            "q",
+            "i"
+         ],
+         "indistinguishableStates": []
+      }
+   ],
+   "transitions": [
+      {
+         "fromState": "s0",
+         "toState": "s1",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "a"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s0",
+         "toState": "s2",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "k"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s0",
+         "toState": "s3",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "q"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s0",
+         "toState": "s4",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "a"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s0",
+         "toState": "s5",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "k"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s0",
+         "toState": "s6",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "q"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s0",
+         "toState": "s7",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "a"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s0",
+         "toState": "s8",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "k"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s0",
+         "toState": "s9",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "q"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "s10",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "s11",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "s12",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s10",
+         "toState": "s37",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s10",
+         "toState": "s38",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s10",
+         "toState": "s39",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s10",
+         "toState": "s40",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s11",
+         "toState": "s41",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s11",
+         "toState": "s42",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s11",
+         "toState": "s43",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s11",
+         "toState": "s44",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s12",
+         "toState": "s45",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s12",
+         "toState": "s46",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s12",
+         "toState": "s47",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s12",
+         "toState": "s48",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s2",
+         "toState": "s13",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s2",
+         "toState": "s14",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s2",
+         "toState": "s15",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s13",
+         "toState": "s49",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s13",
+         "toState": "s50",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s13",
+         "toState": "s51",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s13",
+         "toState": "s52",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s14",
+         "toState": "s53",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s14",
+         "toState": "s54",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s14",
+         "toState": "s55",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s14",
+         "toState": "s56",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s15",
+         "toState": "s57",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s15",
+         "toState": "s58",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s15",
+         "toState": "s59",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s15",
+         "toState": "s60",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s16",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s17",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s18",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s16",
+         "toState": "s61",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s16",
+         "toState": "s62",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s16",
+         "toState": "s63",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s16",
+         "toState": "s64",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s17",
+         "toState": "s65",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s17",
+         "toState": "s66",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s17",
+         "toState": "s67",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s17",
+         "toState": "s68",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s18",
+         "toState": "s69",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s18",
+         "toState": "s70",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s18",
+         "toState": "s71",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s18",
+         "toState": "s72",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s4",
+         "toState": "s19",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s4",
+         "toState": "s20",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s4",
+         "toState": "s21",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s19",
+         "toState": "s73",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s19",
+         "toState": "s74",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s19",
+         "toState": "s75",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s19",
+         "toState": "s76",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s20",
+         "toState": "s77",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s20",
+         "toState": "s78",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s20",
+         "toState": "s79",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s20",
+         "toState": "s80",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s21",
+         "toState": "s81",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s21",
+         "toState": "s82",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s21",
+         "toState": "s83",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s21",
+         "toState": "s84",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s5",
+         "toState": "s22",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s5",
+         "toState": "s23",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s5",
+         "toState": "s24",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s22",
+         "toState": "s85",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s22",
+         "toState": "s86",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s22",
+         "toState": "s87",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s22",
+         "toState": "s88",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s23",
+         "toState": "s89",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s23",
+         "toState": "s90",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s23",
+         "toState": "s91",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s23",
+         "toState": "s92",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s24",
+         "toState": "s93",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s24",
+         "toState": "s94",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s24",
+         "toState": "s95",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s24",
+         "toState": "s96",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s6",
+         "toState": "s25",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s6",
+         "toState": "s26",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s6",
+         "toState": "s27",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s25",
+         "toState": "s97",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s25",
+         "toState": "s98",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s25",
+         "toState": "s99",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s25",
+         "toState": "s100",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s26",
+         "toState": "s101",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s26",
+         "toState": "s102",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s26",
+         "toState": "s103",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s26",
+         "toState": "s104",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s27",
+         "toState": "s105",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s27",
+         "toState": "s106",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s27",
+         "toState": "s107",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s27",
+         "toState": "s108",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s7",
+         "toState": "s28",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s7",
+         "toState": "s29",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s7",
+         "toState": "s30",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s28",
+         "toState": "s109",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s28",
+         "toState": "s110",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s28",
+         "toState": "s111",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s28",
+         "toState": "s112",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s29",
+         "toState": "s113",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s29",
+         "toState": "s114",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s29",
+         "toState": "s115",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s29",
+         "toState": "s116",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s30",
+         "toState": "s117",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },{
+         "fromState": "s30",
+         "toState": "s118",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s30",
+         "toState": "s119",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s30",
+         "toState": "s120",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s8",
+         "toState": "s31",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s8",
+         "toState": "s32",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s8",
+         "toState": "s33",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s31",
+         "toState": "s121",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s31",
+         "toState": "s122",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s31",
+         "toState": "s123",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s31",
+         "toState": "s124",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s32",
+         "toState": "s125",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s32",
+         "toState": "s126",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s32",
+         "toState": "s127",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s32",
+         "toState": "s128",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s33",
+         "toState": "s129",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s33",
+         "toState": "s130",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s33",
+         "toState": "s131",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s33",
+         "toState": "s132",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s9",
+         "toState": "s34",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s9",
+         "toState": "s35",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s9",
+         "toState": "s36",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s34",
+         "toState": "s133",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s34",
+         "toState": "s134",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s34",
+         "toState": "s135",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s34",
+         "toState": "s136",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s35",
+         "toState": "s137",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s35",
+         "toState": "s138",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s35",
+         "toState": "s139",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s35",
+         "toState": "s140",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s36",
+         "toState": "s141",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s36",
+         "toState": "s142",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "a"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s36",
+         "toState": "s143",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "k"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s36",
+         "toState": "s144",
+         "agentActions": [
+            [
+               {
+                  "agent": "Ag1",
+                  "action": "q"
+               },
+               {
+                  "agent": "Ag2",
+                  "action": "i"
+               },
+               {
+                  "agent": "Ag3",
+                  "action": "i"
+               }
+            ]
+         ]
+      }
+   ],
+   "groups": [
+      {
+         "name": "g1",
+         "agents": [
+            "Ag1",
+            "Ag2"
+         ]
+      }
+   ],
+   "formula": "<g1>F(win1||win2)"
+  }
+

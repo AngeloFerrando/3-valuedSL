@@ -1,0 +1,8 @@
+--- {sleep} | {coffee}
+tenants, coffee, empty
+tenants, coffee, sleep
+sleep, gas, laundry
+--- {bathroom} | {gas}
+tenants, coffee, empty
+tenants, coffee, sleep
+sleep, gas, bathroom

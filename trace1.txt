@@ -1,0 +1,6 @@
+coffee
+sleep, coffee
+sleep, gas
+coffee
+coffee
+gas, bathroom

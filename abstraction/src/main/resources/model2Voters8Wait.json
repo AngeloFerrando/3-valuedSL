@@ -1,0 +1,4497 @@
+{
+   "states": [
+      {
+         "name": "sI",
+         "labels": [],
+         "initial" : true
+      },
+      {
+         "name": "s1",
+         "labels": []
+      },
+      {
+         "name": "s2",
+         "labels": []
+      },
+      {
+         "name": "s3",
+         "labels": []
+      },
+      {
+         "name": "s4",
+         "labels": []
+      },
+      {
+         "name": "s5",
+         "labels": []
+      },
+      {
+         "name": "s6",
+         "labels": []
+      },
+      {
+         "name": "s7",
+         "labels": []
+      },
+      {
+         "name": "s8",
+         "labels": []
+      },
+      {
+         "name": "s9",
+         "labels": []
+      },
+      {
+         "name": "s10",
+         "labels": []
+      },
+      {
+         "name": "s11",
+         "labels": []
+      },
+      {
+         "name": "s12",
+         "labels": []
+      },
+      {
+         "name": "s13",
+         "labels": []
+      },
+      {
+         "name": "s14",
+         "labels": []
+      },
+      {
+         "name": "s15",
+         "labels": []
+      },
+      {
+         "name": "s16",
+         "labels": []
+      },
+      {
+         "name": "s17",
+         "labels": []
+      },
+      {
+         "name": "s18",
+         "labels": []
+      },
+      {
+         "name": "s19",
+         "labels": []
+      },
+      {
+         "name": "s20",
+         "labels": []
+      },
+      {
+         "name": "s21",
+         "labels": []
+      },
+      {
+         "name": "s22",
+         "labels": []
+      },
+      {
+         "name": "s23",
+         "labels": []
+      },
+      {
+         "name": "s24",
+         "labels": []
+      },
+      {
+         "name": "s25",
+         "labels": []
+      },
+      {
+         "name": "s26",
+         "labels": []
+      },
+      {
+         "name": "s27",
+         "labels": []
+      },
+      {
+         "name": "s28",
+         "labels": []
+      },
+      {
+         "name": "s29",
+         "labels": []
+      },
+      {
+         "name": "s30",
+         "labels": []
+      },
+      {
+         "name": "s31",
+         "labels": []
+      },
+      {
+         "name": "s32",
+         "labels": []
+      },
+      {
+         "name": "s33",
+         "labels": []
+      },
+      {
+         "name": "s34",
+         "labels": []
+      },
+      {
+         "name": "s35",
+         "labels": []
+      },
+      {
+         "name": "s36",
+         "labels": []
+      },
+      {
+         "name": "s37",
+         "labels": []
+      },
+      {
+         "name": "s38",
+         "labels": []
+      },
+      {
+         "name": "s39",
+         "labels": []
+      },
+      {
+         "name": "s40",
+         "labels": []
+      },
+      {
+         "name": "s41",
+         "labels": []
+      },
+      {
+         "name": "s42",
+         "labels": []
+      },
+      {
+         "name": "s43",
+         "labels": []
+      },
+      {
+         "name": "s44",
+         "labels": []
+      },
+      {
+         "name": "s45",
+         "labels": []
+      },
+      {
+         "name": "s46",
+         "labels": []
+      },
+      {
+         "name": "s47",
+         "labels": []
+      },
+      {
+         "name": "s48",
+         "labels": []
+      },
+      {
+         "name": "s49",
+         "labels": []
+      },
+      {
+         "name": "s50",
+         "labels": []
+      },
+      {
+         "name": "s51",
+         "labels": []
+      },
+      {
+         "name": "s52",
+         "labels": []
+      },
+      {
+         "name": "s53",
+         "labels": []
+      },
+      {
+         "name": "s54",
+         "labels": []
+      },
+      {
+         "name": "s55",
+         "labels": []
+      },
+      {
+         "name": "s56",
+         "labels": []
+      },
+      {
+         "name": "s57",
+         "labels": []
+      },
+      {
+         "name": "s58",
+         "labels": []
+      },
+      {
+         "name": "s59",
+         "labels": []
+      },
+      {
+         "name": "s60",
+         "labels": []
+      },
+      {
+         "name": "s61",
+         "labels": []
+      },
+      {
+         "name": "s62",
+         "labels": []
+      },
+      {
+         "name": "s63",
+         "labels": []
+      },
+      {
+         "name": "s64",
+         "labels": []
+      },
+      {
+         "name": "s65",
+         "labels": []
+      },
+      {
+         "name": "s66",
+         "labels": []
+      },
+      {
+         "name": "s67",
+         "labels": []
+      },
+      {
+         "name": "s68",
+         "labels": []
+      },
+      {
+         "name": "s69",
+         "labels": []
+      },
+      {
+         "name": "s70",
+         "labels": []
+      },
+      {
+         "name": "s71",
+         "labels": []
+      },
+      {
+         "name": "s72",
+         "labels": []
+      },
+      {
+         "name": "s73",
+         "labels": []
+      },
+      {
+         "name": "s74",
+         "labels": []
+      },
+      {
+         "name": "s75",
+         "labels": []
+      },
+      {
+         "name": "s76",
+         "labels": []
+      },
+      {
+         "name": "s77",
+         "labels": []
+      },
+      {
+         "name": "s78",
+         "labels": []
+      },
+      {
+         "name": "s79",
+         "labels": []
+      },
+      {
+         "name": "s80",
+         "labels": []
+      },
+      {
+         "name": "s81",
+         "labels": []
+      },
+      {
+         "name": "s82",
+         "labels": []
+      },
+      {
+         "name": "s83",
+         "labels": []
+      },
+      {
+         "name": "s84",
+         "labels": []
+      },
+      {
+         "name": "s85",
+         "labels": []
+      },
+      {
+         "name": "s86",
+         "labels": []
+      },
+      {
+         "name": "s87",
+         "labels": []
+      },
+      {
+         "name": "s88",
+         "labels": []
+      },
+      {
+         "name": "s89",
+         "labels": []
+      },
+      {
+         "name": "s90",
+         "labels": []
+      },
+      {
+         "name": "s91",
+         "labels": []
+      },
+      {
+         "name": "s92",
+         "labels": []
+      },
+      {
+         "name": "s93",
+         "labels": []
+      },
+      {
+         "name": "s94",
+         "labels": []
+      },
+      {
+         "name": "s95",
+         "labels": []
+      },
+      {
+         "name": "s96",
+         "labels": []
+      },
+      {
+         "name": "s97",
+         "labels": []
+      },
+      {
+         "name": "s98",
+         "labels": []
+      },
+      {
+         "name": "s99",
+         "labels": []
+      },
+      {
+         "name": "s100",
+         "labels": []
+      },
+      {
+         "name": "s101",
+         "labels": []
+      },
+      {
+         "name": "s102",
+         "labels": []
+      },
+      {
+         "name": "s103",
+         "labels": []
+      },
+      {
+         "name": "s104",
+         "labels": []
+      },
+      {
+         "name": "s105",
+         "labels": []
+      },
+      {
+         "name": "s106",
+         "labels": []
+      },
+      {
+         "name": "s107",
+         "labels": []
+      },
+      {
+         "name": "s108",
+         "labels": []
+      },
+      {
+         "name": "s109",
+         "labels": []
+      },
+      {
+         "name": "s110",
+         "labels": []
+      },
+      {
+         "name": "s111",
+         "labels": []
+      },
+      {
+         "name": "s112",
+         "labels": []
+      },
+      {
+         "name": "s113",
+         "labels": []
+      },
+      {
+         "name": "s114",
+         "labels": []
+      },
+      {
+         "name": "s115",
+         "labels": []
+      },
+      {
+         "name": "s116",
+         "labels": []
+      },
+      {
+         "name": "s117",
+         "labels": []
+      },
+      {
+         "name": "s118",
+         "labels": []
+      },
+      {
+         "name": "s119",
+         "labels": []
+      },
+      {
+         "name": "s120",
+         "labels": []
+      },
+      {
+         "name": "s121",
+         "labels": []
+      },
+      {
+         "name": "s122",
+         "labels": []
+      },
+      {
+         "name": "s123",
+         "labels": []
+      },
+      {
+         "name": "s124",
+         "labels": []
+      },
+      {
+         "name": "s125",
+         "labels": []
+      },
+      {
+         "name": "s126",
+         "labels": []
+      },
+      {
+         "name": "s127",
+         "labels": []
+      },
+      {
+         "name": "s128",
+         "labels": []
+      },
+      {
+         "name": "s129",
+         "labels": []
+      },
+      {
+         "name": "s130",
+         "labels": []
+      },
+      {
+         "name": "s131",
+         "labels": []
+      },
+      {
+         "name": "s132",
+         "labels": []
+      },
+      {
+         "name": "s133",
+         "labels": []
+      },
+      {
+         "name": "s134",
+         "labels": []
+      },
+      {
+         "name": "s135",
+         "labels": []
+      },
+      {
+         "name": "s136",
+         "labels": []
+      },
+      {
+         "name": "s137",
+         "labels": []
+      },
+      {
+         "name": "s138",
+         "labels": []
+      },
+      {
+         "name": "s139",
+         "labels": []
+      },
+      {
+         "name": "s140",
+         "labels": []
+      },
+      {
+         "name": "s141",
+         "labels": []
+      },
+      {
+         "name": "s142",
+         "labels": []
+      },
+      {
+         "name": "s143",
+         "labels": []
+      },
+      {
+         "name": "s144",
+         "labels": []
+      },
+      {
+         "name": "s145",
+         "labels": []
+      },
+      {
+         "name": "s146",
+         "labels": []
+      },
+      {
+         "name": "s147",
+         "labels": []
+      },
+      {
+         "name": "s148",
+         "labels": []
+      },
+      {
+         "name": "s149",
+         "labels": []
+      },
+      {
+         "name": "s150",
+         "labels": []
+      },
+      {
+         "name": "s151",
+         "labels": []
+      },
+      {
+         "name": "s152",
+         "labels": []
+      },
+      {
+         "name": "s153",
+         "labels": []
+      },
+      {
+         "name": "s154",
+         "labels": []
+      },
+      {
+         "name": "s155",
+         "labels": []
+      },
+      {
+         "name": "s156",
+         "labels": []
+      },
+      {
+         "name": "s157",
+         "labels": []
+      },
+      {
+         "name": "s158",
+         "labels": []
+      },
+      {
+         "name": "s159",
+         "labels": []
+      },
+      {
+         "name": "s160",
+         "labels": []
+      },
+      {
+         "name": "s161",
+         "labels": []
+      },
+      {
+         "name": "s162",
+         "labels": []
+      },
+      {
+         "name": "s163",
+         "labels": []
+      },
+      {
+         "name": "s164",
+         "labels": []
+      },
+      {
+         "name": "s165",
+         "labels": ["punish1", "punish2", "vote11", "vote21"]
+      },
+      {
+         "name": "s166",
+         "labels": ["npunish1", "npunish2", "vote11", "vote21"]
+      },
+      {
+         "name": "s167",
+         "labels": ["punish1", "vote11", "ngive2", "punish2"]
+      },
+      {
+         "name": "s168",
+         "labels": ["npunish1", "vote11", "ngive2", "npunish2"]
+      },
+      {
+         "name": "s169",
+         "labels": ["ngive1", "punish1", "punish2", "vote21"]
+      },
+      {
+         "name": "s170",
+         "labels": ["ngive1", "npunish1", "vote21", "npunish2"]
+      },
+      {
+         "name": "s171",
+         "labels": ["punish1", "ngive1", "ngive2", "punish2"]
+      },
+      {
+         "name": "s172",
+         "labels": ["npunish1", "ngive1", "ngive2", "npunish2"]
+      },
+      {
+         "name": "s173",
+         "labels": ["punish1", "vote11", "ngive2", "punish2"]
+      },
+      {
+         "name": "s174",
+         "labels": ["npunish1", "vote11", "ngive2", "npunish2"]
+      },
+      {
+         "name": "s175",
+         "labels": ["punish1", "vote11", "vote22", "punish2"]
+      },
+      {
+         "name": "s176",
+         "labels": ["npunish1", "vote11", "vote22", "npunish2"]
+      },
+      {
+         "name": "s177",
+         "labels": ["ngive1", "punish1", "ngive2", "punish2"]
+      },
+      {
+         "name": "s178",
+         "labels": ["ngive1", "npunish1", "ngive2", "npunish2"]
+      },
+      {
+         "name": "s179",
+         "labels": ["ngive1", "punish1", "vote22", "punish2"]
+      },
+      {
+         "name": "s180",
+         "labels": ["ngive1", "npunish1", "vote22", "npunish2"]
+      },
+      {
+         "name": "s181",
+         "labels": ["ngive1", "punish1", "vote21", "punish2"]
+      },
+      {
+         "name": "s182",
+         "labels": ["ngive1", "npunish1", "vote21", "npunish2"]
+      },
+      {
+         "name": "s183",
+         "labels": ["ngive1", "punish1", "ngive2", "punish2"]
+      },
+      {
+         "name": "s184",
+         "labels": ["ngive1", "npunish1", "ngive2", "npunish2"]
+      },
+      {
+         "name": "s185",
+         "labels": ["vote12", "punish1", "vote21", "punish2"]
+      },
+      {
+         "name": "s186",
+         "labels": ["vote12", "npunish1", "vote21", "npunish2"]
+      },
+      {
+         "name": "s187",
+         "labels": ["vote12", "punish1", "ngive2", "punish2"]
+      },
+      {
+         "name": "s188",
+         "labels": ["vote12", "npunish1", "ngive2", "npunish2"]
+      },
+      {
+         "name": "s189",
+         "labels": ["ngive1", "punish1", "ngive2", "punish2"]
+      },
+      {
+         "name": "s190",
+         "labels": ["ngive1", "npunish1", "ngive2", "npunish2"]
+      },
+      {
+         "name": "s191",
+         "labels": ["ngive1", "punish1", "vote22", "punish2"]
+      },
+      {
+         "name": "s192",
+         "labels": ["ngive1", "npunish1", "vote22", "npunish2"]
+      },
+      {
+         "name": "s193",
+         "labels": ["vote12", "punish1", "ngive2", "punish2"]
+      },
+      {
+         "name": "s194",
+         "labels": ["vote12", "npunish1", "ngive2", "npunish2"]
+      },
+      {
+         "name": "s195",
+         "labels": ["vote12", "punish1", "vote22", "punish2"]
+      },
+      {
+         "name": "s196",
+         "labels": ["vote12", "npunish1", "vote22", "npunish2"]
+      }
+   ],
+   "agents": [
+      {
+         "name": "Coercer",
+         "actions": [
+            "receive",
+            "punish",
+            "npunish",
+            "wait",
+            "idle"
+         ],
+         "indistinguishableStates": [
+            ["s21", "s22", "s23", "s24", "s25", "s26", "s27", "s28", "s29", "s30", "s31", "s32", "s33", "s34", "s35", "s36"],
+            ["s37", "s38", "s39", "s40", "s41", "s42", "s43", "s44", "s45", "s46", "s47", "s48", "s49", "s50", "s51", "s52"],
+            ["s53", "s54", "s55", "s56", "s57", "s58", "s59", "s60", "s61", "s62", "s63", "s64", "s65", "s66", "s67", "s68"],
+            ["s69", "s70", "s71", "s72", "s73", "s74", "s75", "s76", "s77", "s78", "s79", "s80", "s81", "s82", "s83", "s84"],
+            ["s85", "s86", "s87", "s88", "s89", "s90", "s91", "s92", "s93", "s94", "s95", "s69", "s97", "s98", "s99", "s100"],
+            ["s101", "s102", "s103", "s104", "s105", "s106", "s107", "s108", "s109", "s110", "s111", "s112", "s113", "s114", "s115", "s116"],
+            ["s117", "s118", "s119", "s120", "s121", "s122", "s123", "s124", "s125", "s126", "s127", "s128", "s129", "s130", "s131", "s132"],
+            ["s133", "s134", "s135", "s136", "s137", "s138", "s139", "s140", "s141", "s142", "s143", "s144", "s145", "s146", "s147", "s148"]
+         ]
+      },
+      {
+         "name": "Voter1",
+         "actions": [
+            "vote1",
+            "vote2",
+            "give1",
+            "give2",
+            "ngive",
+            "idle"
+         ],
+         "indistinguishableStates": []
+      },
+      {
+         "name": "Voter2",
+         "actions": [
+            "vote1",
+            "vote2",
+            "give1",
+            "give2",
+            "ngive",
+            "idle"
+         ],
+         "indistinguishableStates": []
+      }
+   ],
+   "transitions": [
+      {
+         "fromState": "sI",
+         "toState": "s1",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "idle"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "vote1"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "vote1"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "s2",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "idle"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "vote1"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "vote2"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "s3",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "idle"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "vote2"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "vote1"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "sI",
+         "toState": "s4",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "idle"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "vote2"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "vote2"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "s1",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["idle"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["give1", "ngive"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["give1", "ngive"]
+            }
+         ]
+      },
+      {
+         "fromState": "s2",
+         "toState": "s2",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["idle"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["give1", "ngive"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["give2", "ngive"]
+            }
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s3",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["idle"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["give2", "ngive"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["give1", "ngive"]
+            }
+         ]
+      },
+      {
+         "fromState": "s4",
+         "toState": "s4",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["idle"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["give2", "ngive"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["give2", "ngive"]
+            }
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "s5",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "give1"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "give1"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "s6",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "give1"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "ngive"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "s7",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "ngive"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "give1"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s1",
+         "toState": "s8",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "ngive"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "ngive"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s2",
+         "toState": "s9",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "give1"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "ngive"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s2",
+         "toState": "s10",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "give1"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "give2"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s2",
+         "toState": "s11",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "ngive"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "ngive"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s2",
+         "toState": "s12",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "ngive"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "give2"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s13",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "ngive"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "give1"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s14",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "ngive"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "ngive"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s15",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "give2"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "give1"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s3",
+         "toState": "s16",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "give2"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "ngive"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s4",
+         "toState": "s17",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "ngive"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "ngive"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s4",
+         "toState": "s18",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "ngive"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "give2"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s4",
+         "toState": "s19",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "give2"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "ngive"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s4",
+         "toState": "s20",
+         "agentActions" : [
+            [
+               {
+                  "agent": "Coercer",
+                  "action" : "receive"
+               },
+               {
+                  "agent": "Voter1",
+                  "action" : "give2"
+               },
+               {
+                  "agent": "Voter2",
+                  "action" : "give2"
+               }
+            ]
+         ]
+      },
+      {
+         "fromState": "s5",
+         "toState": "s21",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s6",
+         "toState": "s22",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s7",
+         "toState": "s23",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s8",
+         "toState": "s24",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s9",
+         "toState": "s25",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s10",
+         "toState": "s26",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s11",
+         "toState": "s27",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s12",
+         "toState": "s28",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s13",
+         "toState": "s29",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s14",
+         "toState": "s30",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s15",
+         "toState": "s31",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s16",
+         "toState": "s32",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s17",
+         "toState": "s33",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s18",
+         "toState": "s34",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s19",
+         "toState": "s35",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s20",
+         "toState": "s36",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s21",
+         "toState": "s37",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s22",
+         "toState": "s38",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s23",
+         "toState": "s39",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s24",
+         "toState": "s40",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s25",
+         "toState": "s41",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s26",
+         "toState": "s42",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s27",
+         "toState": "s43",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s28",
+         "toState": "s44",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s29",
+         "toState": "s45",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s30",
+         "toState": "s46",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s31",
+         "toState": "s47",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s32",
+         "toState": "s48",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s33",
+         "toState": "s49",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s34",
+         "toState": "s50",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s35",
+         "toState": "s51",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s36",
+         "toState": "s52",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s37",
+         "toState": "s53",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s38",
+         "toState": "s54",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s39",
+         "toState": "s55",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s40",
+         "toState": "s56",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s41",
+         "toState": "s57",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s42",
+         "toState": "s58",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s43",
+         "toState": "s59",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s44",
+         "toState": "s60",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s45",
+         "toState": "s61",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s46",
+         "toState": "s62",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s47",
+         "toState": "s63",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s48",
+         "toState": "s64",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s49",
+         "toState": "s65",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s50",
+         "toState": "s66",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s51",
+         "toState": "s67",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s52",
+         "toState": "s68",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s53",
+         "toState": "s69",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s54",
+         "toState": "s70",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s55",
+         "toState": "s71",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s56",
+         "toState": "s72",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s57",
+         "toState": "s73",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s58",
+         "toState": "s74",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s59",
+         "toState": "s75",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s60",
+         "toState": "s76",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s61",
+         "toState": "s77",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s62",
+         "toState": "s78",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s63",
+         "toState": "s79",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s64",
+         "toState": "s80",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s65",
+         "toState": "s81",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s66",
+         "toState": "s82",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s67",
+         "toState": "s83",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s68",
+         "toState": "s84",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s69",
+         "toState": "s85",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s70",
+         "toState": "s86",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s71",
+         "toState": "s87",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s72",
+         "toState": "s88",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s73",
+         "toState": "s89",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s74",
+         "toState": "s90",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s75",
+         "toState": "s91",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s76",
+         "toState": "s92",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s77",
+         "toState": "s93",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s78",
+         "toState": "s94",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s79",
+         "toState": "s95",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s80",
+         "toState": "s96",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s81",
+         "toState": "s97",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s82",
+         "toState": "s98",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s83",
+         "toState": "s99",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s84",
+         "toState": "s100",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s85",
+         "toState": "s101",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s86",
+         "toState": "s102",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s87",
+         "toState": "s103",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s88",
+         "toState": "s104",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s89",
+         "toState": "s105",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s90",
+         "toState": "s106",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s91",
+         "toState": "s107",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s92",
+         "toState": "s108",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s93",
+         "toState": "s109",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s94",
+         "toState": "s110",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s95",
+         "toState": "s111",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s96",
+         "toState": "s112",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s97",
+         "toState": "s113",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s98",
+         "toState": "s114",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s99",
+         "toState": "s115",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s100",
+         "toState": "s116",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s101",
+         "toState": "s117",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s102",
+         "toState": "s118",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s103",
+         "toState": "s119",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s104",
+         "toState": "s120",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s105",
+         "toState": "s121",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s106",
+         "toState": "s122",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s107",
+         "toState": "s123",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s108",
+         "toState": "s124",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s109",
+         "toState": "s125",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s110",
+         "toState": "s126",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s111",
+         "toState": "s127",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s112",
+         "toState": "s128",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s113",
+         "toState": "s129",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s114",
+         "toState": "s130",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s115",
+         "toState": "s131",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s116",
+         "toState": "s132",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s117",
+         "toState": "s133",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s118",
+         "toState": "s134",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s119",
+         "toState": "s135",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s120",
+         "toState": "s136",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s121",
+         "toState": "s137",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s122",
+         "toState": "s138",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s123",
+         "toState": "s139",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s124",
+         "toState": "s140",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s125",
+         "toState": "s141",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s126",
+         "toState": "s142",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s127",
+         "toState": "s143",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s128",
+         "toState": "s144",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s129",
+         "toState": "s145",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s130",
+         "toState": "s146",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s131",
+         "toState": "s147",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s132",
+         "toState": "s148",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s133",
+         "toState": "s149",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s134",
+         "toState": "s150",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s135",
+         "toState": "s151",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s136",
+         "toState": "s152",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s137",
+         "toState": "s153",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s138",
+         "toState": "s154",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s139",
+         "toState": "s155",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s140",
+         "toState": "s156",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s141",
+         "toState": "s157",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s142",
+         "toState": "s158",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s143",
+         "toState": "s159",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s144",
+         "toState": "s160",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s145",
+         "toState": "s161",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s146",
+         "toState": "s162",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s147",
+         "toState": "s163",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s148",
+         "toState": "s164",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["wait"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s133",
+         "toState": "s165",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s133",
+         "toState": "s166",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s134",
+         "toState": "s167",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s134",
+         "toState": "s168",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s135",
+         "toState": "s169",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s135",
+         "toState": "s170",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s136",
+         "toState": "s171",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s136",
+         "toState": "s172",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s137",
+         "toState": "s173",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s137",
+         "toState": "s174",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s138",
+         "toState": "s175",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s138",
+         "toState": "s176",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s139",
+         "toState": "s177",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s139",
+         "toState": "s178",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s140",
+         "toState": "s179",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s140",
+         "toState": "s180",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s141",
+         "toState": "s181",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s141",
+         "toState": "s182",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s142",
+         "toState": "s183",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s142",
+         "toState": "s184",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s143",
+         "toState": "s185",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s143",
+         "toState": "s186",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s144",
+         "toState": "s187",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s144",
+         "toState": "s188",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s145",
+         "toState": "s189",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s145",
+         "toState": "s190",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s146",
+         "toState": "s191",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s146",
+         "toState": "s192",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s147",
+         "toState": "s193",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s147",
+         "toState": "s194",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s148",
+         "toState": "s195",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["punish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      },
+      {
+         "fromState": "s148",
+         "toState": "s196",
+         "multipleAgentActions" : [
+            {
+               "agent": "Coercer",
+               "actions" : ["npunish"]
+            },
+            {
+               "agent": "Voter1",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            },
+            {
+               "agent": "Voter2",
+               "actions" : ["vote1", "vote2", "give1", "give2", "ngive", "idle"]
+            }
+         ]
+      }
+   ],
+   "groups": [
+      {
+         "name": "g1",
+         "agents": [
+            "Coercer"
+         ]
+      },
+      {
+         "name": "g2",
+         "agents": [
+            "Voter1", "Voter2"
+         ]
+      }
+   ],
+   "formula": "<g2>G!((ngive1 and npunish1) or (vote11 and punish1) or (vote12 and punish1) or (ngive2 and npunish2) or (vote21 and punish2) or (vote22 and punish2))" // "<g1>F((vote1 and npunish) or (vote2 and punish) or (ngive and punish))"
+  }
+
