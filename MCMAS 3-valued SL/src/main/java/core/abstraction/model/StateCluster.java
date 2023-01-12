@@ -136,13 +136,9 @@ public class StateCluster extends State {
 //		return agentActions;
 //	}
 
-	public List<List<AgentAction>> hasMustTransition(StateCluster toStateCluster, CGSModel CGSModel) {
-		Group group = CGSModel.getGroups().get(0);
-//		group.getAgents().add("Environment");
-
-		List<String> coalition = group.getAgents();
+	public List<List<AgentAction>> hasAbstractTransition(StateCluster toStateCluster, CGSModel CGSModel, Set<String> mustAgents) {
 		Map<String, List<String>> mustActions = new HashMap<>();
-		for(String agent : coalition) {
+		for(String agent : mustAgents) {
 			mustActions.put(agent, new ArrayList<>());
 			for(String action : CGSModel.getAgentMap().get(agent).getActions()) {
 				boolean toStateFound = false;
@@ -193,12 +189,101 @@ public class StateCluster extends State {
 		for (State fromChildState : childStates) {
 			for (State toChildState : toStateCluster.childStates) {
 				if (CGSModel.getAgentActionsByStates().containsKey(fromChildState.getName(), toChildState.getName())) {
-					List<List<AgentAction>> aux = new ArrayList<>();
 					for(List<AgentAction> agentActionList : CGSModel.getAgentActionsByStates().get(fromChildState.getName(), toChildState.getName())) {
 						boolean valid = true;
 						for(String agent : mustActions.keySet()) {
 							Optional<AgentAction> optAct = agentActionList.stream().filter(a -> a.getAgent().equals(agent) && mustActions.get(agent).contains(a.getAction())).findAny();
-							if(!optAct.isPresent()) {
+							if(optAct.isEmpty()) {
+								valid = false;
+								break;
+							}
+						}
+						if(valid) {
+							for (AgentAction act : agentActionList) {
+								act.setAction(act.getAction() + "_" + fromChildState.getName());
+								for(Agent ag : CGSModel.getAgents()) {
+									if(ag.getName().equals(act.getAgent())) {
+										if(!ag.getActions().contains(act.getAction())) {
+											ag.getActions().add(act.getAction());
+										}
+										break;
+									}
+								}
+							}
+							agentActions.add(agentActionList);
+						}
+					}
+					agentActions.addAll(CGSModel.getAgentActionsByStates().get(fromChildState.getName(), toChildState.getName()));
+				}
+			}
+		}
+
+		return agentActions;
+	}
+
+	public List<List<AgentAction>> hasMustTransition(StateCluster toStateCluster, CGSModel CGSModel) {
+		Group group = CGSModel.getGroups().get(0);
+//		group.getAgents().add("Environment");
+		List<Agent> coalition = CGSModel.getAgents();
+
+		Map<String, List<String>> mustActions = new HashMap<>();
+		for(Agent ag : coalition) {
+			String agent = ag.getName();
+			mustActions.put(agent, new ArrayList<>());
+			for(String action : CGSModel.getAgentMap().get(agent).getActions()) {
+				boolean toStateFound = false;
+				for(State fromChildState : childStates) {
+					toStateFound = false;
+					for(State toChildState : toStateCluster.childStates) {
+						if(CGSModel.getAgentActionsByStates().get(fromChildState.getName(), toChildState.getName()) == null) {
+							continue;
+						}
+						for(List<AgentAction> agentActionList : CGSModel.getAgentActionsByStates().get(fromChildState.getName(), toChildState.getName())) {
+							for(AgentAction agentAction : agentActionList) {
+								if(agentAction.getAgent().equals(agent) && agentAction.getAction().equals(action)) {
+									toStateFound = true;
+									break;
+								}
+							}
+							if(toStateFound) {
+								break;
+							}
+						}
+						if(toStateFound) {
+							break;
+						}
+					}
+					if(!toStateFound) {
+						break;
+					}
+				}
+				if(toStateFound) {
+					if(mustActions.containsKey(agent)) {
+						mustActions.get(agent).add(action);
+					} else {
+						List<String> aux = new ArrayList<>();
+						aux.add(action);
+						mustActions.put(agent, aux);
+					}
+				}
+			}
+		}
+
+		for(String agent : mustActions.keySet()) {
+			if(mustActions.get(agent).isEmpty()) {
+				return new ArrayList<>();
+			}
+		}
+
+		List<List<AgentAction>> agentActions = new ArrayList<>();
+		for (State fromChildState : childStates) {
+			for (State toChildState : toStateCluster.childStates) {
+				if (CGSModel.getAgentActionsByStates().containsKey(fromChildState.getName(), toChildState.getName())) {
+					for(List<AgentAction> agentActionList : CGSModel.getAgentActionsByStates().get(fromChildState.getName(), toChildState.getName())) {
+						boolean valid = true;
+						for(String agent : mustActions.keySet()) {
+							Optional<AgentAction> optAct = agentActionList.stream().filter(a -> a.getAgent().equals(agent) && mustActions.get(agent).contains(a.getAction())).findAny();
+							if(optAct.isEmpty()) {
 								valid = false;
 								break;
 							}
@@ -227,7 +312,7 @@ public class StateCluster extends State {
 
 		return agentActions;
 	}
-	public List<List<AgentAction>> hasMayTransition(StateCluster toStateCluster, CGSModel CGSModel, CGSModel must) {
+	public List<List<AgentAction>> hasMayTransition(StateCluster toStateCluster, CGSModel CGSModel) {
 		List<List<AgentAction>> agentActions = new ArrayList<>();
 		for (State fromChildState : childStates) {
 			for (State toChildState : toStateCluster.childStates) {

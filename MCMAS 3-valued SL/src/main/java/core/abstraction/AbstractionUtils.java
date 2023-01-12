@@ -62,11 +62,55 @@ public class AbstractionUtils {
 		List<Transition> transitions = new ArrayList<>();
 		for (StateCluster fromStateCluster : stateClusters) {
 			for (StateCluster toStateCluster : stateClusters) {
-				List<List<AgentAction>> agentActions = fromStateCluster.hasMayTransition(toStateCluster, CGSModel, must);
+				List<List<AgentAction>> agentActions = fromStateCluster.hasMayTransition(toStateCluster, CGSModel);
 				createTransition(fromStateCluster, transitions, toStateCluster, agentActions);
 			}
 		}
 		
+		return transitions;
+	}
+
+	public static List<Transition> getAbstractTransitions(final CGSModel CGSModel, final List<StateCluster> stateClusters, Set<String> mustAgents) {
+		List<Transition> transitions = new ArrayList<>();
+		State sinkState = new State();
+		sinkState.setName("sink");
+		Set<String> aux = new HashSet<>();
+		Set<String> aux1 = new HashSet<>();
+		for(String l : CGSModel.getStates().get(0).getLabels()) {
+			aux.add(l.replace("_tt", "_uu").replace("_ff", "_uu"));
+			if(!l.contains("_uu")) aux1.add(l);
+		}
+		sinkState.setLabels(new ArrayList<>(aux));
+		sinkState.setFalseLabels(new ArrayList<>(aux1));
+		sinkState = new StateCluster(sinkState);
+		boolean sinkAdded = false;
+		for (StateCluster fromStateCluster : stateClusters) {
+			boolean found = false;
+			for (StateCluster toStateCluster : stateClusters) {
+				List<List<AgentAction>> agentActions = fromStateCluster.hasAbstractTransition(toStateCluster, CGSModel, mustAgents);
+				if(!agentActions.isEmpty()) found = true;
+				createTransition(fromStateCluster, transitions, toStateCluster, agentActions);
+			}
+			if(!found) {
+				List<AgentAction> acts = new ArrayList<>();
+				for (Agent ag : CGSModel.getAgents()) {
+					AgentAction act = new AgentAction();
+					act.setAgent(ag.getName());
+					act.setAction(ag.getActions().get(0));
+					acts.add(act);
+				}
+				List<List<AgentAction>> actsL = new ArrayList<>();
+				actsL.add(acts);
+				createTransition(fromStateCluster, transitions, sinkState, actsL);
+				if(!sinkAdded) {
+					sinkAdded = true;
+					createTransition(sinkState, transitions, sinkState, actsL);
+				}
+			}
+		}
+		if(sinkAdded) {
+			stateClusters.add((StateCluster) sinkState);
+		}
 		return transitions;
 	}
 	

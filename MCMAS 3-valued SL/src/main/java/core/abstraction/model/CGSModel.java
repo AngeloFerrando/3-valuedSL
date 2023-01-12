@@ -270,6 +270,33 @@ public class CGSModel extends JsonObject implements Cloneable {
 	public enum Outcome { True, False, Undefined }
 
 	public CGSModel createAbstraction(Abstraction kind, Predicate<State> toAbstract) {
+		Set<String> existentialAgents =  new HashSet<>();
+		Set<String> universalAgents = new HashSet<>();
+		this.getSL().existentialandUniversalAgents(existentialAgents, universalAgents);
+		existentialAgents.remove("Environment");
+		universalAgents.remove("Environment");
+		if(kind == Abstraction.Must) {
+			CGSModel mustAtlModel = this.clone();
+			List<StateCluster> mustStateClusters = AbstractionUtils.getStateClusters(mustAtlModel, toAbstract);
+			List<Transition> mustTransitions = AbstractionUtils.getAbstractTransitions(mustAtlModel, mustStateClusters, existentialAgents);
+			mustAtlModel.setStates(mustStateClusters);
+			mustAtlModel.setTransitions(mustTransitions);
+			mustAtlModel.setStateMap(null);
+			mustAtlModel.setAgentActionsByStates(null);
+			return mustAtlModel;
+		} else {
+			CGSModel mayAtlModel = this.clone();
+			List<StateCluster> mayStateClusters = AbstractionUtils.getStateClusters(mayAtlModel, toAbstract);
+			List<Transition> mayTransitions = AbstractionUtils.getAbstractTransitions(mayAtlModel, mayStateClusters, universalAgents);
+			mayAtlModel.setStates(mayStateClusters);
+			mayAtlModel.setTransitions(mayTransitions);
+			mayAtlModel.setStateMap(null);
+			mayAtlModel.setAgentActionsByStates(null);
+			return mayAtlModel;
+		}
+	}
+	
+	public CGSModel createAbstractionOld(Abstraction kind, Predicate<State> toAbstract) {
 		if(kind == Abstraction.Must) {
 			CGSModel mustAtlModel = this.clone();
 			List<StateCluster> mustStateClusters = AbstractionUtils.getStateClusters(mustAtlModel, toAbstract);

@@ -1,9 +1,12 @@
 package core.parser;
 
+import core.abstraction.model.Agent;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public abstract class StrategyLogic implements Cloneable {
 
@@ -29,6 +32,25 @@ public abstract class StrategyLogic implements Cloneable {
         return transl(v, false);
     }
     public abstract StrategyLogic transl(boolean v, boolean check);
+    public void existentialandUniversalAgents(Set<String> existentialAgents, Set<String> universalAgents) {
+        List<StrategyLogic> subFormulas = new ArrayList<>();
+        this.getSubFormulas(subFormulas);
+        List<StrategyLogic> existentials = subFormulas.stream().filter(sl -> sl instanceof Existential).toList();
+        List<StrategyLogic> universals = subFormulas.stream().filter(sl -> sl instanceof Universal).toList();
+        List<StrategyLogic> bindings = subFormulas.stream().filter(sl -> sl instanceof Binding).toList();
+        for(StrategyLogic existential : existentials) {
+            existentialAgents.addAll(bindings.stream().filter(b -> ((Binding)b).var.equals(((Existential)existential).var)).map(b -> ((Binding)b).agent).toList());
+        }
+        for(StrategyLogic universal : universals) {
+            existentialAgents.addAll(bindings.stream().filter(b -> ((Binding)b).var.equals(((Universal)universal).var)).map(b -> ((Binding)b).agent).toList());
+        }
+        Set<String> intersection = new HashSet<>(existentialAgents);
+        intersection.retainAll(universalAgents);
+        if(!intersection.isEmpty()) {
+            throw new RuntimeException("Agents can only pick one kind of strategies, that is existential or universal ones.");
+        }
+    }
+    public abstract void getSubFormulas(List<StrategyLogic> subFormulas);
 
     public static class Atom extends StrategyLogic {
         private String atom;
@@ -105,6 +127,11 @@ public abstract class StrategyLogic implements Cloneable {
                 }
             }
         }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+        }
     }
 
     public static class Next extends StrategyLogic {
@@ -144,6 +171,12 @@ public abstract class StrategyLogic implements Cloneable {
 
         public Next transl(boolean v, boolean check) {
             return new Next(subFormula.transl(v, check));
+        }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            this.subFormula.getSubFormulas(subFormulas);
         }
     }
 
@@ -207,6 +240,13 @@ public abstract class StrategyLogic implements Cloneable {
                 return new Or(left.transl(false, check), right.transl(false, check));
             }
         }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            left.getSubFormulas(subFormulas);
+            right.getSubFormulas(subFormulas);
+        }
     }
 
     public static class Or extends StrategyLogic {
@@ -269,6 +309,13 @@ public abstract class StrategyLogic implements Cloneable {
                 return new And(left.transl(false, check), right.transl(false, check));
             }
         }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            left.getSubFormulas(subFormulas);
+            right.getSubFormulas(subFormulas);
+        }
     }
 
     public static class Implies extends StrategyLogic {
@@ -323,6 +370,13 @@ public abstract class StrategyLogic implements Cloneable {
         public Implies transl(boolean v, boolean check) {
             return new Implies(left.transl(v, check), right.transl(v, check));
         }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            left.getSubFormulas(subFormulas);
+            right.getSubFormulas(subFormulas);
+        }
     }
 
     public static class Eventually extends StrategyLogic {
@@ -368,6 +422,12 @@ public abstract class StrategyLogic implements Cloneable {
                 return new Globally(subFormula.transl(false, check));
             }
         }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            subFormula.getSubFormulas(subFormulas);
+        }
     }
 
     public static class Globally extends StrategyLogic {
@@ -412,6 +472,12 @@ public abstract class StrategyLogic implements Cloneable {
             } else {
                 return new Eventually(subFormula.transl(false, check));
             }
+        }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            subFormula.getSubFormulas(subFormulas);
         }
     }
 
@@ -470,6 +536,13 @@ public abstract class StrategyLogic implements Cloneable {
         @Override
         public StrategyLogic transl(boolean v, boolean check) {
             return v ? new Until(left.transl(true, check), right.transl(true, check)) : new Or(new Until(right.transl(false, check), new And(left.transl(false, check), right.transl(false))), new Globally(right.transl(false)));
+        }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            left.getSubFormulas(subFormulas);
+            right.getSubFormulas(subFormulas);
         }
     }
 
@@ -530,6 +603,13 @@ public abstract class StrategyLogic implements Cloneable {
         public StrategyLogic transl(boolean v, boolean check) {
             return v ? new Release(left.transl(true, check), right.transl(true, check)) : new Until(left.transl(false, check), right.transl(false, check));
         }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            left.getSubFormulas(subFormulas);
+            right.getSubFormulas(subFormulas);
+        }
     }
 
     public static class Not extends StrategyLogic {
@@ -570,6 +650,12 @@ public abstract class StrategyLogic implements Cloneable {
         @Override
         public StrategyLogic transl(boolean v, boolean check) {
             return subFormula.transl(!v, check);
+        }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            subFormula.getSubFormulas(subFormulas);
         }
     }
 
@@ -624,6 +710,12 @@ public abstract class StrategyLogic implements Cloneable {
                 return new Universal(var, subFormula.transl(false, check));
             }
         }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            subFormula.getSubFormulas(subFormulas);
+        }
     }
 
     public static class Universal extends StrategyLogic {
@@ -675,6 +767,12 @@ public abstract class StrategyLogic implements Cloneable {
                 return new Existential(var, subFormula.transl(false, check));
             }
         }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            subFormula.getSubFormulas(subFormulas);
+        }
     }
 
     public static class Binding extends StrategyLogic {
@@ -711,6 +809,12 @@ public abstract class StrategyLogic implements Cloneable {
         @Override
         public StrategyLogic transl(boolean v, boolean check) {
             return new Binding(this.agent, this.var, subFormula.transl(v, check));
+        }
+
+        @Override
+        public void getSubFormulas(List<StrategyLogic> subFormulas) {
+            subFormulas.add(this);
+            subFormula.getSubFormulas(subFormulas);
         }
     }
 
