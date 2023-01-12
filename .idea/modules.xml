@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/3-valuedSL.iml" filepath="$PROJECT_DIR$/.idea/3-valuedSL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MCMAS 3-valued SL/abstraction.iml" filepath="$PROJECT_DIR$/MCMAS 3-valued SL/abstraction.iml" />
     </modules>
   </component>
 </project>

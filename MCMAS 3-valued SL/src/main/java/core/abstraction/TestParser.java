@@ -71,7 +71,7 @@ public class TestParser {
         }
         long startTime, endTime, duration;
         CGSModel model = GenerateScheduler.generate(nProcesses);
-
+//
         AbstractionUtils.validateCGS(model);
 
         System.out.println("Number of states in CGS: " + model.getStates().size());
