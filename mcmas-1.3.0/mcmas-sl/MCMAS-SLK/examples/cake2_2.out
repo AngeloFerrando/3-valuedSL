@@ -1,0 +1,154 @@
+************************************************************************
+                       MCMAS v1.1.0 
+
+ This software comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law. 
+
+ Please check http://vas.doc.ic.ac.uk/tools/mcmas/ for the latest release.
+ Please send any feedback to <mcmas@imperial.ac.uk>
+************************************************************************
+
+Command line: ./mcmas -c 3 examples/cake2_2.ispl
+
+examples/cake2_2.ispl has been parsed successfully.
+Global syntax checking...
+Done
+Encoding BDD parameters...
+Building partial transition relation...
+Building BDD for initial states...
+Building reachable state space...
+Checking formulae...
+Verifying properties...
+  Formula number 1: <<x>> (Environment, x) ([[y1]] [[y2]] ((((<<z>> (P1, z) (P2, y2) F i1c1 -> ((P1, y1) (P2, y2) F i1c1 || (P1, y1) (P2, y2) F i1c2)) && (<<z>> (P1, z) (P2, y2) F i1c2 -> (P1, y1) (P2, y2) F i1c2)) && ((<<z>> (P1, y1) (P2, z) F i2c1 -> ((P1, y1) (P2, y2) F i2c1 || (P1, y1) (P2, y2) F i2c2)) && (<<z>> (P1, y1) (P2, z) F i2c2 -> (P1, y1) (P2, y2) F i2c2))) -> (P1, y1) (P2, y2) (F i1c1 && F i2c1)) && <<y1>> <<y2>> (((<<z>> (P1, z) (P2, y2) F i1c1 -> ((P1, y1) (P2, y2) F i1c1 || (P1, y1) (P2, y2) F i1c2)) && (<<z>> (P1, z) (P2, y2) F i1c2 -> (P1, y1) (P2, y2) F i1c2)) && ((<<z>> (P1, y1) (P2, z) F i2c1 -> ((P1, y1) (P2, y2) F i2c1 || (P1, y1) (P2, y2) F i2c2)) && (<<z>> (P1, y1) (P2, z) F i2c2 -> (P1, y1) (P2, y2) F i2c2)))), is TRUE in the model
+  The following is a witness for the formula: 
+   < 0 > 
+   < 0 1 2 > 
+   < 0 3 4 > 
+  States description: 
+------------- State: 0 -----------------
+Agent Environment
+  a1 = 0
+  a2 = 0
+  f1 = 1
+  f2 = 1
+  s1 = 2
+  s2 = 0
+  turn = player
+Agent P1
+  k = 2
+  m = 2
+Agent P2
+  k = 2
+  m = 2
+----------------------------------------
+------------- State: 1 -----------------
+Agent Environment
+  a1 = 2
+  a2 = 1
+  f1 = 1
+  f2 = 1
+  s1 = 2
+  s2 = 0
+  turn = env
+Agent P1
+  k = 2
+  m = 2
+Agent P2
+  k = 2
+  m = 2
+----------------------------------------
+------------- State: 2 -----------------
+Agent Environment
+  a1 = 0
+  a2 = 0
+  f1 = 2
+  f2 = 1
+  s1 = 1
+  s2 = 1
+  turn = player
+Agent P1
+  k = 1
+  m = 1
+Agent P2
+  k = 1
+  m = 1
+----------------------------------------
+------------- State: 3 -----------------
+Agent Environment
+  a1 = 2
+  a2 = 1
+  f1 = 1
+  f2 = 1
+  s1 = 2
+  s2 = 0
+  turn = env
+Agent P1
+  k = 2
+  m = 2
+Agent P2
+  k = 2
+  m = 2
+----------------------------------------
+------------- State: 4 -----------------
+Agent Environment
+  a1 = 0
+  a2 = 0
+  f1 = 2
+  f2 = 1
+  s1 = 1
+  s2 = 1
+  turn = player
+Agent P1
+  k = 1
+  m = 1
+Agent P2
+  k = 1
+  m = 1
+----------------------------------------
+  Strategies: 
+------- Strategy x [Environment] -------
+Agent Environment
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=1, Environment.s1=1, Environment.s2=0, Environment.turn=player (8): f_1_1_s_1
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=player (7): f_1_1_s_2
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=2, Environment.s1=1, Environment.s2=1, Environment.turn=env (5): f_1_2_s_1_1
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=2, Environment.s1=1, Environment.s2=1, Environment.turn=player (9): f_1_2_s_1_1
+  Environment.a1=0, Environment.a2=0, Environment.f1=2, Environment.f2=1, Environment.s1=1, Environment.s2=1, Environment.turn=env (6): f_1_2_s_1_1
+  Environment.a1=0, Environment.a2=0, Environment.f1=2, Environment.f2=1, Environment.s1=1, Environment.s2=1, Environment.turn=player (10): f_2_1_s_1_1
+  Environment.a1=1, Environment.a2=1, Environment.f1=1, Environment.f2=1, Environment.s1=1, Environment.s2=0, Environment.turn=env (4): f_1_1_s_1
+  Environment.a1=1, Environment.a2=1, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env (3): f_1_1_s_2
+  Environment.a1=1, Environment.a2=2, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env (2): f_1_1_s_1
+  Environment.a1=2, Environment.a2=1, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env (1): f_2_1_s_1_1
+  Environment.a1=2, Environment.a2=2, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env (0): f_1_2_s_1_1
+----------------------------------------
+----------- Strategy y1 [P1] -----------
+Agent P1
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=1, Environment.s1=1, Environment.s2=0, Environment.turn=player, k=1, m=2 (8): a1
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=player, k=2, m=2 (7): a2
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=2, Environment.s1=1, Environment.s2=1, Environment.turn=env, k=1, m=1 (5): a0
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=2, Environment.s1=1, Environment.s2=1, Environment.turn=player, k=1, m=1 (9): a0
+  Environment.a1=0, Environment.a2=0, Environment.f1=2, Environment.f2=1, Environment.s1=1, Environment.s2=1, Environment.turn=env, k=1, m=1 (6): a0
+  Environment.a1=0, Environment.a2=0, Environment.f1=2, Environment.f2=1, Environment.s1=1, Environment.s2=1, Environment.turn=player, k=1, m=1 (10): a0
+  Environment.a1=1, Environment.a2=1, Environment.f1=1, Environment.f2=1, Environment.s1=1, Environment.s2=0, Environment.turn=env, k=1, m=2 (4): a0
+  Environment.a1=1, Environment.a2=1, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env, k=2, m=2 (3): a0
+  Environment.a1=1, Environment.a2=2, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env, k=2, m=2 (2): a0
+  Environment.a1=2, Environment.a2=1, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env, k=2, m=2 (1): a0
+  Environment.a1=2, Environment.a2=2, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env, k=2, m=2 (0): a0
+----------------------------------------
+----------- Strategy y2 [P2] -----------
+Agent P2
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=1, Environment.s1=1, Environment.s2=0, Environment.turn=player, k=1, m=2 (8): a1
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=player, k=2, m=2 (7): a1
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=2, Environment.s1=1, Environment.s2=1, Environment.turn=env, k=1, m=1 (5): a0
+  Environment.a1=0, Environment.a2=0, Environment.f1=1, Environment.f2=2, Environment.s1=1, Environment.s2=1, Environment.turn=player, k=1, m=1 (9): a0
+  Environment.a1=0, Environment.a2=0, Environment.f1=2, Environment.f2=1, Environment.s1=1, Environment.s2=1, Environment.turn=env, k=1, m=1 (6): a0
+  Environment.a1=0, Environment.a2=0, Environment.f1=2, Environment.f2=1, Environment.s1=1, Environment.s2=1, Environment.turn=player, k=1, m=1 (10): a0
+  Environment.a1=1, Environment.a2=1, Environment.f1=1, Environment.f2=1, Environment.s1=1, Environment.s2=0, Environment.turn=env, k=1, m=2 (4): a0
+  Environment.a1=1, Environment.a2=1, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env, k=2, m=2 (3): a0
+  Environment.a1=1, Environment.a2=2, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env, k=2, m=2 (2): a0
+  Environment.a1=2, Environment.a2=1, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env, k=2, m=2 (1): a0
+  Environment.a1=2, Environment.a2=2, Environment.f1=1, Environment.f2=1, Environment.s1=2, Environment.s2=0, Environment.turn=env, k=2, m=2 (0): a0
+----------------------------------------
+done, 1 formulae successfully read and checked
+execution time = 0.452
+number of reachable states = 11
+BDD memory in use = 9395664

@@ -1,0 +1,99 @@
+--- Rock-paper-scissors example for Strategy Logic
+
+Agent Environment
+  Vars:
+    state : {game, p1win, p2win};
+  end Vars
+  Actions = {none};
+  Protocol:
+    Other : {none};
+  end Protocol
+  Evolution:
+    state = p1win if state = game and
+            (Player1.Action = rock and Player2.Action = scissors or
+             Player1.Action = paper and Player2.Action = rock or
+             Player1.Action = scissors and Player2.Action = paper);
+    state = p2win if state = game and
+            (Player2.Action = rock and Player1.Action = scissors or
+             Player2.Action = paper and Player1.Action = rock or
+             Player2.Action = scissors and Player1.Action = paper);
+  end Evolution
+end Agent
+
+Agent Player1
+  Vars:
+  end Vars
+
+  Actions = {rock, paper, scissors};
+
+  Protocol:
+    Other : {rock, paper, scissors};
+  end Protocol
+
+  Evolution:
+  end Evolution
+end Agent
+
+Agent Player2
+  Vars:
+  end Vars
+
+  Actions = {rock, paper, scissors};
+
+  Protocol:
+    Other : {rock, paper, scissors};
+  end Protocol
+
+  Evolution:
+  end Evolution
+end Agent
+
+Evaluation
+  p1win if Environment.state = p1win;
+  p2win if Environment.state = p2win;
+end Evaluation
+
+InitStates
+  Environment.state = game;
+end InitStates
+
+Formulae
+  !p1win and !p2win;
+  EX (!p1win and !p2win);
+  EX p1win;
+  EX p2win;
+  EG (!p1win and !p2win);
+  !EF (p1win and EF p2win);
+  !EF (p2win and EF p1win);
+  !EX (p2win and p1win);
+  !AX p1win;
+  !AX p2win;
+  !AX (p1win or p2win);
+
+  ! <<x>> [[y]] [[z]] (Environment, x) (Player1, y) (Player2, z) X F G p1win;
+  <<x>> <<y>> (Environment, x) (Player1, y) (Player2, x) X (Player2, y) X <<y>> (Player1, y) X p1win;
+  <<x>> <<y>> (Environment, x) (Player1, y) (Player2, y) X p1win;
+  <<x>> [[y]] <<z>> (Environment, x) (Player1, y) (Player2, z) X p1win;
+  <<x>> <<y>> [[z]] (Environment, x) (Player1, y) (Player2, z) X p1win;
+  <<x>> <<y>> (Environment, x) (Player1, y) (Player2, y) X !p1win;
+  [[x]] [[y]] (Environment, x) (Player1, y) (Player2, y) X !p1win;
+  <<x>> <<y>> (Environment, x) (Player1, y) (Player2, y) !X p1win;
+  [[x]] [[y]] (Environment, x) (Player1, y) (Player2, y) !X p1win;
+  <<x>> <<y>> (Environment, x) (Player1, y) (Player2, y) !X! p1win;
+  [[x]] [[y]] (Environment, x) (Player1, y) (Player2, y) !X! p1win;
+  [[x]] [[y]] [[z]] (Environment, x) (Player1, y) (Player2, z) ((G (!p1win and !p2win)) or (!p1win and !p2win U p1win or p2win));
+  [[x]] [[y]] [[z]] (Environment, x) (Player1, y) (Player2, z) !F (p1win and F p2win);
+
+  [[e]] (Environment, e) [[x]] <<y>> ((Player1, x) (Player2, y) !F p1win and (Player1, y) (Player2, x) !F p2win);
+  [[e]] (Environment, e) [[x]] (Player1, x) (<<y>> (Player2, y) F p1win and <<y>> (Player2, y) !(F p1win or F p2win) and <<y>> (Player2, y) F p2win);
+
+  <<x>> <<y>> (Player1, x) (Player2, y) [[e]] (Environment, e) F p1win;
+  <<x>> <<y>> (Player1, x) (Player2, y) [[e]] (Environment, e) F p2win;
+  ! [[x]] [[y]] (Player1, x) (Player2, y) [[e]] (Environment, e) G ! p1win;
+  ! [[x]] [[y]] (Player1, x) (Player2, y) [[e]] (Environment, e) G ! p2win;
+
+  <<x>> <<y>> (Environment, x) (Player1, y) (Player2, y) (! X [[z]] (Environment, z) p1win and X X ! p1win);
+
+  [[e]] [[x]] [[y]] (Environment, e) (Player1, x) (Player2, y) X X X X (p1win or p2win);
+  <<x>> [[e]] (Player1, x) (Player2, x) (Environment, e) G (!p1win and !p2win);
+end Formulae

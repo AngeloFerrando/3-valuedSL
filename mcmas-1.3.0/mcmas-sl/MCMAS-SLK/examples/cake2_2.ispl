@@ -1,0 +1,147 @@
+Agent Environment
+    Obsvars:
+        turn: {env, player};
+        f1: 1 .. 2;
+        f2: 1 .. 2;
+        s1: 0 .. 2;
+        s2: 0 .. 2;
+        a1: 0 .. 2;
+        a2: 0 .. 2;
+    end Obsvars
+    Actions = {f_1_1_s_1, f_1_1_s_2, f_1_2_s_1_1, f_2_1_s_1_1};
+    Protocol:
+        (turn=player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0): {f_1_1_s_1};
+        (turn=env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0): {f_1_1_s_1};
+        (turn=player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0): {f_1_1_s_2};
+        (turn=env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0): {f_1_1_s_1, f_1_1_s_2, f_1_2_s_1_1, f_2_1_s_1_1};
+        (turn=player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1): {f_1_2_s_1_1};
+        (turn=env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1): {f_1_2_s_1_1, f_2_1_s_1_1};
+        (turn=player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1): {f_2_1_s_1_1};
+        (turn=env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1): {f_1_2_s_1_1, f_2_1_s_1_1};
+    end Protocol
+    Evolution:
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 0 and a2 = 0) if (turn = env and Action = f_1_1_s_1 and P1.Action = a0 and P2.Action = a0);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 0 and a2 = 0) if (turn = player and Action = f_1_1_s_1 and P1.Action = a0 and P2.Action = a0);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 0 and a2 = 1) if (turn = env and Action = f_1_1_s_1 and P1.Action = a0 and P2.Action = a1);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 0 and a2 = 1) if (turn = player and Action = f_1_1_s_1 and P1.Action = a0 and P2.Action = a1);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 0 and a2 = 2) if (turn = env and Action = f_1_1_s_1 and P1.Action = a0 and P2.Action = a2);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 0 and a2 = 2) if (turn = player and Action = f_1_1_s_1 and P1.Action = a0 and P2.Action = a2);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 1 and a2 = 0) if (turn = env and Action = f_1_1_s_1 and P1.Action = a1 and P2.Action = a0);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 1 and a2 = 0) if (turn = player and Action = f_1_1_s_1 and P1.Action = a1 and P2.Action = a0);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 1 and a2 = 1) if (turn = env and Action = f_1_1_s_1 and P1.Action = a1 and P2.Action = a1);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 1 and a2 = 1) if (turn = player and Action = f_1_1_s_1 and P1.Action = a1 and P2.Action = a1);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 1 and a2 = 2) if (turn = env and Action = f_1_1_s_1 and P1.Action = a1 and P2.Action = a2);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 1 and a2 = 2) if (turn = player and Action = f_1_1_s_1 and P1.Action = a1 and P2.Action = a2);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 2 and a2 = 0) if (turn = env and Action = f_1_1_s_1 and P1.Action = a2 and P2.Action = a0);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 2 and a2 = 0) if (turn = player and Action = f_1_1_s_1 and P1.Action = a2 and P2.Action = a0);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 2 and a2 = 1) if (turn = env and Action = f_1_1_s_1 and P1.Action = a2 and P2.Action = a1);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 2 and a2 = 1) if (turn = player and Action = f_1_1_s_1 and P1.Action = a2 and P2.Action = a1);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 2 and a2 = 2) if (turn = env and Action = f_1_1_s_1 and P1.Action = a2 and P2.Action = a2);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 1 and s2 = 0 and a1 = 2 and a2 = 2) if (turn = player and Action = f_1_1_s_1 and P1.Action = a2 and P2.Action = a2);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 0 and a2 = 0) if (turn = env and Action = f_1_1_s_2 and P1.Action = a0 and P2.Action = a0);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 0 and a2 = 0) if (turn = player and Action = f_1_1_s_2 and P1.Action = a0 and P2.Action = a0);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 0 and a2 = 1) if (turn = env and Action = f_1_1_s_2 and P1.Action = a0 and P2.Action = a1);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 0 and a2 = 1) if (turn = player and Action = f_1_1_s_2 and P1.Action = a0 and P2.Action = a1);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 0 and a2 = 2) if (turn = env and Action = f_1_1_s_2 and P1.Action = a0 and P2.Action = a2);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 0 and a2 = 2) if (turn = player and Action = f_1_1_s_2 and P1.Action = a0 and P2.Action = a2);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 1 and a2 = 0) if (turn = env and Action = f_1_1_s_2 and P1.Action = a1 and P2.Action = a0);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 1 and a2 = 0) if (turn = player and Action = f_1_1_s_2 and P1.Action = a1 and P2.Action = a0);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 1 and a2 = 1) if (turn = env and Action = f_1_1_s_2 and P1.Action = a1 and P2.Action = a1);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 1 and a2 = 1) if (turn = player and Action = f_1_1_s_2 and P1.Action = a1 and P2.Action = a1);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 1 and a2 = 2) if (turn = env and Action = f_1_1_s_2 and P1.Action = a1 and P2.Action = a2);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 1 and a2 = 2) if (turn = player and Action = f_1_1_s_2 and P1.Action = a1 and P2.Action = a2);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 2 and a2 = 0) if (turn = env and Action = f_1_1_s_2 and P1.Action = a2 and P2.Action = a0);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 2 and a2 = 0) if (turn = player and Action = f_1_1_s_2 and P1.Action = a2 and P2.Action = a0);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 2 and a2 = 1) if (turn = env and Action = f_1_1_s_2 and P1.Action = a2 and P2.Action = a1);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 2 and a2 = 1) if (turn = player and Action = f_1_1_s_2 and P1.Action = a2 and P2.Action = a1);
+        (turn = player and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 2 and a2 = 2) if (turn = env and Action = f_1_1_s_2 and P1.Action = a2 and P2.Action = a2);
+        (turn = env and f1 = 1 and f2 = 1 and s1 = 2 and s2 = 0 and a1 = 2 and a2 = 2) if (turn = player and Action = f_1_1_s_2 and P1.Action = a2 and P2.Action = a2);
+        (turn = player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 0) if (turn = env and Action = f_1_2_s_1_1 and P1.Action = a0 and P2.Action = a0);
+        (turn = env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 0) if (turn = player and Action = f_1_2_s_1_1 and P1.Action = a0 and P2.Action = a0);
+        (turn = player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 1) if (turn = env and Action = f_1_2_s_1_1 and P1.Action = a0 and P2.Action = a1);
+        (turn = env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 1) if (turn = player and Action = f_1_2_s_1_1 and P1.Action = a0 and P2.Action = a1);
+        (turn = player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 2) if (turn = env and Action = f_1_2_s_1_1 and P1.Action = a0 and P2.Action = a2);
+        (turn = env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 2) if (turn = player and Action = f_1_2_s_1_1 and P1.Action = a0 and P2.Action = a2);
+        (turn = player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 0) if (turn = env and Action = f_1_2_s_1_1 and P1.Action = a1 and P2.Action = a0);
+        (turn = env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 0) if (turn = player and Action = f_1_2_s_1_1 and P1.Action = a1 and P2.Action = a0);
+        (turn = player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 1) if (turn = env and Action = f_1_2_s_1_1 and P1.Action = a1 and P2.Action = a1);
+        (turn = env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 1) if (turn = player and Action = f_1_2_s_1_1 and P1.Action = a1 and P2.Action = a1);
+        (turn = player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 2) if (turn = env and Action = f_1_2_s_1_1 and P1.Action = a1 and P2.Action = a2);
+        (turn = env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 2) if (turn = player and Action = f_1_2_s_1_1 and P1.Action = a1 and P2.Action = a2);
+        (turn = player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 0) if (turn = env and Action = f_1_2_s_1_1 and P1.Action = a2 and P2.Action = a0);
+        (turn = env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 0) if (turn = player and Action = f_1_2_s_1_1 and P1.Action = a2 and P2.Action = a0);
+        (turn = player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 1) if (turn = env and Action = f_1_2_s_1_1 and P1.Action = a2 and P2.Action = a1);
+        (turn = env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 1) if (turn = player and Action = f_1_2_s_1_1 and P1.Action = a2 and P2.Action = a1);
+        (turn = player and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 2) if (turn = env and Action = f_1_2_s_1_1 and P1.Action = a2 and P2.Action = a2);
+        (turn = env and f1 = 1 and f2 = 2 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 2) if (turn = player and Action = f_1_2_s_1_1 and P1.Action = a2 and P2.Action = a2);
+        (turn = player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 0) if (turn = env and Action = f_2_1_s_1_1 and P1.Action = a0 and P2.Action = a0);
+        (turn = env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 0) if (turn = player and Action = f_2_1_s_1_1 and P1.Action = a0 and P2.Action = a0);
+        (turn = player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 1) if (turn = env and Action = f_2_1_s_1_1 and P1.Action = a0 and P2.Action = a1);
+        (turn = env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 1) if (turn = player and Action = f_2_1_s_1_1 and P1.Action = a0 and P2.Action = a1);
+        (turn = player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 2) if (turn = env and Action = f_2_1_s_1_1 and P1.Action = a0 and P2.Action = a2);
+        (turn = env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 0 and a2 = 2) if (turn = player and Action = f_2_1_s_1_1 and P1.Action = a0 and P2.Action = a2);
+        (turn = player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 0) if (turn = env and Action = f_2_1_s_1_1 and P1.Action = a1 and P2.Action = a0);
+        (turn = env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 0) if (turn = player and Action = f_2_1_s_1_1 and P1.Action = a1 and P2.Action = a0);
+        (turn = player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 1) if (turn = env and Action = f_2_1_s_1_1 and P1.Action = a1 and P2.Action = a1);
+        (turn = env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 1) if (turn = player and Action = f_2_1_s_1_1 and P1.Action = a1 and P2.Action = a1);
+        (turn = player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 2) if (turn = env and Action = f_2_1_s_1_1 and P1.Action = a1 and P2.Action = a2);
+        (turn = env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 1 and a2 = 2) if (turn = player and Action = f_2_1_s_1_1 and P1.Action = a1 and P2.Action = a2);
+        (turn = player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 0) if (turn = env and Action = f_2_1_s_1_1 and P1.Action = a2 and P2.Action = a0);
+        (turn = env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 0) if (turn = player and Action = f_2_1_s_1_1 and P1.Action = a2 and P2.Action = a0);
+        (turn = player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 1) if (turn = env and Action = f_2_1_s_1_1 and P1.Action = a2 and P2.Action = a1);
+        (turn = env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 1) if (turn = player and Action = f_2_1_s_1_1 and P1.Action = a2 and P2.Action = a1);
+        (turn = player and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 2) if (turn = env and Action = f_2_1_s_1_1 and P1.Action = a2 and P2.Action = a2);
+        (turn = env and f1 = 2 and f2 = 1 and s1 = 1 and s2 = 1 and a1 = 2 and a2 = 2) if (turn = player and Action = f_2_1_s_1_1 and P1.Action = a2 and P2.Action = a2);
+    end Evolution
+end Agent
+
+Agent P1
+    Vars:
+        m: 1 .. 2;
+        k: 1 .. 2;
+    end Vars
+    Actions = {a0, a1, a2};
+    Protocol:
+        (m > 1 and Environment.turn = player and k = 1): {a1};
+        (m > 1 and Environment.turn = player and k = 2): {a1, a2};
+        Other: {a0};
+    end Protocol
+    Evolution:
+        (m = 1 and k = 1) if (Environment.turn = env and (Environment.Action = f_1_2_s_1_1 or Environment.Action = f_2_1_s_1_1));
+        (m = 2 and k = 1) if (Environment.turn = env and (Environment.Action = f_1_1_s_1));
+        (m = 2 and k = 2) if (Environment.turn = env and (Environment.Action = f_1_1_s_2));
+    end Evolution
+end Agent
+
+Agent P2
+    Vars:
+        m: 1 .. 2;
+        k: 1 .. 2;
+    end Vars
+    Actions = {a0, a1, a2};
+    Protocol:
+        (m > 1 and Environment.turn = player and k = 1): {a1};
+        (m > 1 and Environment.turn = player and k = 2): {a1, a2};
+        Other: {a0};
+    end Protocol
+    Evolution:
+        (m = 1 and k = 1) if (Environment.turn = env and (Environment.Action = f_1_2_s_1_1 or Environment.Action = f_2_1_s_1_1));
+        (m = 2 and k = 1) if (Environment.turn = env and (Environment.Action = f_1_1_s_1));
+        (m = 2 and k = 2) if (Environment.turn = env and (Environment.Action = f_1_1_s_2));
+    end Evolution
+end Agent
+
+Evaluation
+    i1c1 if (P1.m = 1 and P1.k = 1 and Environment.turn = player);
+    i1c2 if (P1.m = 1 and P1.k = 2 and Environment.turn = player);
+    i2c1 if (P2.m = 1 and P2.k = 1 and Environment.turn = player);
+    i2c2 if (P2.m = 1 and P2.k = 2 and Environment.turn = player);
+end Evaluation
+
+InitStates
+    Environment.turn = player and Environment.f1 = 1 and Environment.f2 = 1 and Environment.s1 = 2 and Environment.s2 = 0 and Environment.a1 = 0 and Environment.a2 = 0 and P1.m = 2 and P1.k = 2 and P2.m = 2 and P2.k = 2;
+end InitStates
+
+Formulae
+    <<x>> (Environment, x) (([[y1]] [[y2]] (((((<<z>> (P1, z) (P2, y2) F i1c1) -> (((P1, y1) (P2, y2) F i1c1) or ((P1, y1) (P2, y2) F i1c2))) and ((<<z>> (P1, z) (P2, y2) F i1c2) -> (((P1, y1) (P2, y2) F i1c2)))) and (((<<z>> (P1, y1) (P2, z) F i2c1) -> (((P1, y1) (P2, y2) F i2c1) or ((P1, y1) (P2, y2) F i2c2))) and ((<<z>> (P1, y1) (P2, z) F i2c2) -> (((P1, y1) (P2, y2) F i2c2))))) -> ((P1, y1) (P2, y2) ((F i1c1) and (F i2c1))))) and (<<y1>> <<y2>> ((((<<z>> (P1, z) (P2, y2) F i1c1) -> (((P1, y1) (P2, y2) F i1c1) or ((P1, y1) (P2, y2) F i1c2))) and ((<<z>> (P1, z) (P2, y2) F i1c2) -> (((P1, y1) (P2, y2) F i1c2)))) and (((<<z>> (P1, y1) (P2, z) F i2c1) -> (((P1, y1) (P2, y2) F i2c1) or ((P1, y1) (P2, y2) F i2c2))) and ((<<z>> (P1, y1) (P2, z) F i2c2) -> (((P1, y1) (P2, y2) F i2c2)))))));
+end Formulae

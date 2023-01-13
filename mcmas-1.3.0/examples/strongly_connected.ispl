@@ -1,0 +1,64 @@
+-- A simple test of MCMAS' witness or counterexample generation facilities.
+
+Agent Environment
+  Vars:
+    state : {one, two, three};
+  end Vars
+  Actions = {one, two, three};
+  Protocol:
+    state=one: {one, two};
+    state=two: {two, three};
+    state=three: {three};
+  end Protocol
+  Evolution:
+    state=one if (Action=one);
+    state=two if (Action=two);
+    state=three if (Action=three);
+  end Evolution
+end Agent
+
+Agent Nil
+  Vars:
+    foo: {a, b};
+  end Vars
+  Actions = {a, b};
+  Protocol:
+    foo=a: {a};
+    foo=b: {b};
+  end Protocol
+  Evolution:
+    foo=a if (Action=a);
+    foo=b if (Action=b);
+  end Evolution 
+end Agent
+
+Evaluation
+  one if ( Environment.state=one );
+  two if ( Environment.state=two );
+  three if ( Environment.state=three );
+  onethree if ( Environment.state=one ) or ( Environment.state=three );
+  twothree if ( Environment.state=two ) or ( Environment.state=three );
+  tr if ( Environment.state=one ) or !( Environment.state = one);
+end Evaluation
+
+InitStates
+    (Environment.state = one);
+end InitStates
+
+--Groups
+--  g1 = {Sender,Receiver};
+--end Groups
+
+Fairness
+  onethree;
+  twothree;
+end Fairness
+
+Formulae
+  EG tr;
+  CTL* E(G tr);
+  CTL* A(G tr);
+  CTL* E(G !tr);
+  LTL F !tr;
+end Formulae
+

@@ -42,7 +42,7 @@ public abstract class StrategyLogic implements Cloneable {
             existentialAgents.addAll(bindings.stream().filter(b -> ((Binding)b).var.equals(((Existential)existential).var)).map(b -> ((Binding)b).agent).toList());
         }
         for(StrategyLogic universal : universals) {
-            existentialAgents.addAll(bindings.stream().filter(b -> ((Binding)b).var.equals(((Universal)universal).var)).map(b -> ((Binding)b).agent).toList());
+            universalAgents.addAll(bindings.stream().filter(b -> ((Binding)b).var.equals(((Universal)universal).var)).map(b -> ((Binding)b).agent).toList());
         }
         Set<String> intersection = new HashSet<>(existentialAgents);
         intersection.retainAll(universalAgents);

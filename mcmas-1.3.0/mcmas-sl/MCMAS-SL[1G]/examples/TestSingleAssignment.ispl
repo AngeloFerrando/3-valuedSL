@@ -1,0 +1,53 @@
+Semantics=SingleAssignment;                                                                                                                                                                                    
+                                                                                                                                                                                                               
+Agent Environment
+    Vars:
+        a: 1..3;
+    end Vars
+    Actions = {none};
+    Protocol:
+        Other: {none};
+    end Protocol
+    Evolution:
+        a = 2 if a = 1;
+        a = 3 if a = 2;
+        a = 1 if a = 3;
+    end Evolution
+end Agent
+
+Agent TestAgent
+    Vars:
+        a: 1..3;
+        b: 2..4;
+        c: 2..3;
+    end Vars
+    Actions = {none};
+    Protocol:
+        Other: {none};
+    end Protocol
+    Evolution:
+        b = 3 if b = 2;
+        b = 4 if b = 3;
+        b = 2 if b = 4;
+
+        a = 2 if a = 1;
+        a = 3 if a = 2;
+        a = 1 if a = 3;
+
+        c = 2 if c = 3;
+        c = 3 if c = 2;
+    end Evolution
+end Agent
+
+Evaluation
+        a_b if Environment.a = TestAgent.b;
+end Evaluation
+
+InitStates
+        Environment.a = TestAgent.a and !(TestAgent.a = TestAgent.b) and !(TestAgent.b=TestAgent.c);
+end InitStates
+
+Formulae
+        EF a_b;
+end Formulae
+

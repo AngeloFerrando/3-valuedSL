@@ -1,0 +1,162 @@
+Agent Environment
+  Vars:
+    state: {none, r1, r2, uk,
+        p, np, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12       };
+    agt: {a1, a2, a3, a4};
+  end Vars
+  Actions = {receive1,receive2,receive3,
+                 punish, npunish, wait};
+  Protocol:
+    (state=none) and agt=a1: {receive1};
+    (state=p or state=np) and agt=a2:{receive2};
+    (state=p or state=np) and agt=a3:{receive3};
+    state=h12: {punish, npunish};
+    state=h1 or state=r1 or state=r2 or state=uk
+    or state=h2 or state=h3 or state=h4 or state=h5 or state=h6 or state=h7
+    or state=h8 or state=h9 or state=h10 or state=h11 or state=h12
+    : {wait};
+  end Protocol
+  Evolution:
+    state=h1 if (state=r1 or state=r2 or state=uk) and Action=wait;
+    state=h2 if state=h1 and Action=wait;
+    state=h3 if state=h2 and Action=wait;
+    state=h4 if state=h3 and Action=wait;
+    state=h5 if state=h4 and Action=wait;
+    state=h6 if state=h5 and Action=wait;
+    state=h7 if state=h6 and Action=wait;
+    state=h8 if state=h7 and Action=wait;
+    state=h9 if state=h8 and Action=wait;
+    state=h10 if state=h9 and Action=wait;
+    state=h11 if state=h10 and Action=wait;
+    state=h12 if state=h11 and Action=wait;
+    state=r1 and agt=a1 if Action=receive1 and Voter1.Action=give1;
+    state=r2 and agt=a1 if Action=receive1 and Voter1.Action=give2;
+    state=uk and agt=a1 if Action=receive1 and Voter1.Action=ngive;
+    state=r1 and agt=a2 if Action=receive2 and Voter2.Action=give1;
+    state=r2 and agt=a2 if Action=receive2 and Voter2.Action=give2;
+    state=uk and agt=a2 if Action=receive2 and Voter2.Action=ngive;
+    state=r1 and agt=a3 if Action=receive3 and Voter3.Action=give1;
+    state=r2 and agt=a3 if Action=receive3 and Voter3.Action=give2;
+    state=uk and agt=a3 if Action=receive3 and Voter3.Action=ngive;
+    state=p and agt=a2 if Action=punish and agt=a1;
+    state=np and agt=a2 if Action=npunish and agt=a1;
+    state=p and agt=a3 if Action=punish and agt=a2;
+    state=np and agt=a3 if Action=npunish and agt=a2;
+    state=p and agt=a4 if Action=punish and agt=a3;
+    state=np and agt=a4 if Action=npunish and agt=a3;
+  end Evolution
+end Agent
+
+Agent Voter1
+  Vars:
+    state: {init, ng1, ng2, v1, v2, g1, g2};
+  end Vars
+  Actions = {vote1, vote2, give1, give2, none, ngive};
+  Protocol:
+    state=init: {vote1, vote2};
+    state=v1 : {give1, ngive};
+    state=v2 : {give2, ngive};
+    state=g1 or state=g2 or state=ng1 or state=ng2: {none};
+  end Protocol
+  Evolution:
+    state=v1 if state=init and Action=vote1;
+    state=v2 if state=init and Action=vote2;
+    state=g1 if (Action=give1) and Environment.Action=receive1;
+    state=g2 if (Action=give2) and Environment.Action=receive1;
+    state=ng1 if Action=ngive and state=v1 and Environment.Action=receive1;
+    state=ng2 if Action=ngive and state=v2 and Environment.Action=receive1;
+  end Evolution
+end Agent
+
+Agent Voter2
+  Vars:
+    state: {init, ng1, ng2, v1, v2, g1, g2};
+  end Vars
+  Actions = {vote1, vote2, give1, give2, none, ngive};
+  Protocol:
+    state=init: {vote1, vote2};
+    state=v1 : {give1, ngive};
+    state=v2 : {give2, ngive};
+    state=g1 or state=g2 or state=ng1 or state=ng2: {none};
+  end Protocol
+  Evolution:
+    state=v1 if state=init and Action=vote1;
+    state=v2 if state=init and Action=vote2;
+    state=g1 if (Action=give1) and Environment.Action=receive2;
+    state=g2 if (Action=give2) and Environment.Action=receive2;
+    state=ng1 if Action=ngive and state=v1 and Environment.Action=receive2;
+    state=ng2 if Action=ngive and state=v2 and Environment.Action=receive2;
+  end Evolution
+
+end Agent
+
+Agent Voter3
+  Vars:
+    state: {init, ng1, ng2, v1, v2, g1, g2};
+  end Vars
+  Actions = {vote1, vote2, give1, give2, none, ngive};
+  Protocol:
+    state=init: {vote1, vote2};
+    state=v1 : {give1, ngive};
+    state=v2 : {give2, ngive};
+    state=g1 or state=g2 or state=ng1 or state=ng2: {none};
+  end Protocol
+  Evolution:
+    state=v1 if state=init and Action=vote1;
+    state=v2 if state=init and Action=vote2;
+    state=g1 if (Action=give1) and Environment.Action=receive3;
+    state=g2 if (Action=give2) and Environment.Action=receive3;
+    state=ng1 if Action=ngive and state=v1 and Environment.Action=receive3;
+    state=ng2 if Action=ngive and state=v2 and Environment.Action=receive3;
+  end Evolution
+
+end Agent
+
+Evaluation
+  punish1 if Environment.state=p and Environment.agt=a2;
+  npunish1 if Environment.state=np and Environment.agt=a2;
+  v1_1_give if Voter1.state=g1;
+  v2_1_give if Voter1.state=g2;
+  ngive1 if Voter1.state=ng1 or Voter1.state=ng2;
+  give1 if Voter1.state=g1 or Voter1.state=g2;
+
+  punish2 if Environment.state=p and Environment.agt=a3;
+  npunish2 if Environment.state=np and Environment.agt=a3;
+  v1_2_give if Voter2.state=g1;
+  v2_2_give if Voter2.state=g2;
+  ngive2 if Voter2.state=ng1 or Voter2.state=ng2;
+  give2 if Voter2.state=g1 or Voter2.state=g2;
+
+  punish3 if Environment.state=p and Environment.agt=a4;
+  npunish3 if Environment.state=np and Environment.agt=a4;
+  v1_3_give if Voter3.state=g1;
+  v2_3_give if Voter3.state=g2;
+  ngive3 if Voter3.state=ng1 or Voter3.state=ng2;
+  give3 if Voter3.state=g1 or Voter3.state=g2;
+
+end Evaluation
+
+InitStates
+  Environment.state=none and (Environment.agt=a1) and (Voter1.state=init)
+  and (Voter2.state=init)
+  and (Voter3.state=init)
+  ;
+end InitStates
+
+Groups
+  g1 = {Environment};
+  g2 = {Voter1, Voter2, Voter3};
+  g3 = {Voter1};
+  g4 = {Voter2};
+  g5 = {Voter3};
+end Groups
+
+Formulae
+  <g2> G! (((ngive1 and npunish1)
+      or (give1 and punish1))
+      or  ((ngive2 and npunish2)
+      or (give2 and punish2))
+      or  ((ngive3 and npunish3)
+      or (give3 and punish3))
+          );
+end Formulae

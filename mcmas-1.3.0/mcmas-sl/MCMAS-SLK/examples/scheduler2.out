@@ -1,0 +1,50 @@
+************************************************************************
+                       MCMAS v1.1.0 
+
+ This software comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law. 
+
+ Please check http://vas.doc.ic.ac.uk/tools/mcmas/ for the latest release.
+ Please send any feedback to <mcmas@imperial.ac.uk>
+************************************************************************
+
+Command line: ./mcmas -c 3 examples/scheduler2.ispl
+
+examples/scheduler2.ispl has been parsed successfully.
+Global syntax checking...
+Done
+Encoding BDD parameters...
+Building partial transition relation...
+Building BDD for initial states...
+Building reachable state space...
+Checking formulae...
+Verifying properties...
+  Formula number 1: [[x]] [[y1]] [[y2]] (Environment, x) (P1, y1) (P2, y2) G (! (rs1 && rs2)), is TRUE in the model
+    -- Sorry it is not possible to compute witnesses for non-ECTLK formulae
+  Formula number 2: <<x>> [[y1]] [[y2]] (Environment, x) (P1, y1) (P2, y2) G ((wt1 -> F (! wt1)) && (wt2 -> F (! wt2))), is TRUE in the model
+  The following is a witness for the formula: 
+   < 0 > 
+  States description: 
+------------- State: 0 -----------------
+Agent Environment
+  q1 = false
+  q2 = false
+  state = fr
+Agent P1
+  state = in
+Agent P2
+  state = in
+----------------------------------------
+  Strategies: 
+------- Strategy x [Environment] -------
+Agent Environment
+  Environment.q1=false, Environment.q2=false, Environment.state=a (0): id
+  Environment.q1=false, Environment.q2=false, Environment.state=fr (4): id
+  Environment.q1=false, Environment.q2=true, Environment.state=a (1): p2
+  Environment.q1=true, Environment.q2=false, Environment.state=a (2): p1
+  Environment.q1=true, Environment.q2=true, Environment.state=a (3): p1
+----------------------------------------
+done, 2 formulae successfully read and checked
+execution time = 0.012
+number of reachable states = 9
+BDD memory in use = 9132464

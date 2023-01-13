@@ -1,0 +1,16 @@
+********************************************************************************
+                                  MCMAS-SLK
+      Model Checker for the Verification of Strategy Logic Specifications
+********************************************************************************
+
+This repository contains MCMAS-SLK source code, binaries, benchmarks, and
+outputs. In particular:
+  - mcmas32 i386 Linux binary
+  - mcmas64 x86_64 Linux binary
+  - examples/*.ispl Sample ISPL files
+  - examples/*.out Sample outputs
+  - doc/installation_guide.pdf Installation guide
+  - LICENSE GNU GPL license
+  - benchmark.sh Script for generating SL benchmarks
+
+Please contact mcmas@doc.ic.ac.uk for further information.

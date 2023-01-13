@@ -1,0 +1,116 @@
+-- The protocol for the 3 dining cryptographers (Chaum)
+Agent Environment
+  Obsvars:
+    numberofodd : { none, even, odd };
+  end Obsvars
+
+  Vars:
+    coin1 : {head, tail};
+    coin2 : {head, tail};
+    coin3 : {head, tail};
+  end Vars
+
+  Actions = { none };
+  Protocol:
+    Other : {none};
+  end Protocol
+
+  Evolution:
+    numberofodd=even if ( ( numberofodd=none) and ( 
+(  DinCrypt1.Action=sayequal and  DinCrypt2.Action=saydifferent and  DinCrypt3.Action=saydifferent )       or 
+(  DinCrypt1.Action=saydifferent and  DinCrypt2.Action=sayequal and  DinCrypt3.Action=saydifferent )       or 
+(  DinCrypt1.Action=saydifferent and  DinCrypt2.Action=saydifferent and  DinCrypt3.Action=sayequal )       or 
+(  DinCrypt1.Action=sayequal and  DinCrypt2.Action=sayequal and  DinCrypt3.Action=sayequal ) ) );
+    numberofodd=odd if ( ( numberofodd=none) and ( 
+(  DinCrypt1.Action=saydifferent and  DinCrypt2.Action=saydifferent and  DinCrypt3.Action=saydifferent )       or 
+(  DinCrypt1.Action=sayequal and  DinCrypt2.Action=sayequal and  DinCrypt3.Action=saydifferent )       or 
+(  DinCrypt1.Action=sayequal and  DinCrypt2.Action=saydifferent and  DinCrypt3.Action=sayequal )       or 
+(  DinCrypt1.Action=saydifferent and  DinCrypt2.Action=sayequal and  DinCrypt3.Action=sayequal )  ) );
+  end Evolution
+end Agent
+
+Agent DinCrypt1
+  Lobsvars = { coin1, coin3};
+  Vars:
+    payer : {yes,no};
+    seedifferent : { empty, yes, no };
+  end Vars
+  Actions = { sayequal, saydifferent, none };
+  Protocol:
+    (payer=no and seedifferent=yes): {saydifferent};
+    (payer=no and seedifferent=no) : {sayequal};
+    (payer=yes and seedifferent=yes): {sayequal};
+    (payer=yes and seedifferent=no) : {saydifferent};
+    Other: {none};
+  end Protocol
+  Evolution:
+    (seedifferent=no) if ( seedifferent=empty and Environment.coin1=head and Environment.coin3=head ) or
+      ( seedifferent=empty and Environment.coin1=tail and Environment.coin3=tail ); 
+    (seedifferent=yes)  if ( seedifferent=empty and Environment.coin1=head and Environment.coin3=tail ) or
+      ( seedifferent=empty and Environment.coin1=tail and Environment.coin3=head );
+  end Evolution
+end Agent
+Agent DinCrypt2
+  Lobsvars = { coin2, coin1};
+  Vars:
+    payer : {yes,no};
+    seedifferent : { empty, yes, no };
+  end Vars
+  Actions = { sayequal, saydifferent, none };
+  Protocol:
+    (payer=no and seedifferent=yes): {saydifferent};
+    (payer=no and seedifferent=no) : {sayequal};
+    (payer=yes and seedifferent=yes): {sayequal};
+    (payer=yes and seedifferent=no) : {saydifferent};
+    Other: {none};
+  end Protocol
+  Evolution:
+    (seedifferent=no) if ( seedifferent=empty and Environment.coin2=head and Environment.coin1=head ) or
+      ( seedifferent=empty and Environment.coin2=tail and Environment.coin1=tail ); 
+    (seedifferent=yes)  if ( seedifferent=empty and Environment.coin2=head and Environment.coin1=tail ) or
+      ( seedifferent=empty and Environment.coin2=tail and Environment.coin1=head );
+  end Evolution
+end Agent
+Agent DinCrypt3
+  Lobsvars = { coin3, coin2};
+  Vars:
+    payer : {yes,no};
+    seedifferent : { empty, yes, no };
+  end Vars
+  Actions = { sayequal, saydifferent, none };
+  Protocol:
+    (payer=no and seedifferent=yes): {saydifferent};
+    (payer=no and seedifferent=no) : {sayequal};
+    (payer=yes and seedifferent=yes): {sayequal};
+    (payer=yes and seedifferent=no) : {saydifferent};
+    Other: {none};
+  end Protocol
+  Evolution:
+    (seedifferent=no) if ( seedifferent=empty and Environment.coin3=head and Environment.coin2=head ) or
+      ( seedifferent=empty and Environment.coin3=tail and Environment.coin2=tail ); 
+    (seedifferent=yes)  if ( seedifferent=empty and Environment.coin3=head and Environment.coin2=tail ) or
+      ( seedifferent=empty and Environment.coin3=tail and Environment.coin2=head );
+  end Evolution
+end Agent
+Evaluation
+  c1paid if ( DinCrypt1.payer=yes );
+  c2paid if ( DinCrypt2.payer=yes );
+  c3paid if ( DinCrypt3.payer=yes );
+  odd if ( Environment.numberofodd=odd);
+  even if ( Environment.numberofodd=even);
+end Evaluation
+InitStates
+ ( ((DinCrypt1.payer=yes) and (DinCrypt2.payer=no) and (DinCrypt3.payer=no))  or 
+((DinCrypt1.payer=no) and (DinCrypt2.payer=yes) and (DinCrypt3.payer=no))  or 
+((DinCrypt1.payer=no) and (DinCrypt2.payer=no) and (DinCrypt3.payer=yes))  or 
+((DinCrypt1.payer=no) and (DinCrypt2.payer=no) and (DinCrypt3.payer=no))  )
+ and (Environment.numberofodd=none) 
+ and (DinCrypt1.seedifferent=empty) and (DinCrypt2.seedifferent=empty) and (DinCrypt3.seedifferent=empty);
+end InitStates
+Groups
+	g1 = {DinCrypt1, DinCrypt2, DinCrypt3};
+end Groups
+Formulae
+    AG((odd and !c1paid) -> (K(DinCrypt1, c2paid or c3paid)) and !K(DinCrypt1, c2paid) and !K(DinCrypt1, c3paid));
+    AG(even -> GCK(g1, !(c1paid or c2paid or c3paid)));
+end Formulae

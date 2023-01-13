@@ -1,0 +1,145 @@
+Agent Supplier
+    Vars:
+		state : {s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14};
+    end Vars
+    Actions = {notify_purchaser_about_purchase_order1, notify_purchaser_about_payment1,
+    			notify_purchaser_about_purchase_order2, notify_purchaser_about_payment2,
+    			place_e_good, notify_purchaser_about_rejection_of_remedy_request, 
+    			send_refund, accept_purchase_order, reject_purchase_order, 
+    			accept_paymnet, reject_payment, terminate, null};
+    Protocol:
+    	-- wait for the order from the Purchaser
+    	state=s0 : {null}; 
+    	-- make a decision on the acceptance of the order, or do nothing (violate the contract)
+    	state=s1 : {accept_purchase_order, reject_purchase_order, terminate};
+    	-- notify the Purchaser that the order is accepted
+    	state=s2 : {notify_purchaser_about_purchase_order1};
+    	-- notify the Purchaser that the order is rejected
+    	state=s3 : {notify_purchaser_about_purchase_order2};
+    	-- wait for the payment
+    	state=s4 : {null};
+    	-- decide to accept or reject the payment, or violate the contract by doing nothing
+    	state=s5 : {accept_paymnet, reject_payment, terminate};
+    	-- tell the Purchaser that the order is accepted
+    	state=s6 : {notify_purchaser_about_payment1};
+    	-- tell the Purchaser the order is rejected
+    	state=s7 : {notify_purchaser_about_payment2};
+    	-- upload the e-goods or violate the contract by doing nothing
+    	state=s8 : {place_e_good, terminate};
+    	-- wait for the Purchaser to download the e-goods and 
+    	-- send back the notification about the acceptance of the e-goods 
+    	state=s9 : {null};
+    	-- e-goods is accepted by the Purchaser and the contract ends successfully
+    	state=s10 : {null};
+    	-- get the request from the Purchaser about the remedy. decide how to deal with it
+    	state=s11 : {notify_purchaser_about_rejection_of_remedy_request, place_e_good, send_refund, terminate};
+    	-- the remedy request is rejected
+    	state=s12 : {null};
+    	-- the refund is sent
+    	state=s13 : {null};
+    	-- Red state: the contract is violated by the Supplier
+    	state=s14 : {null};
+    end Protocol
+    Evolution:
+    	state=s0 if state=s3 or state=s7;
+    	state=s1 if state=s0 and Purchaser.Action=place_purchase_order;
+    	state=s2 if state=s1 and Action=accept_purchase_order;
+    	state=s3 if state=s1 and Action=reject_purchase_order;
+    	state=s4 if state=s2;
+    	state=s5 if state=s4 and Purchaser.Action=make_payment;
+    	state=s6 if state=s5 and Action=accept_paymnet;
+    	state=s7 if state=s5 and Action=reject_payment;
+    	state=s8 if state=s6;
+    	state=s9 if (state=s8 or state=s11) and Action=place_e_good;
+    	state=s10 if state=s9 and Purchaser.Action=notify_supplier_about_acceptance_of_e_good;
+    	state=s11 if state=s9 and Purchaser.Action=send_e_good_back_and_ask_remedy;
+    	state=s12 if state=s11 and Action=notify_purchaser_about_rejection_of_remedy_request;
+    	state=s13 if state=s11 and Action=send_refund;
+    	state=s14 if Action=terminate; 
+    end Evolution
+end Agent
+
+Agent Purchaser
+    Vars:
+		state : {p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11};  	
+    end Vars
+    Actions = {place_purchase_order, make_payment, download_e_good, 
+    			notify_supplier_about_acceptance_of_e_good, 
+    			send_e_good_back_and_ask_remedy, terminate, null};
+    Protocol:
+    	-- initiate the contract by placing the order
+    	state=p0 : {place_purchase_order}; 
+    	-- wait for the Supplier's decision: accept the order or reject
+    	state=p1 : {null};
+    	-- order accepted. Send the payment. It violates the contract by not sending the payment
+    	state=p2 : {make_payment, terminate};
+    	-- wait for the notification from the Supplier about the payment	
+    	state=p3 : {null};
+    	-- wait for the notification from the Supplier about downloading the e-goods 
+    	state=p4 : {null};
+    	-- start to download the e-goods
+    	state=p5 : {download_e_good};
+    	-- tell the Supplier about acceptance of the e-good or send it back for remedy
+    	state=p6 : {notify_supplier_about_acceptance_of_e_good, send_e_good_back_and_ask_remedy};
+    	-- the contract is fulfilled successfully 
+    	state=p7 : {null};
+    	-- wait for the reply from the Supplier about the remedy
+    	state=p8 : {null};
+    	-- the Supplier rejects the remedy request 
+    	state=p9 : {null};
+    	-- receive the refund from the Supplier
+    	state=p10 : {null};
+    	-- Red state: the contract is violated by the Purchaser
+    	state=p11 : {null};
+    end Protocol
+    Evolution:
+    	state=p0 if (state=p1 and Supplier.Action=notify_purchaser_about_purchase_order2) or 
+    				(state=p3 and Supplier.Action=notify_purchaser_about_payment2);
+    	state=p1 if state=p0;
+    	state=p2 if state=p1 and Supplier.Action=notify_purchaser_about_purchase_order1;
+    	state=p3 if state=p2 and Action=make_payment;
+    	state=p4 if state=p3 and Supplier.Action=notify_purchaser_about_payment1;
+    	state=p5 if (state=p4 or state=p8) and Supplier.Action=place_e_good;
+    	state=p6 if state=p5;
+    	state=p7 if state=p6 and Action=notify_supplier_about_acceptance_of_e_good;
+    	state=p8 if state=p6 and Action=send_e_good_back_and_ask_remedy;
+    	state=p9 if state=p8 and Supplier.Action=notify_purchaser_about_rejection_of_remedy_request;
+    	state=p10 if state=p8 and Supplier.Action=send_refund;
+    	state=p11 if Action=terminate; 
+    end Evolution
+end Agent
+
+Evaluation
+	contract_success if Supplier.state=s10 or Purchaser.state=p7;
+	contract_end if Supplier.state=s10 or Supplier.state=s12 or Supplier.state=s13 or 
+		Purchaser.state=p7 or Purchaser.state=p9 or Purchaser.state=p10;
+	purchaser_violation if Purchaser.state=p11;
+	supplier_violation if Supplier.state=s14;
+	purchaser_compliance if Purchaser.state <> p11;
+	supplier_compliance if Supplier.state <> s14;
+	egoods_placed if Supplier.state = s9;
+	payment_received if Supplier.state = s5;
+end Evaluation
+
+InitStates
+	Supplier.state=s0 and Purchaser.state=p0;
+end InitStates
+
+Formulae
+	AF (K(Supplier, contract_success));
+	EF purchaser_violation;
+	EF supplier_violation;
+	AG (payment_received -> AF supplier_compliance);
+	
+	-- does not hold because of the global state (s4, p2), which is equivalent to (s4, p11) for the Supplier
+	AG ((supplier_compliance and purchaser_compliance) -> K(Supplier, EF contract_end)); 
+	
+	
+	K (Supplier, EF purchaser_violation);
+	
+	-- it is possible that the contract ends by the purchaser asking for refund
+	E ((supplier_compliance and purchaser_compliance) U (contract_end and (!contract_success)));
+	
+	-- the e-goods cannot be placed before the payment is accepted 
+	! EF (egoods_placed and (EF payment_received));
+end Formulae

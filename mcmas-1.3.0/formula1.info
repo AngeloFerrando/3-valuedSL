@@ -1,0 +1,11 @@
+-- State 0 --
+  Agent Environment
+    atom=false
+    s0=false
+    s1=false
+    s2=false
+    s3=false
+    s4=true
+  Agent a0
+    play=true
+

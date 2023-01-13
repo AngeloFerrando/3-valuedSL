@@ -1,0 +1,72 @@
+Agent Environment
+    Obsvars:
+	win: boolean;
+    end Obsvars
+    Vars:
+    	cards : {null, ak, aq, ka, kq, qa, qk};
+    end Vars
+    Actions = { none };
+    Protocol:
+    	Other : {none};
+    end Protocol
+    Evolution:
+    		cards=ak if ( cards=ka and player1.Action = swap );
+    		cards=ka if ( cards=ak and player1.Action = swap );
+    		cards=aq if ( cards=qa and player1.Action = swap );
+    		cards=qa if ( cards=aq and player1.Action = swap );
+    		cards=kq if ( cards=qk and player1.Action = swap );
+    		cards=qk if ( cards=kq and player1.Action = swap );
+
+		cards=null and win=false if player1.Action = reset;
+
+		cards=ak if ( player1.Action =  distribute);
+    		cards=ka if ( player1.Action =  distribute);
+    		cards=aq if ( player1.Action =  distribute);
+    		cards=qa if ( player1.Action =  distribute);
+    		cards=kq if ( player1.Action =  distribute);
+    		cards=qk if ( player1.Action =  distribute);
+
+		win=true if ( player1.Action =  check) and (cards=ak or cards=kq or cards=qa);
+    end Evolution
+end Agent
+
+Agent player1
+    Vars:
+    	step : {s1, s2, s3, s4};
+    end Vars
+    Actions = {keep, swap, distribute, check, reset};
+    Protocol:
+	step=s1: {distribute};
+    	step=s2: {keep,swap};
+	step=s3: {check};
+	step=s4: {reset};
+    end Protocol
+    Evolution:
+    	step=s2 if step=s1;
+    	step=s3 if step=s2;	
+	step=s4 if step=s3;
+    	step=s1 if step=s4 and Environment.win=false;
+    end Evolution
+end Agent
+
+Evaluation
+	p1win if Environment.win=true;
+end Evaluation
+
+InitStates
+
+	(player1.step=s1) and (Environment.cards=null) and Environment.win=false;
+	
+end InitStates
+
+Groups
+	g1 = {player1};
+end Groups
+
+Fairness
+end Fairness
+
+Formulae
+        AF(p1win);
+	<g1>F(p1win);
+end Formulae

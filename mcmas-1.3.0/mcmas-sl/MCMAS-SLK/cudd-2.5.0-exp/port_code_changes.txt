@@ -1,0 +1,94 @@
+This is the sequence of steps to perform in order to compile
+CUDD v. 2.3.1 as a static library on Windows 2000 with MSVC++ 6.0
+
+
+As the user of the Windows port of CUDD v. 2.3.1, you do not need to 
+perform these steps unless you would like to repeat the port from scratch. 
+
+The use of the Windows port of CUDD is described in "port_readme.txt".
+
+
+(0) Dowload the CUDD v. 2.3.1 source code release:
+    ftp://vlsi.colorado.edu/pub/cudd-2.3.1.tar.gz
+
+(1) Create an empty project of type "static library"
+
+(2) Copy the the code of CUDD v. 2.3.1 into the corresponding folders 
+    of the static library project
+
+(3) Change file name "cuddObj.cc" to "cuddObj.cpp"
+    change file name "cuddObj.hh" to "cuddObj.h"
+
+(4) (optional) Reformat the C code using your indentation style
+    The code currently included in this port has been reformatted by
+    GNU INDENT 2.2.6 (http://www.xs4all.nl/~carlo17/indent/)
+    using the command line: "indent -bli0 -i4 -ip1 -ts4 -npcs -prs *.c"
+
+(5) Add the code the project workspace using Project -> AddToProject -> Files
+    Do not add the files with test programs (they do not belong to the library): 
+    "cudd/testcudd.c", "dddmp/testdddmp.c", "mtr/testmtr.c", 
+    "util/test-res.c", "util/test-sav.c".
+    Do not include file "util/pipefork.c" because it contains UNIX-specific commands
+
+    Do not add the files "nanotrav/*.c" to the project, because "nanotrav" 
+    is a stand-alone application which should not be part of the static library.
+
+(6) Move (not copy!) all header files into directory /include. This is needed for 
+    the ease of referencing includes belonging to the library.
+
+(7) Add "include" to Project -> Settings -> C/C++ -> Additional include directories
+    in both debug and release versions.
+
+(8) Define "__STDC__" in Project -> Settings -> C/C++ -> Preprocessor definitions
+    in both debug and release versions.
+
+(9) In "util.h": comment out two lines:
+    #include <unistd.h> (there is no such file on Windows)
+    #include <ctype.h>  (this #include is the reason of mysterious malfunctions 
+    in some projects)
+
+(10) In "datalimit.c": comment out
+         #include <sys/resource.h>
+     and change 
+         #include <sys/time.h>
+     to
+         #include <time.h>
+
+(11) In "cuddObj.h": change
+         #include <stream.h>
+     to 
+         #include <iostream.h>
+
+(12) In "cuddObj.cpp": add the following definitions 
+         #define long(a)      (long)(a)
+         #define hex(a)        hex<<(a)
+     to fix the problem with outputting the hexadecimal numbers
+  
+
+(13) Fix the bug not related to the port:
+     "cuddZddIsop.c" line 844: change  
+          if (!b0)
+     for 
+          if (!b1)
+	   
+
+Now, compile both the debug and the release version of the CUDD library.
+Compilation of the release version takes approxiamately 12 seconds on 
+a 933MHz Pentium III PC. The list of 15 warnings produced by compiling 
+the release version is given in the file "port_compile_warnings.txt".
+
+The resulting static libraries "Debug/cudd.lib" and "Release/cudd.lib"
+can be now linked to projects created with MSVC++ 6.0.
+
+
+Alan Mishchenko
+Portland State University
+Electrical and Computer Engineering
+<alanmi@ee.pdx.edu>
+
+May 19, 2001
+
+This file can be found at http://www.ee.pdx.edu/~alanmi/research/softports.htm
+
+
+ 

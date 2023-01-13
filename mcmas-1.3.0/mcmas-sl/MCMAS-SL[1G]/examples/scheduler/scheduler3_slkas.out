@@ -1,0 +1,63 @@
+************************************************************************
+                       MCMAS v1.1.0 
+
+ This software comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law. 
+
+ Please check http://vas.doc.ic.ac.uk/tools/mcmas/ for the latest release.
+ Please send any feedback to <mcmas@imperial.ac.uk>
+************************************************************************
+
+Command line: ../../mcmas scheduler3_slkas.ispl
+
+scheduler3_slkas.ispl has been parsed successfully.
+Global syntax checking...
+Done
+Encoding BDD parameters...
+Building partial transition relation...
+Building BDD for initial states...
+Building reachable state space...
+Checking formulae...
+Verifying imperfect recall properties...
+  Formula number 1: <<x>> [[y1]] [[y2]] [[y3]] (Environment, x) (P1, y1) (P2, y2) (P3, y3) G (((wt1 -> F (! wt1)) && (wt2 -> F (! wt2))) && (wt3 -> F (! wt3))), is TRUE in the model
+done, 1 imperfect recall formulae successfully read and checked
+execution time = 116.788
+number of reachable states = 21
+BDD memory in use = 377590032
+====== BENCHMARK ======
+CODE                                     REAL         CPU        USER    SYSTEM
+mcmas-total                        116.802366  116.416000  115.964000  0.452000
+  |  ir_check1                     116.783255  116.400000  115.964000  0.436000
+  |    |  build-strategy             0.000319    0.000000    0.000000  0.000000
+  |    |    |  assign-bdds           0.000093    0.000000    0.000000  0.000000
+  |    |    |  generate-actions      0.000098    0.000000    0.000000  0.000000
+  |    |    |  generate-states       0.000064    0.000000    0.000000  0.000000
+  |    |    |  merge-states          0.000010    0.000000    0.000000  0.000000
+  |    |    |  valid-restrictions    0.000007    0.000000    0.000000  0.000000
+  |    |    +- <rest>                0.000047    0.000000    0.000000  0.000000
+  |    +- <rest>                   116.782936  116.400000  115.964000  0.436000
+  |  reachability                    0.000700    0.000000    0.000000  0.000000
+  +- <rest>                          0.018411    0.016000    0.000000  0.016000
+	Command being timed: "../../mcmas scheduler3_slkas.ispl"
+	User time (seconds): 115.96
+	System time (seconds): 0.45
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:56.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 511604
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 515549
+	Voluntary context switches: 4
+	Involuntary context switches: 9883
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

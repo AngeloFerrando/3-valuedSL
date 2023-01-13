@@ -1,0 +1,706 @@
+-- Software development example in the paper Towards verifying contract regulated service composition in ICWS 2008
+
+Agent HardwareSupplier
+    Vars:
+        state : { HardwareSupplier_0, HardwareSupplier_1, HardwareSupplier_2, HardwareSupplier_3, HardwareSupplier_4, HardwareSupplier_5, HardwareSupplier_6, HardwareSupplier_7, HardwareSupplier_8, HardwareSupplier_9, HardwareSupplier_10, HardwareSupplier_11, HardwareSupplier_12, HardwareSupplier_13, HardwareSupplier_14 };
+        failCount : 0 .. 3;
+    end Vars
+    RedStates:
+    end RedStates
+    Actions = {HardwareSupplier_receiveC, HardwareSupplier_Pick1__0, HardwareSupplier_Pick1__1, HardwareSupplier_toClient, HardwareSupplier_Invoke2, HardwareSupplier_fromClient1, HardwareSupplier_fromPSPSPE, HardwareSupplier_While1, HardwareSupplier_Pick2__0, HardwareSupplier_Pick2__1, HardwareSupplier_Pick2__2, HardwareSupplier_DeployPassed, HardwareSupplier_Assign1, HardwareSupplier_DeplyFailed, HardwareSupplier_Assign2, HardwareSupplier_Invoke1, nothing };
+    Protocol :
+        state = HardwareSupplier_0 : { HardwareSupplier_receiveC };
+        state = HardwareSupplier_1 : { HardwareSupplier_Pick1__0, HardwareSupplier_Pick1__1 };
+        state = HardwareSupplier_2 : { HardwareSupplier_toClient };
+        state = HardwareSupplier_3 : { HardwareSupplier_Invoke2 };
+        state = HardwareSupplier_4 : { nothing };
+        state = HardwareSupplier_5 : { HardwareSupplier_fromClient1 };
+        state = HardwareSupplier_6 : { HardwareSupplier_fromPSPSPE, HardwareSupplier_While1 };
+        state = HardwareSupplier_7 : { HardwareSupplier_Pick2__0, HardwareSupplier_Pick2__1, HardwareSupplier_Pick2__2 };
+        state = HardwareSupplier_8 : { HardwareSupplier_DeployPassed };
+        state = HardwareSupplier_9 : { HardwareSupplier_Assign1 };
+        state = HardwareSupplier_10 : { HardwareSupplier_DeplyFailed };
+        state = HardwareSupplier_11 : { HardwareSupplier_Assign2 };
+        state = HardwareSupplier_12 : { HardwareSupplier_Invoke1 };
+        state = HardwareSupplier_13 : { nothing };
+        state = HardwareSupplier_14 : { nothing };
+    end Protocol
+
+    Evolution :
+        state = HardwareSupplier_1 if state = HardwareSupplier_0 and Action = HardwareSupplier_receiveC and Client.Action = Client_buyHardware;
+        state = HardwareSupplier_2 if state = HardwareSupplier_1 and Action = HardwareSupplier_Pick1__0;
+        state = HardwareSupplier_3 if state = HardwareSupplier_1 and Action = HardwareSupplier_Pick1__1;
+        state = HardwareSupplier_4 if state = HardwareSupplier_3 and Action = HardwareSupplier_Invoke2 and Client.Action = Client_Pick45__1;
+        state = HardwareSupplier_5 if state = HardwareSupplier_2 and Action = HardwareSupplier_toClient and Client.Action = Client_Pick45__0;
+        state = HardwareSupplier_6 if state = HardwareSupplier_5 and Action = HardwareSupplier_fromClient1 and Client.Action = Client_sendDeployment;
+        state = HardwareSupplier_6 and failCount = 2 if state = HardwareSupplier_9 and Action = HardwareSupplier_Assign1;
+        state = HardwareSupplier_6 and failCount = failCount + 1 if state = HardwareSupplier_11 and Action = HardwareSupplier_Assign2;
+        state = HardwareSupplier_7 if state = HardwareSupplier_6 and failCount < 2 and Action = HardwareSupplier_fromPSPSPE and Expert.Action = Expert_toHardware and ServiceProvider.Action = ServiceProvider_sendDeploying and PSP.Action = PSP_sendDeploying;
+        state = HardwareSupplier_8 if state = HardwareSupplier_7 and Action = HardwareSupplier_Pick2__0;
+        state = HardwareSupplier_9 if state = HardwareSupplier_8 and Action = HardwareSupplier_DeployPassed and Expert.Action = Expert_Pick1__0 and Client.Action = Client_Pick44__0 and ServiceProvider.Action = ServiceProvider_getresult__0 and PSP.Action = PSP_Pick231__0;
+        state = HardwareSupplier_10 if state = HardwareSupplier_7 and Action = HardwareSupplier_Pick2__1;
+        state = HardwareSupplier_11 if state = HardwareSupplier_10 and Action = HardwareSupplier_DeplyFailed and Expert.Action = Expert_Pick1__2 and Client.Action = Client_Pick44__2 and ServiceProvider.Action = ServiceProvider_getresult__2 and PSP.Action = PSP_Pick231__2;
+        state = HardwareSupplier_12 if state = HardwareSupplier_7 and Action = HardwareSupplier_Pick2__2;
+        state = HardwareSupplier_13 if state = HardwareSupplier_12 and Action = HardwareSupplier_Invoke1 and Expert.Action = Expert_Pick1__1 and Client.Action = Client_Pick44__1 and ServiceProvider.Action = ServiceProvider_getresult__1 and PSP.Action = PSP_Pick231__1;
+        state = HardwareSupplier_14 if state = HardwareSupplier_6 and  ! (failCount < 2) and Action = HardwareSupplier_While1;
+    end Evolution
+end Agent
+
+Agent TestingCompany
+    Vars:
+        state : { TestingCompany_0, TestingCompany_1, TestingCompany_2, TestingCompany_3, TestingCompany_4, TestingCompany_5, TestingCompany_6, TestingCompany_7, TestingCompany_8, TestingCompany_9 };
+        failCounter : 0 .. 3;
+    end Vars
+    RedStates:
+    end RedStates
+    Actions = {TestingCompany_fromClient, TestingCompany_fromPSPSP, TestingCompany_While1, TestingCompany_Pick1__0, TestingCompany_Pick1__1, TestingCompany_Pick1__2, TestingCompany_TestPassed, TestingCompany_Assign1, TestingCompany_TestFailed, TestingCompany_Assign2, TestingCompany_Invoke1, nothing };
+    Protocol :
+        state = TestingCompany_0 : { TestingCompany_fromClient };
+        state = TestingCompany_1 : { TestingCompany_fromPSPSP, TestingCompany_While1 };
+        state = TestingCompany_2 : { TestingCompany_Pick1__0, TestingCompany_Pick1__1, TestingCompany_Pick1__2 };
+        state = TestingCompany_3 : { TestingCompany_TestPassed };
+        state = TestingCompany_4 : { TestingCompany_Assign1 };
+        state = TestingCompany_5 : { TestingCompany_TestFailed };
+        state = TestingCompany_6 : { TestingCompany_Assign2 };
+        state = TestingCompany_7 : { TestingCompany_Invoke1 };
+        state = TestingCompany_8 : { nothing };
+        state = TestingCompany_9 : { nothing };
+    end Protocol
+
+    Evolution :
+        state = TestingCompany_1 if state = TestingCompany_0 and Action = TestingCompany_fromClient and Client.Action = Client_sendTesting;
+        state = TestingCompany_1 and failCounter = 2 if state = TestingCompany_4 and Action = TestingCompany_Assign1;
+        state = TestingCompany_1 and failCounter = failCounter + 1 if state = TestingCompany_6 and Action = TestingCompany_Assign2;
+        state = TestingCompany_2 if state = TestingCompany_1 and failCounter < 2 and Action = TestingCompany_fromPSPSP and ServiceProvider.Action = ServiceProvider_sendTesting and PSP.Action = PSP_sendTesting;
+        state = TestingCompany_3 if state = TestingCompany_2 and Action = TestingCompany_Pick1__0;
+        state = TestingCompany_4 if state = TestingCompany_3 and Action = TestingCompany_TestPassed and Client.Action = Client_Pick441__0 and ServiceProvider.Action = ServiceProvider_Pick63__0 and PSP.Action = PSP_Pick23__0;
+        state = TestingCompany_5 if state = TestingCompany_2 and Action = TestingCompany_Pick1__1;
+        state = TestingCompany_6 if state = TestingCompany_5 and Action = TestingCompany_TestFailed and Client.Action = Client_Pick441__2 and ServiceProvider.Action = ServiceProvider_Pick63__2 and PSP.Action = PSP_Pick23__2;
+        state = TestingCompany_7 if state = TestingCompany_2 and Action = TestingCompany_Pick1__2;
+        state = TestingCompany_8 if state = TestingCompany_7 and Action = TestingCompany_Invoke1 and Client.Action = Client_Pick441__1 and ServiceProvider.Action = ServiceProvider_Pick63__1 and PSP.Action = PSP_Pick23__1;
+        state = TestingCompany_9 if state = TestingCompany_1 and  ! (failCounter < 2) and Action = TestingCompany_While1;
+    end Evolution
+end Agent
+
+Agent Expert
+    Vars:
+        state : { Expert_0, Expert_1, Expert_2, Expert_3, Expert_4, Expert_5, Expert_6, Expert_7, Expert_8 };
+        failCount : 0 .. 3;
+    end Vars
+    RedStates:
+    end RedStates
+    Actions = {Expert_fromClient, Expert_Pick2__0, Expert_Pick2__1, Expert_While1, Expert_toHardware, Expert_Pick1__0, Expert_Pick1__1, Expert_Pick1__2, Expert_Assign2, Expert_Assign4, nothing };
+    Protocol :
+        state = Expert_0 : { Expert_fromClient };
+        state = Expert_1 : { Expert_Pick2__0, Expert_Pick2__1, Expert_While1 };
+        state = Expert_2 : { Expert_toHardware };
+        state = Expert_3 : { Expert_Pick1__0, Expert_Pick1__1, Expert_Pick1__2 };
+        state = Expert_4 : { Expert_Assign2 };
+        state = Expert_5 : { nothing };
+        state = Expert_6 : { Expert_Assign4 };
+        state = Expert_7 : { nothing };
+        state = Expert_8 : { nothing };
+    end Protocol
+
+    Evolution :
+        state = Expert_1 if state = Expert_0 and Action = Expert_fromClient and Client.Action = Client_askExpert;
+        state = Expert_1 and failCount = 2 if state = Expert_4 and Action = Expert_Assign2;
+        state = Expert_1 and failCount = failCount + 1 if state = Expert_6 and Action = Expert_Assign4;
+        state = Expert_2 if state = Expert_1 and failCount < 2 and Action = Expert_Pick2__0;
+        state = Expert_3 if state = Expert_2 and Action = Expert_toHardware and HardwareSupplier.Action = HardwareSupplier_fromPSPSPE;
+        state = Expert_4 if state = Expert_3 and Action = Expert_Pick1__0 and HardwareSupplier.Action = HardwareSupplier_DeployPassed;
+        state = Expert_5 if state = Expert_3 and Action = Expert_Pick1__1 and HardwareSupplier.Action = HardwareSupplier_Invoke1;
+        state = Expert_6 if state = Expert_3 and Action = Expert_Pick1__2 and HardwareSupplier.Action = HardwareSupplier_DeplyFailed;
+        state = Expert_7 if state = Expert_1 and failCount < 2 and Action = Expert_Pick2__1;
+        state = Expert_8 if state = Expert_1 and  ! (failCount < 2) and Action = Expert_While1;
+    end Evolution
+end Agent
+
+Agent InsuranceCompany
+    Vars:
+        state : { InsuranceCompany_0, InsuranceCompany_1, InsuranceCompany_2, InsuranceCompany_3, InsuranceCompany_4, InsuranceCompany_5, InsuranceCompany_6 };
+    end Vars
+    RedStates:
+    end RedStates
+    Actions = {InsuranceCompany_fromClient, InsuranceCompany_fromClient1, InsuranceCompany_Pick1__0, InsuranceCompany_Pick1__1, InsuranceCompany_toClient, InsuranceCompany_Invoke1, nothing };
+    Protocol :
+        state = InsuranceCompany_0 : { InsuranceCompany_fromClient };
+        state = InsuranceCompany_1 : { InsuranceCompany_fromClient1 };
+        state = InsuranceCompany_2 : { InsuranceCompany_Pick1__0, InsuranceCompany_Pick1__1 };
+        state = InsuranceCompany_3 : { InsuranceCompany_toClient };
+        state = InsuranceCompany_4 : { InsuranceCompany_Invoke1 };
+        state = InsuranceCompany_5 : { nothing };
+        state = InsuranceCompany_6 : { nothing };
+    end Protocol
+
+    Evolution :
+        state = InsuranceCompany_1 if state = InsuranceCompany_0 and Action = InsuranceCompany_fromClient and Client.Action = Client_buyInsurance;
+        state = InsuranceCompany_2 if state = InsuranceCompany_1 and Action = InsuranceCompany_fromClient1 and Client.Action = Client_askCompensation;
+        state = InsuranceCompany_3 if state = InsuranceCompany_2 and Action = InsuranceCompany_Pick1__0;
+        state = InsuranceCompany_4 if state = InsuranceCompany_2 and Action = InsuranceCompany_Pick1__1;
+        state = InsuranceCompany_5 if state = InsuranceCompany_4 and Action = InsuranceCompany_Invoke1 and Client.Action = Client_Pick46__1;
+        state = InsuranceCompany_6 if state = InsuranceCompany_3 and Action = InsuranceCompany_toClient and Client.Action = Client_Pick46__0;
+    end Evolution
+end Agent
+
+Agent Client
+    Vars:
+        state : { Client_0, Client_1, Client_2, Client_3, Client_4, Client_5, Client_6, Client_7, Client_8, Client_9, Client_10, Client_11, Client_12, Client_13, Client_14, Client_15, Client_16, Client_17, Client_18, Client_19, Client_20, Client_21, Client_22, Client_23, Client_24, Client_25, Client_26, Client_27, Client_28, Client_29, Client_30, Client_31, Client_32, Client_33, Client_34, Client_35, Client_36, Client_37, Client_38, Client_39, Client_40, Client_41, Client_42, Client_43, Client_44, Client_45, Client_46, Client_47, Client_48, Client_49, Client_50, Client_51 };
+        passed1 : boolean;
+        passed : boolean;
+        failCount : 0 .. 3;
+    end Vars
+    RedStates:
+    end RedStates
+    Actions = {Client_Update1__0, Client_Update1__1, Client_Update1__2, Client_While1, Client_Empty1, Client_receiveUpdate1, Client_Update11__0, Client_Update11__1, Client_Update11__2, Client_Empty12, Client_receiveUpdate121, Client_Payment1__0, Client_Payment1__1, Client_payPSP, Client_Invoke1, Client_ChangePSP1__0, Client_ChangePSP1__1, Client_Change2__0, Client_Change2__1, Client_changePSP, Client_Invoke2, Client_ChangeSP1__0, Client_ChangeSP1__1, Client_changeSP, Client_Invoke3, Client_Invoke4, Client_AskSecondChange, Client_Pick442__0, Client_Pick442__1, Client_PayPenaltyPSPSP, Client_SendSecondChange, Client_WithdrawPSPSP, Client_Assign375, Client_Assign376, Client_sendTesting, Client_Pick441__0, Client_Pick441__1, Client_Pick441__2, Client_Testing, Client_Assign35, Client_Assign36, Client_If43, Client_buyInsurance, Client_buyHardware, Client_Pick45__0, Client_Pick45__1, Client_Empty14, Client_sendDeployment, Client_askExpert, Client_Pick44__0, Client_Pick44__1, Client_Pick44__2, Client_Deploying, Client_Assign351, Client_Pick444__0, Client_Pick444__1, Client_sendFInalPayment, Client_Invoke5, Client_Assign361, Client_askCompensation, Client_If41, Client_Pick46__0, Client_Pick46__1, Client_Empty16, nothing };
+    Protocol :
+        state = Client_0 : { Client_Update1__0, Client_Update1__1, Client_Update1__2, Client_While1 };
+        state = Client_1 : { Client_Empty1 };
+        state = Client_2 : { Client_receiveUpdate1 };
+        state = Client_3 : { nothing };
+        state = Client_4 : { Client_Update11__0, Client_Update11__1, Client_Update11__2 };
+        state = Client_5 : { Client_Empty12 };
+        state = Client_6 : { Client_receiveUpdate121 };
+        state = Client_7 : { nothing };
+        state = Client_8 : { Client_Payment1__0, Client_Payment1__1 };
+        state = Client_9 : { Client_payPSP };
+        state = Client_10 : { Client_Invoke1 };
+        state = Client_11 : { nothing };
+        state = Client_12 : { Client_ChangePSP1__0, Client_ChangePSP1__1, Client_Change2__0, Client_Change2__1 };
+        state = Client_13 : { Client_changePSP };
+        state = Client_14 : { Client_Invoke2 };
+        state = Client_15 : { Client_ChangeSP1__0, Client_ChangeSP1__1 };
+        state = Client_16 : { Client_changeSP };
+        state = Client_17 : { Client_Invoke3 };
+        state = Client_18 : { Client_Invoke4 };
+        state = Client_19 : { Client_AskSecondChange };
+        state = Client_20 : { Client_Pick442__0, Client_Pick442__1 };
+        state = Client_21 : { Client_PayPenaltyPSPSP };
+        state = Client_22 : { Client_SendSecondChange };
+        state = Client_23 : { Client_WithdrawPSPSP };
+        state = Client_24 : { Client_Assign375 };
+        state = Client_25 : { Client_Assign376 };
+        state = Client_26 : { Client_sendTesting };
+        state = Client_27 : { Client_Pick441__0, Client_Pick441__1, Client_Pick441__2, Client_Testing };
+        state = Client_28 : { Client_Assign35 };
+        state = Client_29 : { nothing };
+        state = Client_30 : { Client_Assign36 };
+        state = Client_31 : { Client_If43 };
+        state = Client_32 : { Client_buyInsurance };
+        state = Client_33 : { Client_buyHardware };
+        state = Client_34 : { Client_Pick45__0, Client_Pick45__1 };
+        state = Client_35 : { Client_Empty14 };
+        state = Client_36 : { nothing };
+        state = Client_37 : { Client_sendDeployment };
+        state = Client_38 : { Client_askExpert };
+        state = Client_39 : { Client_Pick44__0, Client_Pick44__1, Client_Pick44__2, Client_Deploying };
+        state = Client_40 : { Client_Assign351 };
+        state = Client_41 : { Client_Pick444__0, Client_Pick444__1 };
+        state = Client_42 : { Client_sendFInalPayment };
+        state = Client_43 : { Client_Invoke5 };
+        state = Client_44 : { nothing };
+        state = Client_45 : { nothing };
+        state = Client_46 : { Client_Assign361 };
+        state = Client_47 : { Client_askCompensation, Client_If41 };
+        state = Client_48 : { Client_Pick46__0, Client_Pick46__1 };
+        state = Client_49 : { Client_Empty16 };
+        state = Client_50 : { nothing };
+        state = Client_51 : { nothing };
+    end Protocol
+
+    Evolution :
+        state = Client_0 and failCount = failCount + 1 if state = Client_24 and Action = Client_Assign375;
+        state = Client_1 if state = Client_0 and failCount < 2 and Action = Client_Update1__0 and PSP.Action = PSP_updateClient;
+        state = Client_2 if state = Client_0 and failCount < 2 and Action = Client_Update1__1 and PSP.Action = PSP_payPenaltyClient;
+        state = Client_3 if state = Client_0 and failCount < 2 and Action = Client_Update1__2 and PSP.Action = PSP_Invoke1;
+        state = Client_4 if state = Client_1 and Action = Client_Empty1;
+        state = Client_4 if state = Client_2 and Action = Client_receiveUpdate1 and PSP.Action = PSP_updateClient1;
+        state = Client_5 if state = Client_4 and Action = Client_Update11__0 and ServiceProvider.Action = ServiceProvider_updateC;
+        state = Client_6 if state = Client_4 and Action = Client_Update11__1 and ServiceProvider.Action = ServiceProvider_payClientPenalty;
+        state = Client_7 if state = Client_4 and Action = Client_Update11__2 and ServiceProvider.Action = ServiceProvider_Invoke2;
+        state = Client_8 if state = Client_5 and Action = Client_Empty12;
+        state = Client_8 if state = Client_6 and Action = Client_receiveUpdate121 and ServiceProvider.Action = ServiceProvider_updateClient1;
+        state = Client_9 if state = Client_8 and Action = Client_Payment1__0;
+        state = Client_10 if state = Client_8 and Action = Client_Payment1__1;
+        state = Client_11 if state = Client_10 and Action = Client_Invoke1 and PSP.Action = PSP_firstPayment__1;
+        state = Client_12 if state = Client_9 and Action = Client_payPSP and PSP.Action = PSP_firstPayment__0;
+        state = Client_13 if state = Client_12 and failCount = 0 and Action = Client_ChangePSP1__0;
+        state = Client_14 if state = Client_12 and failCount = 0 and Action = Client_ChangePSP1__1;
+        state = Client_15 if state = Client_13 and Action = Client_changePSP and PSP.Action = PSP_Change1__0;
+        state = Client_15 if state = Client_14 and Action = Client_Invoke2 and PSP.Action = PSP_Change1__1;
+        state = Client_16 if state = Client_15 and Action = Client_ChangeSP1__0;
+        state = Client_17 if state = Client_15 and Action = Client_ChangeSP1__1;
+        state = Client_18 if state = Client_12 and  ! (failCount = 0) and Action = Client_Change2__0;
+        state = Client_19 if state = Client_12 and  ! (failCount = 0) and Action = Client_Change2__1;
+        state = Client_20 if state = Client_19 and Action = Client_AskSecondChange and ServiceProvider.Action = ServiceProvider_Change2__0 and PSP.Action = PSP_Change2__0;
+        state = Client_21 if state = Client_20 and Action = Client_Pick442__0;
+        state = Client_22 if state = Client_21 and Action = Client_PayPenaltyPSPSP and ServiceProvider.Action = ServiceProvider_Pick62__0 and PSP.Action = PSP_Pick22__0;
+        state = Client_23 if state = Client_20 and Action = Client_Pick442__1;
+        state = Client_24 if state = Client_16 and Action = Client_changeSP and ServiceProvider.Action = ServiceProvider_Change1__0;
+        state = Client_24 if state = Client_17 and Action = Client_Invoke3 and ServiceProvider.Action = ServiceProvider_Change1__1;
+        state = Client_24 if state = Client_18 and Action = Client_Invoke4 and ServiceProvider.Action = ServiceProvider_Change2__1 and PSP.Action = PSP_Change2__1;
+        state = Client_24 if state = Client_22 and Action = Client_SendSecondChange and ServiceProvider.Action = ServiceProvider_receiveSecondChange and PSP.Action = PSP_receiveChange2;
+        state = Client_24 if state = Client_23 and Action = Client_WithdrawPSPSP and ServiceProvider.Action = ServiceProvider_Pick62__1 and PSP.Action = PSP_Pick22__1;
+        state = Client_25 if state = Client_0 and  ! (failCount < 2) and Action = Client_While1;
+        state = Client_26 and failCount = 0 if state = Client_25 and Action = Client_Assign376;
+        state = Client_27 if state = Client_26 and Action = Client_sendTesting and TestingCompany.Action = TestingCompany_fromClient;
+        state = Client_27 and failCount = 2 and passed = true if state = Client_28 and Action = Client_Assign35;
+        state = Client_27 and failCount = failCount + 1 if state = Client_30 and Action = Client_Assign36;
+        state = Client_28 if state = Client_27 and failCount < 2 and Action = Client_Pick441__0 and TestingCompany.Action = TestingCompany_TestPassed;
+        state = Client_29 if state = Client_27 and failCount < 2 and Action = Client_Pick441__1 and TestingCompany.Action = TestingCompany_Invoke1;
+        state = Client_30 if state = Client_27 and failCount < 2 and Action = Client_Pick441__2 and TestingCompany.Action = TestingCompany_TestFailed;
+        state = Client_31 if state = Client_27 and  ! (failCount < 2) and Action = Client_Testing;
+        state = Client_32 if state = Client_31 and passed = true and Action = Client_If43;
+        state = Client_33 if state = Client_32 and Action = Client_buyInsurance and InsuranceCompany.Action = InsuranceCompany_fromClient;
+        state = Client_34 if state = Client_33 and Action = Client_buyHardware and HardwareSupplier.Action = HardwareSupplier_receiveC;
+        state = Client_35 if state = Client_34 and Action = Client_Pick45__0 and HardwareSupplier.Action = HardwareSupplier_toClient;
+        state = Client_36 if state = Client_34 and Action = Client_Pick45__1 and HardwareSupplier.Action = HardwareSupplier_Invoke2;
+        state = Client_37 if state = Client_35 and Action = Client_Empty14;
+        state = Client_38 if state = Client_37 and Action = Client_sendDeployment and HardwareSupplier.Action = HardwareSupplier_fromClient1;
+        state = Client_39 if state = Client_38 and Action = Client_askExpert and Expert.Action = Expert_fromClient;
+        state = Client_39 if state = Client_42 and Action = Client_sendFInalPayment and PSP.Action = PSP_Pick232__0;
+        state = Client_39 and failCount = failCount + 1 if state = Client_46 and Action = Client_Assign361;
+        state = Client_40 if state = Client_39 and failCount < 2 and Action = Client_Pick44__0 and HardwareSupplier.Action = HardwareSupplier_DeployPassed;
+        state = Client_41 and failCount = 0 and passed1 = true if state = Client_40 and Action = Client_Assign351;
+        state = Client_42 if state = Client_41 and Action = Client_Pick444__0;
+        state = Client_43 if state = Client_41 and Action = Client_Pick444__1;
+        state = Client_44 if state = Client_43 and Action = Client_Invoke5 and PSP.Action = PSP_Pick232__1;
+        state = Client_45 if state = Client_39 and failCount < 2 and Action = Client_Pick44__1 and HardwareSupplier.Action = HardwareSupplier_Invoke1;
+        state = Client_46 if state = Client_39 and failCount < 2 and Action = Client_Pick44__2 and HardwareSupplier.Action = HardwareSupplier_DeplyFailed;
+        state = Client_47 if state = Client_39 and  ! (failCount < 2) and Action = Client_Deploying;
+        state = Client_48 if state = Client_47 and passed1 = false and Action = Client_askCompensation and InsuranceCompany.Action = InsuranceCompany_fromClient1;
+        state = Client_49 if state = Client_48 and Action = Client_Pick46__0 and InsuranceCompany.Action = InsuranceCompany_toClient;
+        state = Client_50 if state = Client_48 and Action = Client_Pick46__1 and InsuranceCompany.Action = InsuranceCompany_Invoke1;
+        state = Client_51 if state = Client_49 and Action = Client_Empty16;
+        state = Client_51 if state = Client_47 and passed1 = false and Action = Client_If41;
+    end Evolution
+end Agent
+
+Agent ServiceProvider
+    Vars:
+        state : { ServiceProvider_0, ServiceProvider_1, ServiceProvider_2, ServiceProvider_3, ServiceProvider_4, ServiceProvider_5, ServiceProvider_6, ServiceProvider_7, ServiceProvider_8, ServiceProvider_9, ServiceProvider_10, ServiceProvider_11, ServiceProvider_12, ServiceProvider_13, ServiceProvider_14, ServiceProvider_15, ServiceProvider_16, ServiceProvider_17, ServiceProvider_18, ServiceProvider_19, ServiceProvider_20, ServiceProvider_21, ServiceProvider_22, ServiceProvider_23, ServiceProvider_24, ServiceProvider_25, ServiceProvider_26, ServiceProvider_27, ServiceProvider_28, ServiceProvider_29, ServiceProvider_30, ServiceProvider_31, ServiceProvider_32, ServiceProvider_33, ServiceProvider_34, ServiceProvider_35, ServiceProvider_36, ServiceProvider_37, ServiceProvider_38, ServiceProvider_39, ServiceProvider_40, ServiceProvider_41, ServiceProvider_42, ServiceProvider_43, ServiceProvider_44, ServiceProvider_45, ServiceProvider_46, ServiceProvider_47, ServiceProvider_48, ServiceProvider_49 };
+        Passed : boolean;
+        failCount : 0 .. 3;
+    end Vars
+    RedStates:
+    end RedStates
+    Actions = {ServiceProvider_Pick1__0, ServiceProvider_Pick1__1, ServiceProvider_While1, ServiceProvider_updateC, ServiceProvider_Pick5__0, ServiceProvider_Pick5__1, ServiceProvider_payClientPenalty, ServiceProvider_updateClient1, ServiceProvider_Invoke2, ServiceProvider_Pick2__0, ServiceProvider_Pick2__1, ServiceProvider_updatePSP, ServiceProvider_Pick4__0, ServiceProvider_Pick4__1, ServiceProvider_payPSPPenalty, ServiceProvider_updatePSP1, ServiceProvider_Invoke1, ServiceProvider_Pick3__0, ServiceProvider_Pick3__1, ServiceProvider_Pick3__2, ServiceProvider_Empty1, ServiceProvider_receivePSPUpdate, ServiceProvider_receivePayment1__0, ServiceProvider_receivePayment1__1, ServiceProvider_Empty2, ServiceProvider_Change1__0, ServiceProvider_Change1__1, ServiceProvider_Change2__0, ServiceProvider_Change2__1, ServiceProvider_Empty12, ServiceProvider_Empty13, ServiceProvider_Pick62__0, ServiceProvider_Pick62__1, ServiceProvider_receiveSecondChange, ServiceProvider_Empty15, ServiceProvider_Empty14, ServiceProvider_Assign46, ServiceProvider_Assign47, ServiceProvider_receiveRequest, ServiceProvider_SendComponent__0, ServiceProvider_SendComponent__1, ServiceProvider_sendComponent, ServiceProvider_Invoke3, ServiceProvider_sendTesting, ServiceProvider_Testing, ServiceProvider_Pick63__0, ServiceProvider_Pick63__1, ServiceProvider_Pick63__2, ServiceProvider_passed, ServiceProvider_Assign42, ServiceProvider_Assign48, ServiceProvider_sendDeploying, ServiceProvider_deploying, ServiceProvider_getresult__0, ServiceProvider_getresult__1, ServiceProvider_getresult__2, ServiceProvider_passed1, ServiceProvider_Pick64__0, ServiceProvider_Pick64__1, ServiceProvider_Empty16, ServiceProvider_onceagain, nothing };
+    Protocol :
+        state = ServiceProvider_0 : { ServiceProvider_Pick1__0, ServiceProvider_Pick1__1, ServiceProvider_While1 };
+        state = ServiceProvider_1 : { ServiceProvider_updateC };
+        state = ServiceProvider_2 : { ServiceProvider_Pick5__0, ServiceProvider_Pick5__1 };
+        state = ServiceProvider_3 : { ServiceProvider_payClientPenalty };
+        state = ServiceProvider_4 : { ServiceProvider_updateClient1 };
+        state = ServiceProvider_5 : { ServiceProvider_Invoke2 };
+        state = ServiceProvider_6 : { nothing };
+        state = ServiceProvider_7 : { ServiceProvider_Pick2__0, ServiceProvider_Pick2__1 };
+        state = ServiceProvider_8 : { ServiceProvider_updatePSP };
+        state = ServiceProvider_9 : { ServiceProvider_Pick4__0, ServiceProvider_Pick4__1 };
+        state = ServiceProvider_10 : { ServiceProvider_payPSPPenalty };
+        state = ServiceProvider_11 : { ServiceProvider_updatePSP1 };
+        state = ServiceProvider_12 : { ServiceProvider_Invoke1 };
+        state = ServiceProvider_13 : { nothing };
+        state = ServiceProvider_14 : { ServiceProvider_Pick3__0, ServiceProvider_Pick3__1, ServiceProvider_Pick3__2 };
+        state = ServiceProvider_15 : { ServiceProvider_Empty1 };
+        state = ServiceProvider_16 : { ServiceProvider_receivePSPUpdate };
+        state = ServiceProvider_17 : { nothing };
+        state = ServiceProvider_18 : { ServiceProvider_receivePayment1__0, ServiceProvider_receivePayment1__1 };
+        state = ServiceProvider_19 : { ServiceProvider_Empty2 };
+        state = ServiceProvider_20 : { nothing };
+        state = ServiceProvider_21 : { ServiceProvider_Change1__0, ServiceProvider_Change1__1, ServiceProvider_Change2__0, ServiceProvider_Change2__1 };
+        state = ServiceProvider_22 : { ServiceProvider_Empty12 };
+        state = ServiceProvider_23 : { ServiceProvider_Empty13 };
+        state = ServiceProvider_24 : { ServiceProvider_Pick62__0, ServiceProvider_Pick62__1 };
+        state = ServiceProvider_25 : { ServiceProvider_receiveSecondChange };
+        state = ServiceProvider_26 : { ServiceProvider_Empty15 };
+        state = ServiceProvider_27 : { ServiceProvider_Empty14 };
+        state = ServiceProvider_28 : { ServiceProvider_Assign46 };
+        state = ServiceProvider_29 : { ServiceProvider_Assign47 };
+        state = ServiceProvider_30 : { ServiceProvider_receiveRequest };
+        state = ServiceProvider_31 : { ServiceProvider_SendComponent__0, ServiceProvider_SendComponent__1 };
+        state = ServiceProvider_32 : { ServiceProvider_sendComponent };
+        state = ServiceProvider_33 : { ServiceProvider_Invoke3 };
+        state = ServiceProvider_34 : { nothing };
+        state = ServiceProvider_35 : { ServiceProvider_sendTesting, ServiceProvider_Testing };
+        state = ServiceProvider_36 : { ServiceProvider_Pick63__0, ServiceProvider_Pick63__1, ServiceProvider_Pick63__2 };
+        state = ServiceProvider_37 : { ServiceProvider_passed };
+        state = ServiceProvider_38 : { nothing };
+        state = ServiceProvider_39 : { ServiceProvider_Assign42 };
+        state = ServiceProvider_40 : { ServiceProvider_Assign48 };
+        state = ServiceProvider_41 : { ServiceProvider_sendDeploying, ServiceProvider_deploying };
+        state = ServiceProvider_42 : { ServiceProvider_getresult__0, ServiceProvider_getresult__1, ServiceProvider_getresult__2 };
+        state = ServiceProvider_43 : { ServiceProvider_passed1 };
+        state = ServiceProvider_44 : { ServiceProvider_Pick64__0, ServiceProvider_Pick64__1 };
+        state = ServiceProvider_45 : { ServiceProvider_Empty16 };
+        state = ServiceProvider_46 : { nothing };
+        state = ServiceProvider_47 : { nothing };
+        state = ServiceProvider_48 : { ServiceProvider_onceagain };
+        state = ServiceProvider_49 : { nothing };
+    end Protocol
+
+    Evolution :
+        state = ServiceProvider_0 and failCount = failCount + 1 if state = ServiceProvider_28 and Action = ServiceProvider_Assign46;
+        state = ServiceProvider_1 if state = ServiceProvider_0 and failCount < 2 and Action = ServiceProvider_Pick1__0;
+        state = ServiceProvider_2 if state = ServiceProvider_0 and failCount < 2 and Action = ServiceProvider_Pick1__1;
+        state = ServiceProvider_3 if state = ServiceProvider_2 and Action = ServiceProvider_Pick5__0;
+        state = ServiceProvider_4 if state = ServiceProvider_3 and Action = ServiceProvider_payClientPenalty and Client.Action = Client_Update11__1;
+        state = ServiceProvider_5 if state = ServiceProvider_2 and Action = ServiceProvider_Pick5__1;
+        state = ServiceProvider_6 if state = ServiceProvider_5 and Action = ServiceProvider_Invoke2 and Client.Action = Client_Update11__2;
+        state = ServiceProvider_7 if state = ServiceProvider_1 and Action = ServiceProvider_updateC and Client.Action = Client_Update11__0;
+        state = ServiceProvider_7 if state = ServiceProvider_4 and Action = ServiceProvider_updateClient1 and Client.Action = Client_receiveUpdate121;
+        state = ServiceProvider_8 if state = ServiceProvider_7 and Action = ServiceProvider_Pick2__0;
+        state = ServiceProvider_9 if state = ServiceProvider_7 and Action = ServiceProvider_Pick2__1;
+        state = ServiceProvider_10 if state = ServiceProvider_9 and Action = ServiceProvider_Pick4__0;
+        state = ServiceProvider_11 if state = ServiceProvider_10 and Action = ServiceProvider_payPSPPenalty and PSP.Action = PSP_fromSP__1;
+        state = ServiceProvider_12 if state = ServiceProvider_9 and Action = ServiceProvider_Pick4__1;
+        state = ServiceProvider_13 if state = ServiceProvider_12 and Action = ServiceProvider_Invoke1 and PSP.Action = PSP_fromSP__2;
+        state = ServiceProvider_14 if state = ServiceProvider_8 and Action = ServiceProvider_updatePSP and PSP.Action = PSP_fromSP__0;
+        state = ServiceProvider_14 if state = ServiceProvider_11 and Action = ServiceProvider_updatePSP1 and PSP.Action = PSP_receiveUpdateSP;
+        state = ServiceProvider_15 if state = ServiceProvider_14 and Action = ServiceProvider_Pick3__0 and PSP.Action = PSP_updateSP;
+        state = ServiceProvider_16 if state = ServiceProvider_14 and Action = ServiceProvider_Pick3__1 and PSP.Action = PSP_payPenaltySP;
+        state = ServiceProvider_17 if state = ServiceProvider_14 and Action = ServiceProvider_Pick3__2 and PSP.Action = PSP_Invoke2;
+        state = ServiceProvider_18 if state = ServiceProvider_15 and Action = ServiceProvider_Empty1;
+        state = ServiceProvider_18 if state = ServiceProvider_16 and Action = ServiceProvider_receivePSPUpdate and PSP.Action = PSP_updateSP1;
+        state = ServiceProvider_19 if state = ServiceProvider_18 and Action = ServiceProvider_receivePayment1__0 and PSP.Action = PSP_paySP;
+        state = ServiceProvider_20 if state = ServiceProvider_18 and Action = ServiceProvider_receivePayment1__1 and PSP.Action = PSP_Invoke3;
+        state = ServiceProvider_21 if state = ServiceProvider_19 and Action = ServiceProvider_Empty2;
+        state = ServiceProvider_22 if state = ServiceProvider_21 and failCount = 0 and Action = ServiceProvider_Change1__0 and Client.Action = Client_changeSP;
+        state = ServiceProvider_23 if state = ServiceProvider_21 and failCount = 0 and Action = ServiceProvider_Change1__1 and Client.Action = Client_Invoke3;
+        state = ServiceProvider_24 if state = ServiceProvider_21 and  ! (failCount = 0) and Action = ServiceProvider_Change2__0 and Client.Action = Client_AskSecondChange;
+        state = ServiceProvider_25 if state = ServiceProvider_24 and Action = ServiceProvider_Pick62__0 and Client.Action = Client_PayPenaltyPSPSP;
+        state = ServiceProvider_26 if state = ServiceProvider_24 and Action = ServiceProvider_Pick62__1 and Client.Action = Client_WithdrawPSPSP;
+        state = ServiceProvider_27 if state = ServiceProvider_21 and  ! (failCount = 0) and Action = ServiceProvider_Change2__1 and Client.Action = Client_Invoke4;
+        state = ServiceProvider_28 if state = ServiceProvider_22 and Action = ServiceProvider_Empty12;
+        state = ServiceProvider_28 if state = ServiceProvider_23 and Action = ServiceProvider_Empty13;
+        state = ServiceProvider_28 if state = ServiceProvider_25 and Action = ServiceProvider_receiveSecondChange and Client.Action = Client_SendSecondChange;
+        state = ServiceProvider_28 if state = ServiceProvider_26 and Action = ServiceProvider_Empty15;
+        state = ServiceProvider_28 if state = ServiceProvider_27 and Action = ServiceProvider_Empty14;
+        state = ServiceProvider_29 if state = ServiceProvider_0 and  ! (failCount < 2) and Action = ServiceProvider_While1;
+        state = ServiceProvider_30 and failCount = 0 if state = ServiceProvider_29 and Action = ServiceProvider_Assign47;
+        state = ServiceProvider_31 if state = ServiceProvider_30 and Action = ServiceProvider_receiveRequest and PSP.Action = PSP_sendRequest;
+        state = ServiceProvider_32 if state = ServiceProvider_31 and Action = ServiceProvider_SendComponent__0;
+        state = ServiceProvider_33 if state = ServiceProvider_31 and Action = ServiceProvider_SendComponent__1;
+        state = ServiceProvider_34 if state = ServiceProvider_33 and Action = ServiceProvider_Invoke3 and PSP.Action = PSP_receiveComponent__1;
+        state = ServiceProvider_35 if state = ServiceProvider_32 and Action = ServiceProvider_sendComponent and PSP.Action = PSP_receiveComponent__0;
+        state = ServiceProvider_35 and failCount = 2 and Passed = true if state = ServiceProvider_37 and Action = ServiceProvider_passed;
+        state = ServiceProvider_35 and failCount = failCount + 1 if state = ServiceProvider_39 and Action = ServiceProvider_Assign42;
+        state = ServiceProvider_36 if state = ServiceProvider_35 and failCount < 2 and Action = ServiceProvider_sendTesting and TestingCompany.Action = TestingCompany_fromPSPSP;
+        state = ServiceProvider_37 if state = ServiceProvider_36 and Action = ServiceProvider_Pick63__0 and TestingCompany.Action = TestingCompany_TestPassed;
+        state = ServiceProvider_38 if state = ServiceProvider_36 and Action = ServiceProvider_Pick63__1 and TestingCompany.Action = TestingCompany_Invoke1;
+        state = ServiceProvider_39 if state = ServiceProvider_36 and Action = ServiceProvider_Pick63__2 and TestingCompany.Action = TestingCompany_TestFailed;
+        state = ServiceProvider_40 if state = ServiceProvider_35 and  ! (failCount < 2) and Action = ServiceProvider_Testing;
+        state = ServiceProvider_41 and Passed = false and failCount = 0 if state = ServiceProvider_40 and Passed = true and Action = ServiceProvider_Assign48;
+        state = ServiceProvider_41 if state = ServiceProvider_45 and Action = ServiceProvider_Empty16;
+        state = ServiceProvider_41 and failCount = failCount + 1 if state = ServiceProvider_48 and Action = ServiceProvider_onceagain;
+        state = ServiceProvider_42 if state = ServiceProvider_41 and failCount < 2 and Action = ServiceProvider_sendDeploying and HardwareSupplier.Action = HardwareSupplier_fromPSPSPE;
+        state = ServiceProvider_43 if state = ServiceProvider_42 and Action = ServiceProvider_getresult__0 and HardwareSupplier.Action = HardwareSupplier_DeployPassed;
+        state = ServiceProvider_44 and failCount = 2 and Passed = true if state = ServiceProvider_43 and Action = ServiceProvider_passed1;
+        state = ServiceProvider_45 if state = ServiceProvider_44 and Action = ServiceProvider_Pick64__0 and PSP.Action = PSP_sendFinalPaymentSP;
+        state = ServiceProvider_46 if state = ServiceProvider_44 and Action = ServiceProvider_Pick64__1 and PSP.Action = PSP_Invoke4;
+        state = ServiceProvider_47 if state = ServiceProvider_42 and Action = ServiceProvider_getresult__1 and HardwareSupplier.Action = HardwareSupplier_Invoke1;
+        state = ServiceProvider_48 if state = ServiceProvider_42 and Action = ServiceProvider_getresult__2 and HardwareSupplier.Action = HardwareSupplier_DeplyFailed;
+        state = ServiceProvider_49 if state = ServiceProvider_41 and  ! (failCount < 2) and Action = ServiceProvider_deploying;
+    end Evolution
+end Agent
+
+Agent PSP
+    Vars:
+        state : { PSP_0, PSP_1, PSP_2, PSP_3, PSP_4, PSP_5, PSP_6, PSP_7, PSP_8, PSP_9, PSP_10, PSP_11, PSP_12, PSP_13, PSP_14, PSP_15, PSP_16, PSP_17, PSP_18, PSP_19, PSP_20, PSP_21, PSP_22, PSP_23, PSP_24, PSP_25, PSP_26, PSP_27, PSP_28, PSP_29, PSP_30, PSP_31, PSP_32, PSP_33, PSP_34, PSP_35, PSP_36, PSP_37, PSP_38, PSP_39, PSP_40, PSP_41, PSP_42, PSP_43, PSP_44, PSP_45, PSP_46, PSP_47, PSP_48, PSP_49, PSP_50, PSP_51, PSP_52, PSP_53, PSP_54, PSP_55 };
+        passed : boolean;
+        failCount : 0 .. 3;
+    end Vars
+    RedStates:
+    end RedStates
+    Actions = {PSP_toC__0, PSP_toC__1, PSP_While1, PSP_updateClient, PSP_Pick1__0, PSP_Pick1__1, PSP_payPenaltyClient, PSP_updateClient1, PSP_Invoke1, PSP_fromSP__0, PSP_fromSP__1, PSP_fromSP__2, PSP_Empty1, PSP_receiveUpdateSP, PSP_toSP__0, PSP_toSP__1, PSP_updateSP, PSP_Pick2__0, PSP_Pick2__1, PSP_payPenaltySP, PSP_updateSP1, PSP_Invoke2, PSP_firstPayment__0, PSP_firstPayment__1, PSP_Empty12, PSP_paymentSP__0, PSP_paymentSP__1, PSP_paySP, PSP_Invoke3, PSP_Change1__0, PSP_Change1__1, PSP_Change2__0, PSP_Change2__1, PSP_Empty2, PSP_Empty3, PSP_Pick22__0, PSP_Pick22__1, PSP_receiveChange2, PSP_Empty32, PSP_Empty34, PSP_Assign4322, PSP_Assign4323, PSP_sendRequest, PSP_receiveComponent__0, PSP_receiveComponent__1, PSP_Empty33, PSP_sendTesting, PSP_Testing, PSP_Pick23__0, PSP_Pick23__1, PSP_Pick23__2, PSP_passed, PSP_notPassed, PSP_Assign4324, PSP_sendDeploying, PSP_Deploying, PSP_Pick231__0, PSP_Pick231__1, PSP_Pick231__2, PSP_passed1, PSP_Pick232__0, PSP_Pick232__1, PSP_Pick233__0, PSP_Pick233__1, PSP_sendFinalPaymentSP, PSP_Invoke4, PSP_notPassed1, nothing };
+    Protocol :
+        state = PSP_0 : { PSP_toC__0, PSP_toC__1, PSP_While1 };
+        state = PSP_1 : { PSP_updateClient };
+        state = PSP_2 : { PSP_Pick1__0, PSP_Pick1__1 };
+        state = PSP_3 : { PSP_payPenaltyClient };
+        state = PSP_4 : { PSP_updateClient1 };
+        state = PSP_5 : { PSP_Invoke1 };
+        state = PSP_6 : { nothing };
+        state = PSP_7 : { PSP_fromSP__0, PSP_fromSP__1, PSP_fromSP__2 };
+        state = PSP_8 : { PSP_Empty1 };
+        state = PSP_9 : { PSP_receiveUpdateSP };
+        state = PSP_10 : { nothing };
+        state = PSP_11 : { PSP_toSP__0, PSP_toSP__1 };
+        state = PSP_12 : { PSP_updateSP };
+        state = PSP_13 : { PSP_Pick2__0, PSP_Pick2__1 };
+        state = PSP_14 : { PSP_payPenaltySP };
+        state = PSP_15 : { PSP_updateSP1 };
+        state = PSP_16 : { PSP_Invoke2 };
+        state = PSP_17 : { nothing };
+        state = PSP_18 : { PSP_firstPayment__0, PSP_firstPayment__1 };
+        state = PSP_19 : { PSP_Empty12 };
+        state = PSP_20 : { nothing };
+        state = PSP_21 : { PSP_paymentSP__0, PSP_paymentSP__1 };
+        state = PSP_22 : { PSP_paySP };
+        state = PSP_23 : { PSP_Invoke3 };
+        state = PSP_24 : { nothing };
+        state = PSP_25 : { PSP_Change1__0, PSP_Change1__1, PSP_Change2__0, PSP_Change2__1 };
+        state = PSP_26 : { PSP_Empty2 };
+        state = PSP_27 : { PSP_Empty3 };
+        state = PSP_28 : { PSP_Pick22__0, PSP_Pick22__1 };
+        state = PSP_29 : { PSP_receiveChange2 };
+        state = PSP_30 : { PSP_Empty32 };
+        state = PSP_31 : { PSP_Empty34 };
+        state = PSP_32 : { PSP_Assign4322 };
+        state = PSP_33 : { PSP_Assign4323 };
+        state = PSP_34 : { PSP_sendRequest };
+        state = PSP_35 : { PSP_receiveComponent__0, PSP_receiveComponent__1 };
+        state = PSP_36 : { PSP_Empty33 };
+        state = PSP_37 : { nothing };
+        state = PSP_38 : { PSP_sendTesting, PSP_Testing };
+        state = PSP_39 : { PSP_Pick23__0, PSP_Pick23__1, PSP_Pick23__2 };
+        state = PSP_40 : { PSP_passed };
+        state = PSP_41 : { nothing };
+        state = PSP_42 : { PSP_notPassed };
+        state = PSP_43 : { PSP_Assign4324 };
+        state = PSP_44 : { PSP_sendDeploying, PSP_Deploying };
+        state = PSP_45 : { PSP_Pick231__0, PSP_Pick231__1, PSP_Pick231__2 };
+        state = PSP_46 : { PSP_passed1 };
+        state = PSP_47 : { PSP_Pick232__0, PSP_Pick232__1 };
+        state = PSP_48 : { PSP_Pick233__0, PSP_Pick233__1 };
+        state = PSP_49 : { PSP_sendFinalPaymentSP };
+        state = PSP_50 : { PSP_Invoke4 };
+        state = PSP_51 : { nothing };
+        state = PSP_52 : { nothing };
+        state = PSP_53 : { nothing };
+        state = PSP_54 : { PSP_notPassed1 };
+        state = PSP_55 : { nothing };
+    end Protocol
+
+    Evolution :
+        state = PSP_0 and failCount = failCount + 1 if state = PSP_32 and Action = PSP_Assign4322;
+        state = PSP_1 if state = PSP_0 and failCount < 2 and Action = PSP_toC__0;
+        state = PSP_2 if state = PSP_0 and failCount < 2 and Action = PSP_toC__1;
+        state = PSP_3 if state = PSP_2 and Action = PSP_Pick1__0;
+        state = PSP_4 if state = PSP_3 and Action = PSP_payPenaltyClient and Client.Action = Client_Update1__1;
+        state = PSP_5 if state = PSP_2 and Action = PSP_Pick1__1;
+        state = PSP_6 if state = PSP_5 and Action = PSP_Invoke1 and Client.Action = Client_Update1__2;
+        state = PSP_7 if state = PSP_1 and Action = PSP_updateClient and Client.Action = Client_Update1__0;
+        state = PSP_7 if state = PSP_4 and Action = PSP_updateClient1 and Client.Action = Client_receiveUpdate1;
+        state = PSP_8 if state = PSP_7 and Action = PSP_fromSP__0 and ServiceProvider.Action = ServiceProvider_updatePSP;
+        state = PSP_9 if state = PSP_7 and Action = PSP_fromSP__1 and ServiceProvider.Action = ServiceProvider_payPSPPenalty;
+        state = PSP_10 if state = PSP_7 and Action = PSP_fromSP__2 and ServiceProvider.Action = ServiceProvider_Invoke1;
+        state = PSP_11 if state = PSP_8 and Action = PSP_Empty1;
+        state = PSP_11 if state = PSP_9 and Action = PSP_receiveUpdateSP and ServiceProvider.Action = ServiceProvider_updatePSP1;
+        state = PSP_12 if state = PSP_11 and Action = PSP_toSP__0;
+        state = PSP_13 if state = PSP_11 and Action = PSP_toSP__1;
+        state = PSP_14 if state = PSP_13 and Action = PSP_Pick2__0;
+        state = PSP_15 if state = PSP_14 and Action = PSP_payPenaltySP and ServiceProvider.Action = ServiceProvider_Pick3__1;
+        state = PSP_16 if state = PSP_13 and Action = PSP_Pick2__1;
+        state = PSP_17 if state = PSP_16 and Action = PSP_Invoke2 and ServiceProvider.Action = ServiceProvider_Pick3__2;
+        state = PSP_18 if state = PSP_12 and Action = PSP_updateSP and ServiceProvider.Action = ServiceProvider_Pick3__0;
+        state = PSP_18 if state = PSP_15 and Action = PSP_updateSP1 and ServiceProvider.Action = ServiceProvider_receivePSPUpdate;
+        state = PSP_19 if state = PSP_18 and Action = PSP_firstPayment__0 and Client.Action = Client_payPSP;
+        state = PSP_20 if state = PSP_18 and Action = PSP_firstPayment__1 and Client.Action = Client_Invoke1;
+        state = PSP_21 if state = PSP_19 and Action = PSP_Empty12;
+        state = PSP_22 if state = PSP_21 and Action = PSP_paymentSP__0;
+        state = PSP_23 if state = PSP_21 and Action = PSP_paymentSP__1;
+        state = PSP_24 if state = PSP_23 and Action = PSP_Invoke3 and ServiceProvider.Action = ServiceProvider_receivePayment1__1;
+        state = PSP_25 if state = PSP_22 and Action = PSP_paySP and ServiceProvider.Action = ServiceProvider_receivePayment1__0;
+        state = PSP_26 if state = PSP_25 and failCount = 0 and Action = PSP_Change1__0 and Client.Action = Client_changePSP;
+        state = PSP_27 if state = PSP_25 and failCount = 0 and Action = PSP_Change1__1 and Client.Action = Client_Invoke2;
+        state = PSP_28 if state = PSP_25 and  ! (failCount = 0) and Action = PSP_Change2__0 and Client.Action = Client_AskSecondChange;
+        state = PSP_29 if state = PSP_28 and Action = PSP_Pick22__0 and Client.Action = Client_PayPenaltyPSPSP;
+        state = PSP_30 if state = PSP_28 and Action = PSP_Pick22__1 and Client.Action = Client_WithdrawPSPSP;
+        state = PSP_31 if state = PSP_25 and  ! (failCount = 0) and Action = PSP_Change2__1 and Client.Action = Client_Invoke4;
+        state = PSP_32 if state = PSP_26 and Action = PSP_Empty2;
+        state = PSP_32 if state = PSP_27 and Action = PSP_Empty3;
+        state = PSP_32 if state = PSP_29 and Action = PSP_receiveChange2 and Client.Action = Client_SendSecondChange;
+        state = PSP_32 if state = PSP_30 and Action = PSP_Empty32;
+        state = PSP_32 if state = PSP_31 and Action = PSP_Empty34;
+        state = PSP_33 if state = PSP_0 and  ! (failCount < 2) and Action = PSP_While1;
+        state = PSP_34 and failCount = 0 if state = PSP_33 and Action = PSP_Assign4323;
+        state = PSP_35 if state = PSP_34 and Action = PSP_sendRequest and ServiceProvider.Action = ServiceProvider_receiveRequest;
+        state = PSP_36 if state = PSP_35 and Action = PSP_receiveComponent__0 and ServiceProvider.Action = ServiceProvider_sendComponent;
+        state = PSP_37 if state = PSP_35 and Action = PSP_receiveComponent__1 and ServiceProvider.Action = ServiceProvider_Invoke3;
+        state = PSP_38 if state = PSP_36 and Action = PSP_Empty33;
+        state = PSP_38 and passed = true and failCount = 2 if state = PSP_40 and Action = PSP_passed;
+        state = PSP_38 and failCount = failCount + 1 if state = PSP_42 and Action = PSP_notPassed;
+        state = PSP_39 if state = PSP_38 and failCount < 2 and Action = PSP_sendTesting and TestingCompany.Action = TestingCompany_fromPSPSP;
+        state = PSP_40 if state = PSP_39 and Action = PSP_Pick23__0 and TestingCompany.Action = TestingCompany_TestPassed;
+        state = PSP_41 if state = PSP_39 and Action = PSP_Pick23__1 and TestingCompany.Action = TestingCompany_Invoke1;
+        state = PSP_42 if state = PSP_39 and Action = PSP_Pick23__2 and TestingCompany.Action = TestingCompany_TestFailed;
+        state = PSP_43 if state = PSP_38 and  ! (failCount < 2) and Action = PSP_Testing;
+        state = PSP_44 and failCount = 0 and passed = false if state = PSP_43 and passed = true and Action = PSP_Assign4324;
+        state = PSP_44 if state = PSP_49 and Action = PSP_sendFinalPaymentSP and ServiceProvider.Action = ServiceProvider_Pick64__0;
+        state = PSP_44 and failCount = failCount + 1 if state = PSP_54 and Action = PSP_notPassed1;
+        state = PSP_45 if state = PSP_44 and failCount < 2 and Action = PSP_sendDeploying and HardwareSupplier.Action = HardwareSupplier_fromPSPSPE;
+        state = PSP_46 if state = PSP_45 and Action = PSP_Pick231__0 and HardwareSupplier.Action = HardwareSupplier_DeployPassed;
+        state = PSP_47 and passed = true and failCount = 2 if state = PSP_46 and Action = PSP_passed1;
+        state = PSP_48 if state = PSP_47 and Action = PSP_Pick232__0 and Client.Action = Client_sendFInalPayment;
+        state = PSP_49 if state = PSP_48 and Action = PSP_Pick233__0;
+        state = PSP_50 if state = PSP_48 and Action = PSP_Pick233__1;
+        state = PSP_51 if state = PSP_50 and Action = PSP_Invoke4 and ServiceProvider.Action = ServiceProvider_Pick64__1;
+        state = PSP_52 if state = PSP_47 and Action = PSP_Pick232__1 and Client.Action = Client_Invoke5;
+        state = PSP_53 if state = PSP_45 and Action = PSP_Pick231__1 and HardwareSupplier.Action = HardwareSupplier_Invoke1;
+        state = PSP_54 if state = PSP_45 and Action = PSP_Pick231__2 and HardwareSupplier.Action = HardwareSupplier_DeplyFailed;
+        state = PSP_55 if state = PSP_44 and  ! (failCount < 2) and Action = PSP_Deploying;
+    end Evolution
+end Agent
+
+Evaluation
+    HardwareSupplier_green if HardwareSupplier.state = HardwareSupplier_0 or HardwareSupplier.state = HardwareSupplier_1 or 
+                              HardwareSupplier.state = HardwareSupplier_2 or HardwareSupplier.state = HardwareSupplier_5 or 
+                              HardwareSupplier.state = HardwareSupplier_6 or HardwareSupplier.state = HardwareSupplier_7 or 
+                              HardwareSupplier.state = HardwareSupplier_8 or HardwareSupplier.state = HardwareSupplier_9 or 
+                              HardwareSupplier.state = HardwareSupplier_10 or HardwareSupplier.state = HardwareSupplier_11 or 
+                              HardwareSupplier.state = HardwareSupplier_14;
+    HardwareSupplier_end if HardwareSupplier.state = HardwareSupplier_14;
+    HardwareSupplier_red0 if HardwareSupplier.state = HardwareSupplier_4;
+    HardwareSupplier_red1 if HardwareSupplier.state = HardwareSupplier_13;
+    TestingCompany_green if TestingCompany.state = TestingCompany_0 or TestingCompany.state = TestingCompany_1 or 
+                            TestingCompany.state = TestingCompany_2 or TestingCompany.state = TestingCompany_3 or 
+                            TestingCompany.state = TestingCompany_4 or TestingCompany.state = TestingCompany_5 or 
+                            TestingCompany.state = TestingCompany_6 or TestingCompany.state = TestingCompany_9;
+    TestingCompany_end if TestingCompany.state = TestingCompany_9;
+    TestingCompany_red0 if TestingCompany.state = TestingCompany_8;
+    Expert_green if Expert.state = Expert_0 or Expert.state = Expert_1 or 
+                    Expert.state = Expert_2 or Expert.state = Expert_3 or 
+                    Expert.state = Expert_4 or Expert.state = Expert_5 or 
+                    Expert.state = Expert_6 or Expert.state = Expert_8;
+    Expert_end if Expert.state = Expert_8;
+    Expert_red0 if Expert.state = Expert_7;
+    InsuranceCompany_green if InsuranceCompany.state = InsuranceCompany_0 or InsuranceCompany.state = InsuranceCompany_1 or 
+                              InsuranceCompany.state = InsuranceCompany_2 or InsuranceCompany.state = InsuranceCompany_3 or 
+                              InsuranceCompany.state = InsuranceCompany_6;
+    InsuranceCompany_end if InsuranceCompany.state = InsuranceCompany_6;
+    InsuranceCompany_red0 if InsuranceCompany.state = InsuranceCompany_5;
+    Client_green if Client.state = Client_0 or Client.state = Client_1 or 
+                    Client.state = Client_2 or Client.state = Client_3 or 
+                    Client.state = Client_4 or Client.state = Client_5 or 
+                    Client.state = Client_6 or Client.state = Client_7 or 
+                    Client.state = Client_8 or Client.state = Client_9 or 
+                    Client.state = Client_12 or Client.state = Client_13 or 
+                    Client.state = Client_14 or Client.state = Client_15 or 
+                    Client.state = Client_16 or Client.state = Client_17 or 
+                    Client.state = Client_18 or Client.state = Client_19 or 
+                    Client.state = Client_20 or Client.state = Client_21 or 
+                    Client.state = Client_22 or Client.state = Client_23 or 
+                    Client.state = Client_24 or Client.state = Client_25 or 
+                    Client.state = Client_26 or Client.state = Client_27 or 
+                    Client.state = Client_28 or Client.state = Client_29 or 
+                    Client.state = Client_30 or Client.state = Client_31 or 
+                    Client.state = Client_32 or Client.state = Client_33 or 
+                    Client.state = Client_34 or Client.state = Client_35 or 
+                    Client.state = Client_36 or Client.state = Client_37 or 
+                    Client.state = Client_38 or Client.state = Client_39 or 
+                    Client.state = Client_40 or Client.state = Client_41 or 
+                    Client.state = Client_42 or Client.state = Client_45 or 
+                    Client.state = Client_46 or Client.state = Client_47 or 
+                    Client.state = Client_48 or Client.state = Client_49 or 
+                    Client.state = Client_50 or Client.state = Client_51;
+    Client_end if Client.state = Client_51;
+    Client_red0 if Client.state = Client_11;
+    Client_red1 if Client.state = Client_44;
+    ServiceProvider_green if ServiceProvider.state = ServiceProvider_0 or ServiceProvider.state = ServiceProvider_1 or 
+                             ServiceProvider.state = ServiceProvider_2 or ServiceProvider.state = ServiceProvider_3 or 
+                             ServiceProvider.state = ServiceProvider_4 or ServiceProvider.state = ServiceProvider_7 or 
+                             ServiceProvider.state = ServiceProvider_8 or ServiceProvider.state = ServiceProvider_9 or 
+                             ServiceProvider.state = ServiceProvider_10 or ServiceProvider.state = ServiceProvider_11 or 
+                             ServiceProvider.state = ServiceProvider_14 or ServiceProvider.state = ServiceProvider_15 or 
+                             ServiceProvider.state = ServiceProvider_16 or ServiceProvider.state = ServiceProvider_17 or 
+                             ServiceProvider.state = ServiceProvider_18 or ServiceProvider.state = ServiceProvider_19 or 
+                             ServiceProvider.state = ServiceProvider_20 or ServiceProvider.state = ServiceProvider_21 or 
+                             ServiceProvider.state = ServiceProvider_22 or ServiceProvider.state = ServiceProvider_23 or 
+                             ServiceProvider.state = ServiceProvider_24 or ServiceProvider.state = ServiceProvider_25 or 
+                             ServiceProvider.state = ServiceProvider_26 or ServiceProvider.state = ServiceProvider_27 or 
+                             ServiceProvider.state = ServiceProvider_28 or ServiceProvider.state = ServiceProvider_29 or 
+                             ServiceProvider.state = ServiceProvider_30 or ServiceProvider.state = ServiceProvider_31 or 
+                             ServiceProvider.state = ServiceProvider_32 or ServiceProvider.state = ServiceProvider_35 or 
+                             ServiceProvider.state = ServiceProvider_36 or ServiceProvider.state = ServiceProvider_37 or 
+                             ServiceProvider.state = ServiceProvider_38 or ServiceProvider.state = ServiceProvider_39 or 
+                             ServiceProvider.state = ServiceProvider_40 or ServiceProvider.state = ServiceProvider_41 or 
+                             ServiceProvider.state = ServiceProvider_42 or ServiceProvider.state = ServiceProvider_43 or 
+                             ServiceProvider.state = ServiceProvider_44 or ServiceProvider.state = ServiceProvider_45 or 
+                             ServiceProvider.state = ServiceProvider_46 or ServiceProvider.state = ServiceProvider_47 or 
+                             ServiceProvider.state = ServiceProvider_48 or ServiceProvider.state = ServiceProvider_49;
+    ServiceProvider_end if ServiceProvider.state = ServiceProvider_49;
+    ServiceProvider_red0 if ServiceProvider.state = ServiceProvider_6;
+    ServiceProvider_red1 if ServiceProvider.state = ServiceProvider_13;
+    ServiceProvider_red2 if ServiceProvider.state = ServiceProvider_34;
+    PSP_green if PSP.state = PSP_0 or PSP.state = PSP_1 or 
+                 PSP.state = PSP_2 or PSP.state = PSP_3 or 
+                 PSP.state = PSP_4 or PSP.state = PSP_7 or 
+                 PSP.state = PSP_8 or PSP.state = PSP_9 or 
+                 PSP.state = PSP_10 or PSP.state = PSP_11 or 
+                 PSP.state = PSP_12 or PSP.state = PSP_13 or 
+                 PSP.state = PSP_14 or PSP.state = PSP_15 or 
+                 PSP.state = PSP_18 or PSP.state = PSP_19 or 
+                 PSP.state = PSP_20 or PSP.state = PSP_21 or 
+                 PSP.state = PSP_22 or PSP.state = PSP_25 or 
+                 PSP.state = PSP_26 or PSP.state = PSP_27 or 
+                 PSP.state = PSP_28 or PSP.state = PSP_29 or 
+                 PSP.state = PSP_30 or PSP.state = PSP_31 or 
+                 PSP.state = PSP_32 or PSP.state = PSP_33 or 
+                 PSP.state = PSP_34 or PSP.state = PSP_35 or 
+                 PSP.state = PSP_36 or PSP.state = PSP_37 or 
+                 PSP.state = PSP_38 or PSP.state = PSP_39 or 
+                 PSP.state = PSP_40 or PSP.state = PSP_41 or 
+                 PSP.state = PSP_42 or PSP.state = PSP_43 or 
+                 PSP.state = PSP_44 or PSP.state = PSP_45 or 
+                 PSP.state = PSP_46 or PSP.state = PSP_47 or 
+                 PSP.state = PSP_48 or PSP.state = PSP_49 or 
+                 PSP.state = PSP_52 or PSP.state = PSP_53 or 
+                 PSP.state = PSP_54 or PSP.state = PSP_55;
+    PSP_end if PSP.state = PSP_55;
+    PSP_red0 if PSP.state = PSP_6;
+    PSP_red1 if PSP.state = PSP_17;
+    PSP_red2 if PSP.state = PSP_24;
+    PSP_red3 if PSP.state = PSP_51;
+end Evaluation
+
+InitStates
+    HardwareSupplier.state = HardwareSupplier_0 and 
+    HardwareSupplier.failCount = 0 and 
+    TestingCompany.state = TestingCompany_0 and 
+    TestingCompany.failCounter = 0 and 
+    Expert.state = Expert_0 and 
+    Expert.failCount = 0 and 
+    InsuranceCompany.state = InsuranceCompany_0 and 
+    Client.state = Client_0 and 
+    Client.passed1 = false and 
+    Client.passed = false and 
+    Client.failCount = 0 and 
+    ServiceProvider.state = ServiceProvider_0 and 
+    ServiceProvider.Passed = false and 
+    ServiceProvider.failCount = 0 and 
+    PSP.state = PSP_0 and 
+    PSP.passed = false and 
+    PSP.failCount = 0;
+end InitStates
+
+Groups
+end Groups
+
+Fairness
+end Fairness
+
+Formulae
+	A ( HardwareSupplier_green U HardwareSupplier_end );
+    E ( HardwareSupplier_green U HardwareSupplier_end );
+    E ( TestingCompany_green U TestingCompany_end );
+    E ( Expert_green U Expert_end );
+    E ( InsuranceCompany_green U InsuranceCompany_end );
+    E ( Client_green U Client_end );
+    E ( ServiceProvider_green U ServiceProvider_end );
+    E ( PSP_green U PSP_end );
+    EF HardwareSupplier_red0;
+    EF HardwareSupplier_red1;
+    EF TestingCompany_red0;
+    EF Expert_red0;
+    EF InsuranceCompany_red0;
+    EF Client_red0;
+    EF Client_red1;
+    EF ServiceProvider_red0;
+    EF ServiceProvider_red1;
+    EF ServiceProvider_red2;
+    EF PSP_red0;
+    EF PSP_red1;
+    EF PSP_red2;
+    EF PSP_red3;
+end Formulae
+

@@ -1,0 +1,246 @@
+-- The Go-Back-N ARQ protocol.
+-- We use N = 3.
+
+Semantics=SingleAssignment;
+
+Agent Environment
+  Vars:
+    state : {S,R,SR,none};
+    s_r_1: {b0, b1, empty};
+    s_r_1_seq: 0..7;
+    s_r_2: {b0, b1, empty};
+    s_r_2_seq: 0..7;
+    s_r_3: {b0, b1, empty};
+    s_r_3_seq: 0..7;
+    r_s_1: 0..7;
+    r_s_2: 0..7;
+    r_s_3: 0..7;
+  end Vars
+  Actions = {S,SR,R,none};
+  Protocol:
+    state=S: {S,SR,R,none};
+    state=R: {S,SR,R,none};
+    state=SR: {S,SR,R,none};
+    state=none: {S,SR,R,none};
+  end Protocol
+  Evolution:
+    state=S if (Action=S);
+    state=R if (Action=R);
+    state=SR if (Action=SR);
+    state=none if (Action=none);
+
+    s_r_3=b0 if (s_r_2=b0);
+    s_r_2=b0 if (s_r_1=b0 and (Action=SR or Action=S));
+    s_r_2=empty if (Action=R or Action=none) or (s_r_1=empty);
+    s_r_1=b0 if ((Sender.Action=b10 or Sender.Action=b20 or Sender.Action=b30 or Sender.Action=b40 or 
+                  Sender.Action=b50 or Sender.Action=b60 or Sender.Action=b70) and
+                 (Action=SR or Action=S));
+    s_r_1=empty if (Action=R or Action=none);
+    s_r_3=b1 if (s_r_2=b1);
+    s_r_2=b1 if (s_r_1=b1 and (Action=SR or Action=S));
+    s_r_1=b1 if ((Sender.Action=b11 or Sender.Action=b21 or Sender.Action=b31 or Sender.Action=b41 or 
+                  Sender.Action=b51 or Sender.Action=b61 or Sender.Action=b71) and
+                 (Action=SR or Action=S));
+    s_r_3=empty if (s_r_2=empty);
+    s_r_3_seq=s_r_2_seq if (Action=none) or !(Action=none);
+    s_r_2_seq=s_r_1_seq if (Action=none) or !(Action=none);
+    s_r_1_seq=1 if (Sender.Action=b10 or Sender.Action=b11);
+    s_r_1_seq=2 if (Sender.Action=b20 or Sender.Action=b21);
+    s_r_1_seq=3 if (Sender.Action=b30 or Sender.Action=b31);
+    s_r_1_seq=4 if (Sender.Action=b40 or Sender.Action=b41);
+    s_r_1_seq=5 if (Sender.Action=b50 or Sender.Action=b51);
+    s_r_1_seq=6 if (Sender.Action=b60 or Sender.Action=b61);
+    s_r_1_seq=7 if (Sender.Action=b70 or Sender.Action=b71);
+
+    r_s_3=r_s_2 if (Action=none) or !(Action=none);
+
+    r_s_2=r_s_1 if (Action=S or Action=SR); 
+    r_s_2=0 if (Action=R or Action=none);
+
+    r_s_1=0 if (Action=R or Action=none or Receiver.Action=null);
+    r_s_1=1 if (Action=S or Action=SR) and (Receiver.Action=r1);
+    r_s_1=2 if (Action=S or Action=SR) and (Receiver.Action=r2);
+    r_s_1=3 if (Action=S or Action=SR) and (Receiver.Action=r3);
+    r_s_1=4 if (Action=S or Action=SR) and (Receiver.Action=r4);
+    r_s_1=5 if (Action=S or Action=SR) and (Receiver.Action=r5);
+    r_s_1=6 if (Action=S or Action=SR) and (Receiver.Action=r6);
+    r_s_1=7 if (Action=S or Action=SR) and (Receiver.Action=r7);
+  end Evolution
+end Agent
+
+Agent Sender
+  Lobsvars={s_r_1, r_s_3, s_r_1_seq};
+  Vars:
+    done:boolean;
+    recack: 0..7;
+    dispatch: 0..7;
+    value1: {b0, b1};
+    value2: {b0, b1};
+    value3: {b0, b1};
+    value4: {b0, b1};
+    value5: {b0, b1};
+    value6: {b0, b1};
+    value7: {b0, b1};
+  end Vars
+  Actions = { b10, b11, b20, b21, b30, b31, b40, b41, b50, b51, b60, b61, b70, b71, none};
+  Protocol:
+    done=true : {none};
+    dispatch=1 and value1=b0 : {b10};
+    dispatch=1 and value1=b1 : {b11};
+    dispatch=2 and value2=b0 : {b20};
+    dispatch=2 and value2=b1 : {b21};
+    dispatch=3 and value3=b0 : {b30};
+    dispatch=3 and value3=b1 : {b31};
+    dispatch=4 and value4=b0 : {b40};
+    dispatch=4 and value4=b1 : {b41};
+    dispatch=5 and value5=b0 : {b50};
+    dispatch=5 and value5=b1 : {b51};
+    dispatch=6 and value6=b0 : {b60};
+    dispatch=6 and value6=b1 : {b61};
+    dispatch=7 and value7=b0 : {b70};
+    dispatch=7 and value7=b1 : {b71};
+  end Protocol
+  Evolution:
+    (done=true) if (done=false) and 
+       ( ( (Environment.r_s_3=7) and (Environment.Action=SR) ) 
+        or
+       ( (Environment.r_s_3=7) and (Environment.Action=R) )
+       );
+    (recack = 1) if (Environment.r_s_3=1 and (Environment.Action=SR or Environment.Action=R));
+    (recack = 2) if (Environment.r_s_3=2 and (Environment.Action=SR or Environment.Action=R));
+    (recack = 3) if (Environment.r_s_3=3 and (Environment.Action=SR or Environment.Action=R));
+    (recack = 4) if (Environment.r_s_3=4 and (Environment.Action=SR or Environment.Action=R));
+    (recack = 5) if (Environment.r_s_3=5 and (Environment.Action=SR or Environment.Action=R));
+    (recack = 6) if (Environment.r_s_3=6 and (Environment.Action=SR or Environment.Action=R));
+    (recack = 7) if (Environment.r_s_3=7 and (Environment.Action=SR or Environment.Action=R));
+    (dispatch = dispatch + 1) if (done=false) and (recack + 3 > dispatch) and (dispatch < 7);
+    (dispatch=recack+1) if (done=false) and (Environment.r_s_3 = recack);
+  end Evolution
+end Agent
+
+Agent Receiver
+  Lobsvars={r_s_1, s_r_3, s_r_3_seq};
+  Vars:
+    recv1 : { empty, r0, r1 };
+    recv2 : { empty, r0, r1 };
+    recv3 : { empty, r0, r1 };
+    recv4 : { empty, r0, r1 };
+    recv5 : { empty, r0, r1 };
+    recv6 : { empty, r0, r1 };
+    recv7 : { empty, r0, r1 };
+  end Vars
+  Actions = {null, r1, r2, r3, r4, r5, r6, r7};
+  Protocol:
+    recv1=empty : {null};
+    (recv1 <> empty and recv2 = empty): {r1};
+    (recv2 <> empty and recv3 = empty): {r2};
+    (recv3 <> empty and recv4 = empty): {r3};
+    (recv4 <> empty and recv5 = empty): {r4};
+    (recv5 <> empty and recv6 = empty): {r5};
+    (recv6 <> empty and recv7 = empty): {r6};
+    (recv7 <> empty): {r7};
+  end Protocol
+  Evolution:
+    recv1=r0 if ( ( (Environment.s_r_3=b0) and (recv1=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=1) ) or 
+                  ( (Environment.s_r_3=b0) and (recv1=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=1) ) );
+    recv1=r1 if ( ( (Environment.s_r_3=b1) and (recv1=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=1) ) or 
+                  ( (Environment.s_r_3=b1) and (recv1=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=1) ) );
+    recv2=r0 if ( ( (Environment.s_r_3=b0) and (recv2=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=2) ) or 
+                  ( (Environment.s_r_3=b0) and (recv2=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=2) ) );
+    recv2=r1 if ( ( (Environment.s_r_3=b1) and (recv2=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=2) ) or 
+                  ( (Environment.s_r_3=b1) and (recv2=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=2) ) );
+    recv3=r0 if ( ( (Environment.s_r_3=b0) and (recv3=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=3) ) or 
+                  ( (Environment.s_r_3=b0) and (recv3=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=3) ) );
+    recv3=r1 if ( ( (Environment.s_r_3=b1) and (recv3=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=3) ) or 
+                  ( (Environment.s_r_3=b1) and (recv3=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=3) ) );
+    recv4=r0 if ( ( (Environment.s_r_3=b0) and (recv4=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=4) ) or 
+                  ( (Environment.s_r_3=b0) and (recv4=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=4) ) );
+    recv4=r1 if ( ( (Environment.s_r_3=b1) and (recv4=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=4) ) or 
+                  ( (Environment.s_r_3=b1) and (recv4=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=4) ) );
+    recv5=r0 if ( ( (Environment.s_r_3=b0) and (recv5=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=5) ) or 
+                  ( (Environment.s_r_3=b0) and (recv5=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=5) ) );
+    recv5=r1 if ( ( (Environment.s_r_3=b1) and (recv5=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=5) ) or 
+                  ( (Environment.s_r_3=b1) and (recv5=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=5) ) );
+    recv6=r0 if ( ( (Environment.s_r_3=b0) and (recv6=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=6) ) or 
+                  ( (Environment.s_r_3=b0) and (recv6=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=6) ) );
+    recv6=r1 if ( ( (Environment.s_r_3=b1) and (recv6=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=6) ) or 
+                  ( (Environment.s_r_3=b1) and (recv6=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=6) ) );
+    recv7=r0 if ( ( (Environment.s_r_3=b0) and (recv7=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=7) ) or 
+                  ( (Environment.s_r_3=b0) and (recv7=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=7) ) );
+    recv7=r1 if ( ( (Environment.s_r_3=b1) and (recv7=empty) and 
+                    (Environment.Action=SR) and (Environment.s_r_3_seq=7) ) or 
+                  ( (Environment.s_r_3=b1) and (recv7=empty) and 
+                    (Environment.Action=S) and (Environment.s_r_3_seq=7) ) );
+  end Evolution
+end Agent
+
+Evaluation
+  envworks if ( Environment.state=SR );
+  ff if (Receiver.recv7 <> empty) and (Receiver.recv7 = empty);
+  b7mismatch if (Receiver.recv7=r0 and Sender.value7=b1) or (Receiver.recv7=r1 and Sender.value7=b0);
+  b7done if (Receiver.recv7 <> empty);
+end Evaluation
+
+InitStates
+  (
+    Environment.s_r_1=empty and
+    Environment.s_r_2=empty and
+    Environment.s_r_3=empty and
+    Environment.r_s_1=0 and
+    Environment.r_s_2=0 and
+    Environment.r_s_3=0 and
+    Sender.done=false and
+    Sender.recack=0 and
+    Sender.dispatch=1 and
+    Receiver.recv1=empty and
+    Receiver.recv2=empty and
+    Receiver.recv3=empty and
+    Receiver.recv4=empty and
+    Receiver.recv5=empty and
+    Receiver.recv6=empty and
+    Receiver.recv7=empty
+  );
+end InitStates
+
+Groups
+  g1 = {Sender,Receiver};
+end Groups
+
+Fairness
+  envworks;
+end Fairness
+
+Formulae
+  LTL G (!b7mismatch);
+  LTL F (b7mismatch);
+  LTL F b7done;
+  LTL ((G envworks) -> (F b7done));
+
+  LTL ((G F (envworks and X(envworks and X(envworks and X(envworks))))) -> (F b7done));
+end Formulae

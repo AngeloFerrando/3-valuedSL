@@ -1,0 +1,92 @@
+-- The protocol for the 3 muddy children
+
+Agent Environment
+  Obsvars:
+    sayexist: boolean;
+  	mem: -1..2;
+  end Obsvars
+
+  Vars:
+    initial: boolean;
+  	child1: 0..1;
+  	child2: 0..1;
+  	child3: 0..1;
+  end Vars
+
+  Actions = { exists, ask };
+  Protocol:
+    initial=true and (child1=1 or child2=1 or child3=1): {exists};
+    Other: {ask};
+  end Protocol
+
+  Evolution:
+    initial=false and sayexist=true and mem = mem + 1 if initial=true and Action=exists;
+    initial=false and mem = mem + 1 if initial=true and Action=ask;
+  	mem = mem + 1 if initial=false and mem < 2;
+  end Evolution
+end Agent
+
+Agent Child1
+  Lobsvars = {child2, child3};
+  Vars:
+    othersayknow: boolean;
+  end Vars
+  Actions = { donotknow, know };
+  Protocol:
+    Environment.mem<Environment.child2+Environment.child3: {donotknow};
+    Environment.mem>=Environment.child2+Environment.child3: {know};
+  end Protocol
+  Evolution:
+    othersayknow=true if Environment.Action=ask and Environment.mem<Environment.child2+Environment.child3 and othersayknow=false and (Child2.Action=know or Child3.Action=know);
+  end Evolution
+end Agent
+
+Agent Child2
+  Lobsvars = {child1, child3};
+  Vars:
+    othersayknow: boolean;
+  end Vars
+  Actions = { donotknow, know };
+  Protocol:
+    Environment.mem<Environment.child1+Environment.child3: {donotknow};
+    Environment.mem>=Environment.child1+Environment.child3: {know};
+  end Protocol
+  Evolution:
+    othersayknow=true if Environment.Action=ask and Environment.mem<Environment.child1+Environment.child3 and othersayknow=false and (Child1.Action=know or Child3.Action=know);
+  end Evolution
+end Agent
+
+Agent Child3
+  Lobsvars = {child1, child2};
+  Vars:
+    othersayknow: boolean;
+  end Vars
+  Actions = { donotknow, know };
+  Protocol:
+    Environment.mem<Environment.child1+Environment.child2: {donotknow};
+    Environment.mem>=Environment.child1+Environment.child2: {know};
+  end Protocol
+  Evolution:
+    othersayknow=true if Environment.Action=ask and Environment.mem<Environment.child1+Environment.child2 and othersayknow=false and (Child1.Action=know or Child2.Action=know);
+  end Evolution
+end Agent
+
+Evaluation
+  muddy1 if Environment.child1=1;
+  muddy2 if Environment.child2=1;
+  muddy3 if Environment.child3=1;
+  saysknows1 if Environment.child2+Environment.child3<=Environment.mem;
+  saysknows2 if Environment.child1+Environment.child3<=Environment.mem;
+  saysknows3 if Environment.child1+Environment.child2<=Environment.mem;
+end Evaluation
+
+InitStates
+    Child1.othersayknow=false and Child2.othersayknow=false and Child3.othersayknow=false and
+    Environment.sayexist=false and Environment.initial=true and Environment.mem=-1;
+end InitStates
+
+Formulae
+  AG((saysknows1 -> (K(Child1, muddy1) or K(Child1, !muddy1))) and ((K(Child1, muddy1) or K(Child1, !muddy1)) -> saysknows1));
+  AG((saysknows2 -> (K(Child2, muddy2) or K(Child2, !muddy2))) and ((K(Child2, muddy2) or K(Child2, !muddy2)) -> saysknows2));
+  AG((saysknows3 -> (K(Child3, muddy3) or K(Child3, !muddy3))) and ((K(Child3, muddy3) or K(Child3, !muddy3)) -> saysknows3));
+end Formulae

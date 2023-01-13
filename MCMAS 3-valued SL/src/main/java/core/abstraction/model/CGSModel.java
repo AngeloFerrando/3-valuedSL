@@ -384,38 +384,38 @@ public class CGSModel extends JsonObject implements Cloneable {
 	}
 
 	public static Outcome modelCheck3(CGSModel modelMust, CGSModel modelMay, String mcmasExecPath) throws IOException {
-		boolean universal = modelMust.getSL() instanceof StrategyLogic.Universal;
-		if(universal) {
-			modelMust.setSL(modelMust.getSL().transl(false));
-			String mcmasMustProgram = AbstractionUtils.generateMCMASProgram(modelMust, false);
-			String fileName = "/tmp/st.ispl";
-			Files.write(Paths.get(fileName), mcmasMustProgram.getBytes());
-			String mcmasOutputMustAtlModel = AbstractionUtils.modelCheck(mcmasExecPath, fileName);
-			if (AbstractionUtils.getMcmasResult(mcmasOutputMustAtlModel)) {
-				return Outcome.False;
-			}
-			String mcmasMayProgram = AbstractionUtils.generateMCMASProgram(modelMay, false);
-			Files.write(Paths.get(fileName), mcmasMayProgram.getBytes());
-			String mcmasOutputMayAtlModel = AbstractionUtils.modelCheck(mcmasExecPath, fileName);
-			if (AbstractionUtils.getMcmasResult(mcmasOutputMayAtlModel)) {
-				return Outcome.True;
-			}
-		} else {
-			String mcmasMustProgram = AbstractionUtils.generateMCMASProgram(modelMust, false);
-			String fileName = "/tmp/st.ispl";
-			Files.write(Paths.get(fileName), mcmasMustProgram.getBytes());
-			String mcmasOutputMustAtlModel = AbstractionUtils.modelCheck(mcmasExecPath, fileName);
-			if (AbstractionUtils.getMcmasResult(mcmasOutputMustAtlModel)) {
-				return Outcome.True;
-			}
-			modelMay.setSL(modelMay.getSL().transl(false));
-			String mcmasMayProgram = AbstractionUtils.generateMCMASProgram(modelMay, false);
-			Files.write(Paths.get(fileName), mcmasMayProgram.getBytes());
-			String mcmasOutputMayAtlModel = AbstractionUtils.modelCheck(mcmasExecPath, fileName);
-			if (AbstractionUtils.getMcmasResult(mcmasOutputMayAtlModel)) {
-				return Outcome.False;
-			}
+//		boolean universal = modelMust.getSL() instanceof StrategyLogic.Universal;
+//		if(universal) {
+//			modelMust.setSL(modelMust.getSL().transl(false));
+//			String mcmasMustProgram = AbstractionUtils.generateMCMASProgram(modelMust, false);
+//			String fileName = "/tmp/st.ispl";
+//			Files.write(Paths.get(fileName), mcmasMustProgram.getBytes());
+//			String mcmasOutputMustAtlModel = AbstractionUtils.modelCheck(mcmasExecPath, fileName);
+//			if (AbstractionUtils.getMcmasResult(mcmasOutputMustAtlModel)) {
+//				return Outcome.False;
+//			}
+//			String mcmasMayProgram = AbstractionUtils.generateMCMASProgram(modelMay, false);
+//			Files.write(Paths.get(fileName), mcmasMayProgram.getBytes());
+//			String mcmasOutputMayAtlModel = AbstractionUtils.modelCheck(mcmasExecPath, fileName);
+//			if (AbstractionUtils.getMcmasResult(mcmasOutputMayAtlModel)) {
+//				return Outcome.True;
+//			}
+//		} else {
+		String mcmasMustProgram = AbstractionUtils.generateMCMASProgram(modelMust, false);
+		String fileName = "/tmp/st.ispl";
+		Files.write(Paths.get(fileName), mcmasMustProgram.getBytes());
+		String mcmasOutputMustAtlModel = AbstractionUtils.modelCheck(mcmasExecPath, fileName);
+		if (AbstractionUtils.getMcmasResult(mcmasOutputMustAtlModel)) {
+			return Outcome.True;
 		}
+		modelMay.setSL(modelMay.getSL().transl(false));
+		String mcmasMayProgram = AbstractionUtils.generateMCMASProgram(modelMay, false);
+		Files.write(Paths.get(fileName), mcmasMayProgram.getBytes());
+		String mcmasOutputMayAtlModel = AbstractionUtils.modelCheck(mcmasExecPath, fileName);
+		if (AbstractionUtils.getMcmasResult(mcmasOutputMayAtlModel)) {
+			return Outcome.False;
+		}
+//		}
 		return Outcome.Undefined;
 	}
 

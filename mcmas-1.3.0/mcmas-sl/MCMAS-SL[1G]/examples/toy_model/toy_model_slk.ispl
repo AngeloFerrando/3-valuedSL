@@ -1,0 +1,62 @@
+--- Toy Model for Final Report
+
+Agent Environment
+  Obsvars:
+    state : {game, p1win, p2win};
+  end Obsvars
+  Actions = {idle};
+  Protocol:
+    Other : {idle};
+  end Protocol
+  Evolution:
+    state = p1win if state = game and
+            (Player1.Action = rock and Player2.Action = scissors or
+             Player1.Action = paper and Player2.Action = rock or
+             Player1.Action = scissors and Player2.Action = paper);
+    state = p2win if state = game and
+            (Player2.Action = rock and Player1.Action = scissors or
+             Player2.Action = paper and Player1.Action = rock or
+             Player2.Action = scissors and Player1.Action = paper);
+  end Evolution
+end Agent
+
+Agent Player1
+  Vars:
+  end Vars
+  Actions = {rock, paper, scissors, idle};
+  Protocol:
+    Environment.state = game: {rock, paper, scissors};
+    Other: {idle};
+  end Protocol
+  Evolution:
+  end Evolution
+end Agent
+
+Agent Player2
+  Vars:
+  end Vars
+  Actions = {rock, paper, scissors, idle};
+  Protocol:
+    Environment.state = game: {rock, paper, scissors};
+    Other: {idle};
+  end Protocol
+  Evolution:
+  end Evolution
+end Agent
+
+Evaluation
+  p1 if Environment.state = p1win;
+  p2 if Environment.state = p2win;
+end Evaluation
+
+InitStates
+  Environment.state = game;
+end InitStates
+
+Groups
+  g = {Player1, Player2};
+end Groups
+
+Formulae
+  <<e>> (Environment, e) <<x>> (Player1, x) <<y>> (Player2, y) G !(p1 or p2);
+end Formulae

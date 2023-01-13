@@ -1,0 +1,65 @@
+************************************************************************
+                       MCMAS v1.1.0 
+
+ This software comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law. 
+
+ Please check http://vas.doc.ic.ac.uk/tools/mcmas/ for the latest release.
+ Please send any feedback to <mcmas@imperial.ac.uk>
+************************************************************************
+
+Command line: ../../mcmas -sd 1 scheduler5_sl1gas_opt.ispl
+
+scheduler5_sl1gas_opt.ispl has been parsed successfully.
+Global syntax checking...
+Done
+Encoding BDD parameters...
+Building partial transition relation...
+Building BDD for initial states...
+Building reachable state space...
+Checking formulae...
+Verifying imperfect recall properties...
+done, 0 imperfect recall formulae successfully read and checked
+Verifying perfect recall properties...
+  Perfect recall formula 1: <<x>> [[y1]] [[y2]] [[y3]] [[y4]] [[y5]] (Environment, x) (P1, y1) (P2, y2) (P3, y3) (P4, y4) (P5, y5) ((((G (wt1 -> F (! wt1)) && G (wt2 -> F (! wt2))) && G (wt3 -> F (! wt3))) && G (wt4 -> F (! wt4))) && G (wt5 -> F (! wt5))), is TRUE in the model
+done, 1 perfect recall formulae successfully read and checked
+execution time = 6131.61
+number of reachable states = 113
+BDD memory in use = 1278635360
+====== BENCHMARK ======
+CODE                               REAL          CPU         USER    SYSTEM
+mcmas-total                 6131.668077  6112.044000  6111.640000  0.404000
+  |  pr_check1              6131.426683  6111.808000  6111.464000  0.344000
+  |    |  arena                2.648810     2.640000     2.612000  0.028000
+  |    |  determinize          0.001928     0.000000     0.000000  0.000000
+  |    |  game               444.056975   442.624000   442.424000  0.200000
+  |    |  generalized          0.000571     0.004000     0.004000  0.000000
+  |    |  nondeterministic     0.000246     0.000000     0.000000  0.000000
+  |    |  prefix               0.000018     0.000000     0.000000  0.000000
+  |    |  solve             5684.688694  5666.508000  5666.392000  0.116000
+  |    +- <rest>               0.029441     0.032000     0.032000  0.000000
+  |  reachability              0.017222     0.016000     0.016000  0.000000
+  +- <rest>                    0.224172     0.220000     0.160000  0.060000
+	Command being timed: "../../mcmas -sd 1 scheduler5_sl1gas_opt.ispl"
+	User time (seconds): 6111.64
+	System time (seconds): 0.40
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42:11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1255060
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 316537
+	Voluntary context switches: 6
+	Involuntary context switches: 516960
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

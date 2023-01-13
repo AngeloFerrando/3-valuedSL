@@ -1,0 +1,7 @@
+This is the supplementary material for our JAIR paper submission.
+
+The experimental results can be obtained by executing the following command:
+python3 atl3valued.py [k] [ispl_file]
+
+The ispl files can be found in the directory benchmarks/, including
+the shell_game example and the voting protocol. 

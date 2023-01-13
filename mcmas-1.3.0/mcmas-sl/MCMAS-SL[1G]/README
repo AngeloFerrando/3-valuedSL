@@ -1,0 +1,22 @@
+********************************************************************************
+                                 MCMAS-SL[1G]
+  Model Checker for the Verification of One-Goal Strategy Logic Specifications
+********************************************************************************
+
+This repository contains MCMAS-SL[1G] source code and examples:
+  - cudd-2.5.0-exp/                          CUDD BDD package
+  - doc/installation_guide.pdf               MCMAS Installation guide
+  - examples/                                MCMAS and MCMAS-SL[1G] examples
+  - main.cc, include/, parser/, utilities/   MCMAS and MCMAS-SL[1G] source code
+  - mcmas32                                  MCMAS-SL[1G] i386 Linux binary
+  - mcmas64                                  MCMAS-SL[1G] x86_64 Linux binary
+  - LICENSE                                  GNU GPL license
+
+Note that SL[1G] specifications must be preceded by a "#PR" tag (otherwise they
+are interpreted as SLK specifications).
+
+Separate determinisation (SL[1G] optimisation technique) can be disabled/enabled
+using the "-sd 0"/"-sd 1" command-line argument. It is enabled by default.
+
+Run the executable without any command line arguments for more help.
+

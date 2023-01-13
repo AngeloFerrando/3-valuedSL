@@ -1,0 +1,83 @@
+-- Another model for the Bit transmission problem in ISPL ( from Fagin et al., Reasoning
+-- about knowledge, 1995).
+-- Basic case, no faulty behaviour for Receiver.
+
+Agent Environment
+    Vars:
+        state : {S,R,SR,none};
+    end Vars
+    Actions = {S,SR,R,none};
+    Protocol:
+	state=S: {S,SR,R,none};
+        state=R: {S,SR,R,none};
+        state=SR: {S,SR,R,none};
+        state=none: {S,SR,R,none};
+    end Protocol
+    Evolution:
+	state=S if (Action=S);
+	state=R if (Action=R);
+	state=SR if (Action=SR);
+	state=none if (Action=none);
+    end Evolution
+end Agent
+
+Agent Sender
+    Vars:
+       bit : { b0, b1}; -- The bit can be either zero or one
+       ack : boolean;  -- This is true when the ack has been received
+    end Vars
+    Actions = { sb0,sb1,nothing };
+    Protocol:
+	bit=b0 and ack=false : {sb0};
+	bit=b1 and ack=false : {sb1};
+	ack=true : {nothing};
+    end Protocol
+    Evolution:
+        (ack=true) if (ack=false) and (((Receiver.Action=sendack) and (Environment.Action=SR)) or
+        ((Receiver.Action=sendack) and (Environment.Action=R)));
+   end Evolution
+end Agent
+
+Agent Receiver
+    Vars:
+        state : { empty, r0, r1 };
+    end Vars
+    Actions = {nothing,sendack};
+    Protocol:
+	state=empty : {nothing};
+	(state=r0 or state=r1): {sendack};
+    end Protocol
+    Evolution:
+        state=r0 if ( ( (Sender.Action=sb0) and (state=empty) and (Environment.Action=SR) ) or 
+	( (Sender.Action=sb0) and (state=empty) and (Environment.Action=S) ) );
+      state=r1 if ( ( (Sender.Action=sb1) and (state=empty) and (Environment.Action=SR) ) or 
+		( (Sender.Action=sb1) and (state=empty) and (Environment.Action=S) ) );
+    end Evolution
+end Agent
+
+Evaluation
+    recbit if ( (Receiver.state=r0) or (Receiver.state=r1) );
+    recack if ( ( Sender.ack = true ) );
+    bit0 if ( (Sender.bit=b0));
+    bit1 if ( (Sender.bit=b1) );
+    recbit0 if Receiver.state=r0;
+    envworks if ( Environment.state=SR );
+end Evaluation
+
+InitStates
+	(Sender.bit=b0 or Sender.bit=b1) and 
+	(Receiver.state=empty) and (Sender.ack=false) and
+	(Environment.state=none or Environment.state=SR or Environment.state=S or Environment.state=R);
+end InitStates
+
+Fairness
+    envworks;
+end Fairness
+
+Formulae
+    E((bit0 or bit1) U recack);
+    EF(EG(recbit and !recack));
+    AF(recack);
+    AF(recbit -> AF (recack));
+    AF(recbit -> K(Sender,K(Receiver,bit0) or K(Receiver,bit1)));
+end Formulae

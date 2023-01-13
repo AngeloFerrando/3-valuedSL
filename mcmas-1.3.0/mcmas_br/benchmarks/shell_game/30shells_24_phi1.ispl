@@ -1,0 +1,490 @@
+Agent Environment 
+  Vars:
+    state : { none, 
+          placed1, placed2, placed3, placed4, placed5,
+          placed6, placed7, placed8, placed9, placed10,
+          placed11, placed12, placed13, placed14, placed15,
+          placed16, placed17, placed18, placed19, placed20,
+          placed21, placed22, placed23, placed24, placed25,
+          placed26, placed27, placed28, placed29, placed30 
+          };
+  end Vars
+  Actions = {place1, place2, place3, place4, place5,
+              place6, place7, place8, place9, place10, 
+              place11, place12, place13, place14, place15,
+              place16, place17, place18, place19, place20,
+              place21, place22, place23, place24, place25,
+              place26, place27, place28, place29, place30, 
+              none};
+  Protocol:
+    state=none : {place1, place2, place3, place4, place5,
+                  place6, place7, place8, place9, place10, 
+                  place11, place12, place13, place14, place15,
+                  place16, place17, place18, place19, place20,
+                  place21, place22, place23, place24, place25,
+                  place26, place27, place28, place29, place30 
+                  };
+    state=placed1 
+        or state=placed2 
+        or state=placed3 
+        or state=placed4 
+        or state=placed5 
+        or state=placed6 
+        or state=placed7 
+        or state=placed8 
+        or state=placed9 
+        or state=placed10
+        or state=placed11 
+        or state=placed12 
+        or state=placed13 
+        or state=placed14 
+        or state=placed15 
+        or state=placed16 
+        or state=placed17 
+        or state=placed18 
+        or state=placed19 
+        or state=placed20
+        or state=placed21 
+        or state=placed22 
+        or state=placed23 
+        or state=placed24 
+        or state=placed25 
+        or state=placed26 
+        or state=placed27 
+        or state=placed28 
+        or state=placed29 
+        or state=placed30
+        : {none};
+  end Protocol
+  Evolution:
+    state= placed1 if Action=place1;
+    state= placed2 if Action=place2;
+    state= placed3 if Action=place3;
+    state= placed4 if Action=place4;
+    state= placed5 if Action=place5;
+    state= placed6 if Action=place6;
+    state= placed7 if Action=place7;
+    state= placed8 if Action=place8;
+    state= placed9 if Action=place9;
+    state= placed10 if Action=place10;
+    state= placed11 if Action=place11;
+    state= placed12 if Action=place12;
+    state= placed13 if Action=place13;
+    state= placed14 if Action=place14;
+    state= placed15 if Action=place15;
+    state= placed16 if Action=place16;
+    state= placed17 if Action=place17;
+    state= placed18 if Action=place18;
+    state= placed19 if Action=place19;
+    state= placed20 if Action=place20;
+    state= placed21 if Action=place21;
+    state= placed22 if Action=place22;
+    state= placed23 if Action=place23;
+    state= placed24 if Action=place24;
+    state= placed25 if Action=place25;
+    state= placed26 if Action=place26;
+    state= placed27 if Action=place27;
+    state= placed28 if Action=place28;
+    state= placed29 if Action=place29;
+    state= placed30 if Action=place30;
+  end Evolution
+end Agent
+
+Agent Guesser
+  Vars:
+    state : {none, see1, see2,see3,see4,see5,see6,see7,see8,see9,see10, 
+        see11, see12,see13,see14,see15,see16,see17,see18,see19,see20, 
+        see21, see22,see23,see24,see25,see26,see27,see28,see29,see30, 
+        h1, h2, h3, h4, h5,
+        h6, h7, h8, h9, h10, 
+        h11, h12, h13, h14, h15, 
+        h16, h17, h18, h19, h20,
+	h21, h22, h23, h24,
+        g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, 
+        g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, 
+        g21, g22, g23, g24, g25, g26, g27, g28, g29, g30 
+        }; 
+  end Vars
+  Actions = { guess1, guess2, guess3, guess4, guess5,
+          guess6, guess7, guess8, guess9, guess10, 
+          guess11, guess12, guess13, guess14, guess15,
+          guess16, guess17, guess18, guess19, guess20,
+          guess21, guess22, guess23, guess24, guess25,
+          guess26, guess27, guess28, guess29, guess30,
+          wait };
+  Protocol:
+    state=g1 : {guess1};
+    state=g2: {guess2};
+    state=g3: {guess3};
+    state=g4: {guess4};
+    state=g5: {guess5};
+    state=g6 : {guess6};
+    state=g7: {guess7};
+    state=g8: {guess8};
+    state=g9: {guess9};
+    state=g10: {guess10};
+    state=g11 : {guess11};
+    state=g12: {guess12};
+    state=g13: {guess13};
+    state=g14: {guess14};
+    state=g15: {guess15};
+    state=g16 : {guess16};
+    state=g17: {guess17};
+    state=g18: {guess18};
+    state=g19: {guess19};
+    state=g20: {guess20};
+    state=g21 : {guess21};
+    state=g22: {guess22};
+    state=g23: {guess23};
+    state=g24: {guess24};
+    state=g25: {guess25};
+    state=g26 : {guess26};
+    state=g27: {guess27};
+    state=g28: {guess28};
+    state=g29: {guess29};
+    state=g30: {guess30};
+
+    state=none 
+            or state=h1
+            or state=h2
+            or state=h3
+            or state=h4
+            or state=h5
+            or state=h6
+            or state=h7
+            or state=h8
+            or state=h9
+            or state=h10
+            or state=h11
+            or state=h12
+            or state=h13
+            or state=h14
+            or state=h15
+            or state=h16
+            or state=h17
+            or state=h18
+            or state=h19
+            or state=h20
+            or state=h21
+            or state=h22
+            or state=h23
+          :{wait};
+    state=h24:{guess1, guess2, guess3, guess4, guess5,
+          guess6, guess7, guess8, guess9, guess10,
+          guess11, guess12, guess13, guess14, guess15,
+          guess16, guess17, guess18, guess19, guess20,
+          guess21, guess22, guess23, guess24, guess25,
+          guess26, guess27, guess28, guess29, guess30
+          };
+    state=see1
+        or state=see2
+        or state=see3
+        or state=see4
+        or state=see5
+        or state=see6
+        or state=see7
+        or state=see8
+        or state=see9
+        or state=see10
+        or state=see11
+        or state=see12
+        or state=see13
+        or state=see14
+        or state=see15
+        or state=see16
+        or state=see17
+        or state=see18
+        or state=see19
+        or state=see20
+        or state=see21
+        or state=see22
+        or state=see23
+        or state=see24
+        or state=see25
+        or state=see26
+        or state=see27
+        or state=see28
+        or state=see29
+        or state=see30
+
+              : {wait};
+  end Protocol
+  Evolution:
+    state=g1 if Action=guess1;
+    state=g2 if Action=guess2;
+    state=g3 if Action=guess3;
+    state=g4 if Action=guess4;
+    state=g5 if Action=guess5;
+    state=g6 if Action=guess6;
+    state=g7 if Action=guess7;
+    state=g8 if Action=guess8;
+    state=g9 if Action=guess9;
+    state=g10 if Action=guess10;
+    state=g11 if Action=guess11;
+    state=g12 if Action=guess12;
+    state=g13 if Action=guess13;
+    state=g14 if Action=guess14;
+    state=g15 if Action=guess15;
+    state=g16 if Action=guess16;
+    state=g17 if Action=guess17;
+    state=g18 if Action=guess18;
+    state=g19 if Action=guess19;
+    state=g20 if Action=guess20;
+    state=g21 if Action=guess21;
+    state=g22 if Action=guess22;
+    state=g23 if Action=guess23;
+    state=g24 if Action=guess24;
+    state=g25 if Action=guess25;
+    state=g26 if Action=guess26;
+    state=g27 if Action=guess27;
+    state=g28 if Action=guess28;
+    state=g29 if Action=guess29;
+    state=g30 if Action=guess30;
+
+    state=h1 if state=see1 or state=see2
+        or state=see3
+        or state=see4
+        or state=see5
+        or state=see6
+        or state=see7
+        or state=see8
+        or state=see9
+        or state=see10
+        or state=see11 
+        or state=see12
+        or state=see13
+        or state=see14
+        or state=see15
+        or state=see16
+        or state=see17
+        or state=see18
+        or state=see19
+        or state=see20
+        or state=see21 
+        or state=see22
+        or state=see23
+        or state=see24
+        or state=see25
+        or state=see26
+        or state=see27
+        or state=see28
+        or state=see29
+        or state=see30
+        ;
+    state=h2 if state=h1 and Action=wait;
+    state=h3 if state=h2 and Action=wait;
+    state=h4 if state=h3 and Action=wait;
+    state=h5 if state=h4 and Action=wait;
+    state=h6 if state=h5 and Action=wait;
+    state=h7 if state=h6 and Action=wait;
+    state=h8 if state=h7 and Action=wait;
+    state=h9 if state=h8 and Action=wait;
+    state=h10 if state=h9 and Action=wait;
+    state=h11 if state=h10 and Action=wait;
+    state=h12 if state=h11 and Action=wait;
+    state=h13 if state=h12 and Action=wait;
+    state=h14 if state=h13 and Action=wait;
+    state=h15 if state=h14 and Action=wait;
+    state=h16 if state=h15 and Action=wait;
+    state=h17 if state=h16 and Action=wait;
+    state=h18 if state=h17 and Action=wait;
+    state=h19 if state=h18 and Action=wait;
+    state=h20 if state=h19 and Action=wait;
+    state=h21 if state=h20 and Action=wait;
+    state=h22 if state=h21 and Action=wait;
+    state=h23 if state=h22 and Action=wait;
+    state=h24 if state=h23 and Action=wait;
+    state=see1 if Environment.Action=place1 and state=none;
+    state=see2 if Environment.Action=place2 and state=none;
+    state=see3 if Environment.Action=place3 and state=none;
+    state=see4 if Environment.Action=place4 and state=none;
+    state=see5 if Environment.Action=place5 and state=none;
+    state=see6 if Environment.Action=place6 and state=none;
+    state=see7 if Environment.Action=place7 and state=none;
+    state=see8 if Environment.Action=place8 and state=none;
+    state=see9 if Environment.Action=place9 and state=none;
+    state=see10 if Environment.Action=place10 and state=none;
+    state=see11 if Environment.Action=place11 and state=none;
+    state=see12 if Environment.Action=place12 and state=none;
+    state=see13 if Environment.Action=place13 and state=none;
+    state=see14 if Environment.Action=place14 and state=none;
+    state=see15 if Environment.Action=place15 and state=none;
+    state=see16 if Environment.Action=place16 and state=none;
+    state=see17 if Environment.Action=place17 and state=none;
+    state=see18 if Environment.Action=place18 and state=none;
+    state=see19 if Environment.Action=place19 and state=none;
+    state=see20 if Environment.Action=place20 and state=none;
+    state=see21 if Environment.Action=place21 and state=none;
+    state=see22 if Environment.Action=place22 and state=none;
+    state=see23 if Environment.Action=place23 and state=none;
+    state=see24 if Environment.Action=place24 and state=none;
+    state=see25 if Environment.Action=place25 and state=none;
+    state=see26 if Environment.Action=place26 and state=none;
+    state=see27 if Environment.Action=place27 and state=none;
+    state=see28 if Environment.Action=place28 and state=none;
+    state=see29 if Environment.Action=place29 and state=none;
+    state=see30 if Environment.Action=place30 and state=none;
+  end Evolution
+end Agent
+
+
+Evaluation
+  shell1 if Environment.state=placed1;
+  shell2 if Environment.state=placed2;
+  shell3 if Environment.state=placed3;
+  shell4 if Environment.state=placed4;
+  shell5 if Environment.state=placed5;
+  shell6 if Environment.state=placed6;
+  shell7 if Environment.state=placed7;
+  shell8 if Environment.state=placed8;
+  shell9 if Environment.state=placed9;
+  shell10 if Environment.state=placed10;
+  shell11 if Environment.state=placed11;
+  shell12 if Environment.state=placed12;
+  shell13 if Environment.state=placed13;
+  shell14 if Environment.state=placed14;
+  shell15 if Environment.state=placed15;
+  shell16 if Environment.state=placed16;
+  shell17 if Environment.state=placed17;
+  shell18 if Environment.state=placed18;
+  shell19 if Environment.state=placed19;
+  shell20 if Environment.state=placed20;
+  shell21 if Environment.state=placed21;
+  shell22 if Environment.state=placed22;
+  shell23 if Environment.state=placed23;
+  shell24 if Environment.state=placed24;
+  shell25 if Environment.state=placed25;
+  shell26 if Environment.state=placed26;
+  shell27 if Environment.state=placed27;
+  shell28 if Environment.state=placed28;
+  shell29 if Environment.state=placed29;
+  shell30 if Environment.state=placed30;
+  guess1 if Guesser.state=g1;
+  guess2 if Guesser.state=g2;
+  guess3 if Guesser.state=g3;
+  guess4 if Guesser.state=g4;
+  guess5 if Guesser.state=g5;
+  guess6 if Guesser.state=g6;
+  guess7 if Guesser.state=g7;
+  guess8 if Guesser.state=g8;
+  guess9 if Guesser.state=g9;
+  guess10 if Guesser.state=g10;
+  guess11 if Guesser.state=g11;
+  guess12 if Guesser.state=g12;
+  guess13 if Guesser.state=g13;
+  guess14 if Guesser.state=g14;
+  guess15 if Guesser.state=g15;
+  guess16 if Guesser.state=g16;
+  guess17 if Guesser.state=g17;
+  guess18 if Guesser.state=g18;
+  guess19 if Guesser.state=g19;
+  guess20 if Guesser.state=g20;
+  guess21 if Guesser.state=g21;
+  guess22 if Guesser.state=g22;
+  guess23 if Guesser.state=g23;
+  guess24 if Guesser.state=g24;
+  guess25 if Guesser.state=g25;
+  guess26 if Guesser.state=g26;
+  guess27 if Guesser.state=g27;
+  guess28 if Guesser.state=g28;
+  guess29 if Guesser.state=g29;
+  guess30 if Guesser.state=g30;
+  hidden12 if Guesser.state=h12;
+  win if (Guesser.state=g1 and Environment.state=placed1) 
+              or (Guesser.state=g2 and Environment.state=placed2)
+              or  (Guesser.state=g3 and Environment.state=placed3)
+              or (Guesser.state=g4 and Environment.state=placed4)
+              or  (Guesser.state=g5 and Environment.state=placed5)
+              or  (Guesser.state=g6 and Environment.state=placed6) 
+              or (Guesser.state=g7 and Environment.state=placed7)
+              or  (Guesser.state=g8 and Environment.state=placed8)
+              or (Guesser.state=g9 and Environment.state=placed9)
+              or  (Guesser.state=g10 and Environment.state=placed10)
+              or (Guesser.state=g11 and Environment.state=placed11) 
+              or (Guesser.state=g12 and Environment.state=placed12)
+              or  (Guesser.state=g13 and Environment.state=placed13)
+              or (Guesser.state=g14 and Environment.state=placed14)
+              or  (Guesser.state=g15 and Environment.state=placed15)
+              or  (Guesser.state=g16 and Environment.state=placed16) 
+              or (Guesser.state=g17 and Environment.state=placed17)
+              or  (Guesser.state=g18 and Environment.state=placed18)
+              or (Guesser.state=g19 and Environment.state=placed19)
+              or  (Guesser.state=g20 and Environment.state=placed20)
+              or (Guesser.state=g21 and Environment.state=placed21) 
+              or (Guesser.state=g22 and Environment.state=placed22)
+              or  (Guesser.state=g23 and Environment.state=placed23)
+              or (Guesser.state=g24 and Environment.state=placed24)
+              or  (Guesser.state=g25 and Environment.state=placed25)
+              or  (Guesser.state=g26 and Environment.state=placed26) 
+              or (Guesser.state=g27 and Environment.state=placed27)
+              or  (Guesser.state=g28 and Environment.state=placed28)
+              or (Guesser.state=g29 and Environment.state=placed29)
+              or  (Guesser.state=g30 and Environment.state=placed30)
+;
+
+  gussernotwin if (Guesser.state=g2 and (Environment.ball=shell1 or Environment.ball=shell3 or Environment.ball=shell4 or Environment.ball=shell5 or Environment.ball=shell6 or Environment.ball=shell7 or Environment.ball=shell8 or Environment.ball=shell9 or Environment.ball=shell10
+)) 
+   or (Guesser.state=g1 and (Environment.ball=shell2 or Environment.ball=shell3 or Environment.ball=shell4 or Environment.ball=shell5 or Environment.ball=shell6 or Environment.ball=shell7 or Environment.ball=shell8 or Environment.ball=shell9 or Environment.ball=shell10
+))
+  or (Guesser.state=g3 and (Environment.ball=shell2 or Environment.ball=shell1 or Environment.ball=shell4 or Environment.ball=shell5 or Environment.ball=shell6 or Environment.ball=shell7 or Environment.ball=shell8 or Environment.ball=shell9 or Environment.ball=shell10
+))
+  or (Guesser.state=g4 and (Environment.ball=shell2 or Environment.ball=shell1 or Environment.ball=shell3 or Environment.ball=shell5 or Environment.ball=shell6 or Environment.ball=shell7 or Environment.ball=shell8 or Environment.ball=shell9 or Environment.ball=shell10
+))
+or (Guesser.state=g5 and (Environment.ball=shell2 or Environment.ball=shell1 or Environment.ball=shell4 or Environment.ball=shell3 or Environment.ball=shell6 or Environment.ball=shell7 or Environment.ball=shell8 or Environment.ball=shell9 or Environment.ball=shell10
+)) 
+or (Guesser.state=g6 and (Environment.ball=shell1 or Environment.ball=shell3 or Environment.ball=shell4 or Environment.ball=shell5 or Environment.ball=shell2 or Environment.ball=shell7 or Environment.ball=shell8 or Environment.ball=shell9 or Environment.ball=shell10
+)) 
+   or (Guesser.state=g7 and (Environment.ball=shell2 or Environment.ball=shell3 or Environment.ball=shell4 or Environment.ball=shell5 or Environment.ball=shell6 or Environment.ball=shell2 or Environment.ball=shell8 or Environment.ball=shell9 or Environment.ball=shell10
+))
+  or (Guesser.state=g8 and (Environment.ball=shell2 or Environment.ball=shell1 or Environment.ball=shell4 or Environment.ball=shell5 or Environment.ball=shell6 or Environment.ball=shell7 or Environment.ball=shell2 or Environment.ball=shell9 or Environment.ball=shell10
+))
+  or (Guesser.state=g9 and (Environment.ball=shell2 or Environment.ball=shell1 or Environment.ball=shell3 or Environment.ball=shell5 or Environment.ball=shell6 or Environment.ball=shell7 or Environment.ball=shell8 or Environment.ball=shell2 or Environment.ball=shell10
+))
+or (Guesser.state=g10 and (Environment.ball=shell2 or Environment.ball=shell1 or Environment.ball=shell4 or Environment.ball=shell3 or Environment.ball=shell6 or Environment.ball=shell7 or Environment.ball=shell8 or Environment.ball=shell9 or Environment.ball=shell2
+));
+
+end Evaluation
+
+InitStates
+  Environment.state=none and Guesser.state=none;
+end InitStates
+
+Groups
+  g1 = {Guesser};
+  g4 = {Environment};
+end Groups
+
+
+Formulae
+	<g1> F ((guess1 and shell1) 
+	   or	(guess2 and shell2) 
+	   or	(guess3 and shell3) 
+	   or	(guess4 and shell4) 
+	   or	(guess5 and shell5) 
+	   or	(guess6 and shell6) 
+	   or	(guess7 and shell7) 
+	   or	(guess8 and shell8) 
+	   or	(guess9 and shell9) 
+	   or	(guess10 and shell10) 
+	   or	(guess11 and shell11) 
+	   or	(guess12 and shell12) 
+	   or	(guess13 and shell13) 
+	   or	(guess14 and shell14) 
+	   or	(guess15 and shell15) 
+	   or	(guess16 and shell16) 
+	   or	(guess17 and shell17) 
+	   or	(guess18 and shell18) 
+	   or	(guess19 and shell19) 
+	   or	(guess20 and shell20) 
+	   or	(guess21 and shell21) 
+	   or	(guess22 and shell22) 
+	   or	(guess23 and shell23) 
+	   or	(guess24 and shell24) 
+	   or	(guess25 and shell25) 
+	   or	(guess26 and shell26) 
+	   or	(guess27 and shell27) 
+	   or	(guess28 and shell28) 
+	   or	(guess29 and shell29) 
+	   or	(guess30 and shell30) 
+		);
+end Formulae

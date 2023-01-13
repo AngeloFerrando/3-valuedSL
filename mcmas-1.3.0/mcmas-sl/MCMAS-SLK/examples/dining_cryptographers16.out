@@ -1,0 +1,34 @@
+************************************************************************
+                       MCMAS v1.1.0 
+
+ This software comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law. 
+
+ Please check http://vas.doc.ic.ac.uk/tools/mcmas/ for the latest release.
+ Please send any feedback to <mcmas@imperial.ac.uk>
+************************************************************************
+
+Command line: ./mcmas examples/dining_cryptographers16.ispl
+
+examples/dining_cryptographers16.ispl has been parsed successfully.
+Global syntax checking...
+Done
+Encoding BDD parameters...
+Building partial transition relation...
+Building BDD for initial states...
+Building reachable state space...
+Checking formulae...
+Verifying properties...
+  Formula number 1: (AG ((odd && (! c1paid)) -> (((((((((((((((K(DinCrypt1, ((((((((((((((c2paid || c3paid) || c4paid) || c5paid) || c6paid) || c7paid) || c8paid) || c9paid) || c10paid) || c11paid) || c12paid) || c13paid) || c14paid) || c15paid) || c16paid)) && (! K(DinCrypt1, c2paid))) && (! K(DinCrypt1, c3paid))) && (! K(DinCrypt1, c4paid))) && (! K(DinCrypt1, c5paid))) && (! K(DinCrypt1, c6paid))) && (! K(DinCrypt1, c7paid))) && (! K(DinCrypt1, c8paid))) && (! K(DinCrypt1, c9paid))) && (! K(DinCrypt1, c10paid))) && (! K(DinCrypt1, c11paid))) && (! K(DinCrypt1, c12paid))) && (! K(DinCrypt1, c13paid))) && (! K(DinCrypt1, c14paid))) && (! K(DinCrypt1, c15paid))) && (! K(DinCrypt1, c16paid))))), is TRUE in the model
+  Formula number 2: [[x1]] [[x2]] [[x3]] [[x4]] [[x5]] [[x6]] [[x7]] [[x8]] [[x9]] [[x10]] [[x11]] [[x12]] [[x13]] [[x14]] [[x15]] [[x16]] (DinCrypt1, x1) (DinCrypt2, x2) (DinCrypt3, x3) (DinCrypt4, x4) (DinCrypt5, x5) (DinCrypt6, x6) (DinCrypt7, x7) (DinCrypt8, x8) (DinCrypt9, x9) (DinCrypt10, x10) (DinCrypt11, x11) (DinCrypt12, x12) (DinCrypt13, x13) (DinCrypt14, x14) (DinCrypt15, x15) (DinCrypt16, x16) [[xe]] (Environment, xe) G ((odd && (! c1paid)) -> (((((((((((((((K(DinCrypt1, ((((((((((((((c2paid || c3paid) || c4paid) || c5paid) || c6paid) || c7paid) || c8paid) || c9paid) || c10paid) || c11paid) || c12paid) || c13paid) || c14paid) || c15paid) || c16paid)) && (! K(DinCrypt1, c2paid))) && (! K(DinCrypt1, c3paid))) && (! K(DinCrypt1, c4paid))) && (! K(DinCrypt1, c5paid))) && (! K(DinCrypt1, c6paid))) && (! K(DinCrypt1, c7paid))) && (! K(DinCrypt1, c8paid))) && (! K(DinCrypt1, c9paid))) && (! K(DinCrypt1, c10paid))) && (! K(DinCrypt1, c11paid))) && (! K(DinCrypt1, c12paid))) && (! K(DinCrypt1, c13paid))) && (! K(DinCrypt1, c14paid))) && (! K(DinCrypt1, c15paid))) && (! K(DinCrypt1, c16paid)))), is TRUE in the model
+done, 2 formulae successfully read and checked
+execution time = 458.711
+number of reachable states = 4.45645e+06
+BDD memory in use = 1641438144
+====== BENCHMARK ======
+CODE                     REAL         CPU        USER    SYSTEM
+mcmas-total        458.814510  457.120000  455.888000  1.232000
+  |  check1          0.094183    0.092000    0.092000  0.000000
+  |  check2        451.412997  449.748000  448.676000  1.072000
+  |  reachability    7.128500    7.104000    7.064000  0.040000
+  +- <rest>          0.178830    0.176000    0.056000  0.120000

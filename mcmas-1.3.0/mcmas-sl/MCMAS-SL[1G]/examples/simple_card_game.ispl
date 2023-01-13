@@ -1,0 +1,76 @@
+-- Example from Jamroga et al: simple card game
+-- rule: a > k, k > q, q > a
+
+Agent Environment
+    Vars:
+    	card1 : {a, q, k};
+    	card2 : {a, q, k};
+    end Vars
+    Actions = { none };
+    Protocol:
+    	Other : {none};
+    end Protocol
+    Evolution:
+    	card1=card2 and card2=card1 if player1.Action = swap;
+    end Evolution
+end Agent
+
+Agent player1
+	Lobsvars={card1};
+    Vars:
+    	play : boolean;
+    end Vars
+    Actions = {keep,swap,none};
+    Protocol:
+    	(play=false):{keep,swap};
+		(play=true):{none};
+    end Protocol
+    Evolution:
+    	play=true if play=false;
+    end Evolution
+end Agent
+
+Agent player2
+	Lobsvars={card2};
+    Vars:
+        play : boolean;
+    end Vars
+    Actions = {none};
+    Protocol:
+       Other : {none};
+    end Protocol
+    Evolution:
+        play=true if play=false;
+    end Evolution
+end Agent
+
+
+Evaluation
+	    p1win if ( ( Environment.card1=a and Environment.card2=k) ) or
+                ( ( Environment.card1=k and Environment.card2=q) ) or
+                ( ( Environment.card1=q and Environment.card2=a) );
+end Evaluation
+
+InitStates
+
+	(player1.play=false) and (player2.play=false) and (
+          ( Environment.card1=a and Environment.card2=k ) or
+          ( Environment.card1=a and Environment.card2=q ) or
+          ( Environment.card1=q and Environment.card2=k ) or
+          ( Environment.card1=q and Environment.card2=a ) or
+          ( Environment.card1=k and Environment.card2=a ) or
+          ( Environment.card1=k and Environment.card2=q ));
+	
+end InitStates
+
+Groups
+	g1 = {player1};
+end Groups
+
+Fairness
+end Fairness
+
+Formulae
+        --AF(p1win);
+	<g1>X(p1win);
+end Formulae

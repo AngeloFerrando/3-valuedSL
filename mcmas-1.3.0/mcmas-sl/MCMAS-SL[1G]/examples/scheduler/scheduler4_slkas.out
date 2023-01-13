@@ -1,0 +1,34 @@
+************************************************************************
+                       MCMAS v1.1.0 
+
+ This software comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law. 
+
+ Please check http://vas.doc.ic.ac.uk/tools/mcmas/ for the latest release.
+ Please send any feedback to <mcmas@imperial.ac.uk>
+************************************************************************
+
+Command line: ../../mcmas scheduler4_slkas.ispl
+
+scheduler4_slkas.ispl has been parsed successfully.
+Global syntax checking...
+Done
+Encoding BDD parameters...
+Building partial transition relation...
+Building BDD for initial states...
+Building reachable state space...
+Checking formulae...
+Verifying imperfect recall properties...
+
+Caught signal SIGTERM
+====== BENCHMARK ======
+CODE                                  REAL          CPU        USER      SYSTEM
+mcmas-total                   63616.158389  1004.348000  833.820000  170.528000
+  |  build-strategy               0.000728     0.004000    0.004000    0.000000
+  |    |  assign-bdds             0.000233     0.000000    0.000000    0.000000
+  |    |  generate-actions        0.000228     0.000000    0.000000    0.000000
+  |    |  generate-states         0.000155     0.000000    0.000000    0.000000
+  |    |  merge-states            0.000021     0.004000    0.004000    0.000000
+  |    |  valid-restrictions      0.000014     0.000000    0.000000    0.000000
+  |    +- <rest>                  0.000077     0.000000    0.000000    0.000000
+  +- <rest>                   63616.157661  1004.344000  833.816000  170.528000

@@ -1,0 +1,34 @@
+************************************************************************
+                       MCMAS v1.1.0 
+
+ This software comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law. 
+
+ Please check http://vas.doc.ic.ac.uk/tools/mcmas/ for the latest release.
+ Please send any feedback to <mcmas@imperial.ac.uk>
+************************************************************************
+
+Command line: ./mcmas examples/dining_cryptographers9.ispl
+
+examples/dining_cryptographers9.ispl has been parsed successfully.
+Global syntax checking...
+Done
+Encoding BDD parameters...
+Building partial transition relation...
+Building BDD for initial states...
+Building reachable state space...
+Checking formulae...
+Verifying properties...
+  Formula number 1: (AG ((odd && (! c1paid)) -> ((((((((K(DinCrypt1, (((((((c2paid || c3paid) || c4paid) || c5paid) || c6paid) || c7paid) || c8paid) || c9paid)) && (! K(DinCrypt1, c2paid))) && (! K(DinCrypt1, c3paid))) && (! K(DinCrypt1, c4paid))) && (! K(DinCrypt1, c5paid))) && (! K(DinCrypt1, c6paid))) && (! K(DinCrypt1, c7paid))) && (! K(DinCrypt1, c8paid))) && (! K(DinCrypt1, c9paid))))), is TRUE in the model
+  Formula number 2: [[x1]] [[x2]] [[x3]] [[x4]] [[x5]] [[x6]] [[x7]] [[x8]] [[x9]] (DinCrypt1, x1) (DinCrypt2, x2) (DinCrypt3, x3) (DinCrypt4, x4) (DinCrypt5, x5) (DinCrypt6, x6) (DinCrypt7, x7) (DinCrypt8, x8) (DinCrypt9, x9) [[xe]] (Environment, xe) G ((odd && (! c1paid)) -> ((((((((K(DinCrypt1, (((((((c2paid || c3paid) || c4paid) || c5paid) || c6paid) || c7paid) || c8paid) || c9paid)) && (! K(DinCrypt1, c2paid))) && (! K(DinCrypt1, c3paid))) && (! K(DinCrypt1, c4paid))) && (! K(DinCrypt1, c5paid))) && (! K(DinCrypt1, c6paid))) && (! K(DinCrypt1, c7paid))) && (! K(DinCrypt1, c8paid))) && (! K(DinCrypt1, c9paid)))), is TRUE in the model
+done, 2 formulae successfully read and checked
+execution time = 0.89
+number of reachable states = 20480
+BDD memory in use = 32180352
+====== BENCHMARK ======
+CODE                   REAL       CPU      USER    SYSTEM
+mcmas-total        0.893134  0.888000  0.864000  0.024000
+  |  check1        0.003723  0.004000  0.004000  0.000000
+  |  check2        0.408328  0.404000  0.400000  0.004000
+  |  reachability  0.443055  0.444000  0.436000  0.008000
+  +- <rest>        0.038028  0.036000  0.024000  0.012000

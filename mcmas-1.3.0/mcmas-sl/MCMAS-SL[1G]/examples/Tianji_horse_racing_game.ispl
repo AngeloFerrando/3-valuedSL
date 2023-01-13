@@ -1,0 +1,106 @@
+-- Ancient Chinese story: Tian ji's Horse racing game
+-- Tian ji, a general, and his king play a horse racing game. 
+-- Each one has three horses: fast (H), middle (M) and slow (L) horses. 
+-- Rules: fast vs fast, middle vs middle and slow vs slow.
+-- Decision: fast is faster than middle and slow; middle is 
+-- faster than slow; When two fast/middle/slow horses compete
+-- each other, which one wins is non-deterministic.
+-- However, Tian ji uses Sun Bin's idea: decorate the fast as the middle,
+-- the middle as the slow and the slow as the fast. Thus he loses 
+-- the first competition, but wins the rest two. So he wins the king with 
+-- the score 2:1.
+
+Agent Environment
+    Obsvars:
+    	a: 0..3;
+    	b: 0..3;
+    end Obsvars
+    Actions = {none};
+    Protocol:
+    	Other: {none};
+    end Protocol
+    Evolution:
+    	a=a+1 if (Tianji.Action=H and King.Action=H) or
+    		(Tianji.Action=M and King.Action=M) or 
+    		(Tianji.Action=L and King.Action=L) or
+    		(Tianji.Action=H and King.Action=M) or
+    		(Tianji.Action=M and King.Action=L) or 
+    		(Tianji.Action=H and King.Action=L);
+    	b=b+1 if (Tianji.Action=H and King.Action=H) or
+    		(Tianji.Action=M and King.Action=M) or
+    		(Tianji.Action=L and King.Action=L) or
+    		(Tianji.Action=M and King.Action=H) or
+    		(Tianji.Action=L and King.Action=M) or
+    		(Tianji.Action=L and King.Action=H);
+    	--a=0 and b=0 if Tianji.Action=none and King.Action=none;
+    end Evolution
+end Agent
+
+Agent Tianji
+    Vars:
+    	state: {HML, HM, ML, HL, H, M, L, none};
+    end Vars
+    Actions = {H, M, L, none};
+    Protocol:
+    	state=HML: {H, M, L};
+    	state=HM: {H, M};
+    	state=ML: {M, L};
+    	state=HL: {H, L};
+    	state=H: {H};
+    	state=M: {M};
+    	state=L: {L};
+    	state=none: {none};
+    end Protocol
+    Evolution:
+    	state=HM if state=HML and Action=L;
+    	state=ML if state=HML and Action=H;
+    	state=HL if state=HML and Action=M;
+    	state=H if state=HM and Action=M;
+    	state=M if state=HM and Action=H;
+    	state=H if state=HL and Action=L;
+    	state=L if state=HL and Action=H;
+    	state=M if state=ML and Action=L;
+    	state=L if state=ML and Action=M;
+    	state=none if (state=H and Action=H) or (state=M and Action=M) or (state=L and Action=L);
+    	--state=HML if state=none;
+    end Evolution
+end Agent
+
+Agent King
+    Vars:
+    	state:{HML, ML, L, none};
+    end Vars
+    Actions = {H, M, L, none};
+    Protocol:
+    	state=HML: {H};
+    	state=ML: {M};
+    	state=L: {L};
+    	state=none: {none};
+    end Protocol
+    Evolution:
+    	state=ML if state=HML and Action=H;
+    	state=L if state=ML and Action=M;
+    	state=none if state=L and Action=L;
+    	--state=HML if state=none;
+    end Evolution
+end Agent
+
+Evaluation
+	Tianjiwin if Environment.a>Environment.b and Environment.a+Environment.b=3;
+	Kingwin if Environment.a<Environment.b and Environment.a+Environment.b=3;
+	Tianjinotwin if Environment.a<=Environment.b;
+end Evaluation
+
+InitStates
+	Environment.a=0 and Environment.b=0 and Tianji.state=HML and King.state=HML;
+end InitStates
+
+Groups
+	g1={Tianji};
+end Groups
+
+Formulae
+	<g1>F Tianjiwin;
+	<g1>G (<g1> F Tianjiwin);
+	<g1> (Tianjinotwin U Tianjiwin);
+end Formulae

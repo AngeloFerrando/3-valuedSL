@@ -1,0 +1,99 @@
+-- SL1GAS_UNOPT, 3 processes
+Agent Environment
+    Obsvars:
+        state: {fr, a};
+        q1: boolean;
+        q2: boolean;
+        q3: boolean;
+    end Obsvars
+    Actions = {id, p1, p2, p3};
+    Protocol:
+        (q1 = true): {p1};
+        (q2 = true): {p2};
+        (q3 = true): {p3};
+        Other: {id};
+    end Protocol
+    Evolution:
+        (state = fr and q1 = false and q2 = false and q3 = false) if ((state = fr and !(P1.Action = rq or P2.Action = rq or P3.Action = rq)) or (state = a and q1 = false and q2 = false and q3 = false and (P1.Action = rl or P2.Action = rl or P3.Action = rl) and !(P1.Action = rq or P2.Action = rq or P3.Action = rq)));
+        (state = a and q1 = false and q2 = false and q3 = false) if (((state = a or P1.Action = rq or P2.Action = rq or P3.Action = rq) and ((q1 = false and !(P1.Action = rq)) or (q1 = true and (P1.Action = rn or Action = p1))) and ((q2 = false and !(P2.Action = rq)) or (q2 = true and (P2.Action = rn or Action = p2))) and ((q3 = false and !(P3.Action = rq)) or (q3 = true and (P3.Action = rn or Action = p3)))) or ((state = fr and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = a and q1 = false and q2 = false and q3 = false and ((P1.Action = id and P2.Action = id and P3.Action = id) or ((P1.Action = rl or P2.Action = rl or P3.Action = rl) and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq))))))));
+        (state = a and q1 = false and q2 = false and q3 = true) if (((state = a or P1.Action = rq or P2.Action = rq or P3.Action = rq) and ((q1 = false and !(P1.Action = rq)) or (q1 = true and (P1.Action = rn or Action = p1))) and ((q2 = false and !(P2.Action = rq)) or (q2 = true and (P2.Action = rn or Action = p2))) and !(Action = p3) and ((q3 = true and P3.Action = id) or (q3 = false and P3.Action = rq))) and !((state = fr and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = a and q1 = false and q2 = false and q3 = false and ((P1.Action = id and P2.Action = id and P3.Action = id) or ((P1.Action = rl or P2.Action = rl or P3.Action = rl) and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq))))))));
+        (state = a and q1 = false and q2 = true and q3 = false) if (((state = a or P1.Action = rq or P2.Action = rq or P3.Action = rq) and ((q1 = false and !(P1.Action = rq)) or (q1 = true and (P1.Action = rn or Action = p1))) and !(Action = p2) and ((q2 = true and P2.Action = id) or (q2 = false and P2.Action = rq)) and ((q3 = false and !(P3.Action = rq)) or (q3 = true and (P3.Action = rn or Action = p3)))) and !((state = fr and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = a and q1 = false and q2 = false and q3 = false and ((P1.Action = id and P2.Action = id and P3.Action = id) or ((P1.Action = rl or P2.Action = rl or P3.Action = rl) and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq))))))));
+        (state = a and q1 = false and q2 = true and q3 = true) if (((state = a or P1.Action = rq or P2.Action = rq or P3.Action = rq) and ((q1 = false and !(P1.Action = rq)) or (q1 = true and (P1.Action = rn or Action = p1))) and !(Action = p2) and ((q2 = true and P2.Action = id) or (q2 = false and P2.Action = rq)) and !(Action = p3) and ((q3 = true and P3.Action = id) or (q3 = false and P3.Action = rq))) and !((state = fr and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = a and q1 = false and q2 = false and q3 = false and ((P1.Action = id and P2.Action = id and P3.Action = id) or ((P1.Action = rl or P2.Action = rl or P3.Action = rl) and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq))))))));
+        (state = a and q1 = true and q2 = false and q3 = false) if (((state = a or P1.Action = rq or P2.Action = rq or P3.Action = rq) and !(Action = p1) and ((q1 = true and P1.Action = id) or (q1 = false and P1.Action = rq)) and ((q2 = false and !(P2.Action = rq)) or (q2 = true and (P2.Action = rn or Action = p2))) and ((q3 = false and !(P3.Action = rq)) or (q3 = true and (P3.Action = rn or Action = p3)))) and !((state = fr and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = a and q1 = false and q2 = false and q3 = false and ((P1.Action = id and P2.Action = id and P3.Action = id) or ((P1.Action = rl or P2.Action = rl or P3.Action = rl) and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq))))))));
+        (state = a and q1 = true and q2 = false and q3 = true) if (((state = a or P1.Action = rq or P2.Action = rq or P3.Action = rq) and !(Action = p1) and ((q1 = true and P1.Action = id) or (q1 = false and P1.Action = rq)) and ((q2 = false and !(P2.Action = rq)) or (q2 = true and (P2.Action = rn or Action = p2))) and !(Action = p3) and ((q3 = true and P3.Action = id) or (q3 = false and P3.Action = rq))) and !((state = fr and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = a and q1 = false and q2 = false and q3 = false and ((P1.Action = id and P2.Action = id and P3.Action = id) or ((P1.Action = rl or P2.Action = rl or P3.Action = rl) and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq))))))));
+        (state = a and q1 = true and q2 = true and q3 = false) if (((state = a or P1.Action = rq or P2.Action = rq or P3.Action = rq) and !(Action = p1) and ((q1 = true and P1.Action = id) or (q1 = false and P1.Action = rq)) and !(Action = p2) and ((q2 = true and P2.Action = id) or (q2 = false and P2.Action = rq)) and ((q3 = false and !(P3.Action = rq)) or (q3 = true and (P3.Action = rn or Action = p3)))) and !((state = fr and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = a and q1 = false and q2 = false and q3 = false and ((P1.Action = id and P2.Action = id and P3.Action = id) or ((P1.Action = rl or P2.Action = rl or P3.Action = rl) and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq))))))));
+        (state = a and q1 = true and q2 = true and q3 = true) if (((state = a or P1.Action = rq or P2.Action = rq or P3.Action = rq) and !(Action = p1) and ((q1 = true and P1.Action = id) or (q1 = false and P1.Action = rq)) and !(Action = p2) and ((q2 = true and P2.Action = id) or (q2 = false and P2.Action = rq)) and !(Action = p3) and ((q3 = true and P3.Action = id) or (q3 = false and P3.Action = rq))) and !((state = fr and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = a and q1 = false and q2 = false and q3 = false and ((P1.Action = id and P2.Action = id and P3.Action = id) or ((P1.Action = rl or P2.Action = rl or P3.Action = rl) and ((P1.Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (P2.Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (P3.Action = rq and !(P1.Action = rq) and !(P2.Action = rq))))))));
+    end Evolution
+end Agent
+
+Agent P1
+    Vars:
+        state: {in, wt, rs};
+    end Vars
+    Actions = {id, rq, rn, rl};
+    Protocol:
+        (state = in): {id, rq};
+        (state = wt): {id, rn};
+        (state = rs): {id, rl};
+    end Protocol
+    Evolution:
+        state = in if ((state = in and Action = id) or (state = rs and (Action = rl or (!(Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) and !(Environment.Action = p1)))) or (state = wt and Action = rn));
+        state = rs if ((state = in and ((Environment.state = fr and Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (Environment.state = a and Environment.q1 = false and Environment.q2 = false and Environment.q3 = false and (P1.Action = rl or P2.Action = rl or P3.Action = rl) and Action = rq and !(P2.Action = rq) and !(P3.Action = rq)))) or (state = rs and (Environment.state = a and !(Action = rl) and ((Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) or (Environment.Action = p1)))) or (state = wt and Action = id and Environment.Action = p1));
+        state = wt if !(((state = in and Action = id) or (state = rs and (Action = rl or (!(Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) and !(Environment.Action = p1)))) or (state = wt and Action = rn)) or ((state = in and ((Environment.state = fr and Action = rq and !(P2.Action = rq) and !(P3.Action = rq)) or (Environment.state = a and Environment.q1 = false and Environment.q2 = false and Environment.q3 = false and (P1.Action = rl or P2.Action = rl or P3.Action = rl) and Action = rq and !(P2.Action = rq) and !(P3.Action = rq)))) or (state = rs and (Environment.state = a and !(Action = rl) and ((Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) or (Environment.Action = p1)))) or (state = wt and Action = id and Environment.Action = p1)));
+    end Evolution
+end Agent
+
+Agent P2
+    Vars:
+        state: {in, wt, rs};
+    end Vars
+    Actions = {id, rq, rn, rl};
+    Protocol:
+        (state = in): {id, rq};
+        (state = wt): {id, rn};
+        (state = rs): {id, rl};
+    end Protocol
+    Evolution:
+        state = in if ((state = in and Action = id) or (state = rs and (Action = rl or (!(Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) and !(Environment.Action = p2)))) or (state = wt and Action = rn));
+        state = rs if ((state = in and ((Environment.state = fr and Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (Environment.state = a and Environment.q1 = false and Environment.q2 = false and Environment.q3 = false and (P1.Action = rl or P2.Action = rl or P3.Action = rl) and Action = rq and !(P1.Action = rq) and !(P3.Action = rq)))) or (state = rs and (Environment.state = a and !(Action = rl) and ((Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) or (Environment.Action = p2)))) or (state = wt and Action = id and Environment.Action = p2));
+        state = wt if !(((state = in and Action = id) or (state = rs and (Action = rl or (!(Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) and !(Environment.Action = p2)))) or (state = wt and Action = rn)) or ((state = in and ((Environment.state = fr and Action = rq and !(P1.Action = rq) and !(P3.Action = rq)) or (Environment.state = a and Environment.q1 = false and Environment.q2 = false and Environment.q3 = false and (P1.Action = rl or P2.Action = rl or P3.Action = rl) and Action = rq and !(P1.Action = rq) and !(P3.Action = rq)))) or (state = rs and (Environment.state = a and !(Action = rl) and ((Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) or (Environment.Action = p2)))) or (state = wt and Action = id and Environment.Action = p2)));
+    end Evolution
+end Agent
+
+Agent P3
+    Vars:
+        state: {in, wt, rs};
+    end Vars
+    Actions = {id, rq, rn, rl};
+    Protocol:
+        (state = in): {id, rq};
+        (state = wt): {id, rn};
+        (state = rs): {id, rl};
+    end Protocol
+    Evolution:
+        state = in if ((state = in and Action = id) or (state = rs and (Action = rl or (!(Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) and !(Environment.Action = p3)))) or (state = wt and Action = rn));
+        state = rs if ((state = in and ((Environment.state = fr and Action = rq and !(P1.Action = rq) and !(P2.Action = rq)) or (Environment.state = a and Environment.q1 = false and Environment.q2 = false and Environment.q3 = false and (P1.Action = rl or P2.Action = rl or P3.Action = rl) and Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = rs and (Environment.state = a and !(Action = rl) and ((Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) or (Environment.Action = p3)))) or (state = wt and Action = id and Environment.Action = p3));
+        state = wt if !(((state = in and Action = id) or (state = rs and (Action = rl or (!(Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) and !(Environment.Action = p3)))) or (state = wt and Action = rn)) or ((state = in and ((Environment.state = fr and Action = rq and !(P1.Action = rq) and !(P2.Action = rq)) or (Environment.state = a and Environment.q1 = false and Environment.q2 = false and Environment.q3 = false and (P1.Action = rl or P2.Action = rl or P3.Action = rl) and Action = rq and !(P1.Action = rq) and !(P2.Action = rq)))) or (state = rs and (Environment.state = a and !(Action = rl) and ((Environment.q1 = false and Environment.q2 = false and Environment.q3 = false) or (Environment.Action = p3)))) or (state = wt and Action = id and Environment.Action = p3)));
+    end Evolution
+end Agent
+
+Evaluation
+    rs1 if P1.state = rs;
+    rs2 if P2.state = rs;
+    rs3 if P3.state = rs;
+    wt1 if P1.state = wt;
+    wt2 if P2.state = wt;
+    wt3 if P3.state = wt;
+end Evaluation
+
+InitStates
+    Environment.state = fr and Environment.q1 = false and Environment.q2 = false and Environment.q3 = false and P1.state = in and P2.state = in and P3.state = in;
+end InitStates
+
+Groups
+    empty = {};
+end Groups
+
+Formulae
+    #PR <<x>> [[y1]] [[y2]] [[y3]] (Environment, x) (P1, y1) (P2, y2) (P3, y3) G ((wt1 -> F !wt1) and (wt2 -> F !wt2) and (wt3 -> F !wt3));
+end Formulae

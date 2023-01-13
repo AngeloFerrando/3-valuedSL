@@ -1,0 +1,34 @@
+************************************************************************
+                       MCMAS v1.1.0 
+
+ This software comes with ABSOLUTELY NO WARRANTY, to the extent
+ permitted by applicable law. 
+
+ Please check http://vas.doc.ic.ac.uk/tools/mcmas/ for the latest release.
+ Please send any feedback to <mcmas@imperial.ac.uk>
+************************************************************************
+
+Command line: ./mcmas examples/dining_cryptographers6.ispl
+
+examples/dining_cryptographers6.ispl has been parsed successfully.
+Global syntax checking...
+Done
+Encoding BDD parameters...
+Building partial transition relation...
+Building BDD for initial states...
+Building reachable state space...
+Checking formulae...
+Verifying properties...
+  Formula number 1: (AG ((odd && (! c1paid)) -> (((((K(DinCrypt1, ((((c2paid || c3paid) || c4paid) || c5paid) || c6paid)) && (! K(DinCrypt1, c2paid))) && (! K(DinCrypt1, c3paid))) && (! K(DinCrypt1, c4paid))) && (! K(DinCrypt1, c5paid))) && (! K(DinCrypt1, c6paid))))), is TRUE in the model
+  Formula number 2: [[x1]] [[x2]] [[x3]] [[x4]] [[x5]] [[x6]] (DinCrypt1, x1) (DinCrypt2, x2) (DinCrypt3, x3) (DinCrypt4, x4) (DinCrypt5, x5) (DinCrypt6, x6) [[xe]] (Environment, xe) G ((odd && (! c1paid)) -> (((((K(DinCrypt1, ((((c2paid || c3paid) || c4paid) || c5paid) || c6paid)) && (! K(DinCrypt1, c2paid))) && (! K(DinCrypt1, c3paid))) && (! K(DinCrypt1, c4paid))) && (! K(DinCrypt1, c5paid))) && (! K(DinCrypt1, c6paid)))), is TRUE in the model
+done, 2 formulae successfully read and checked
+execution time = 0.111
+number of reachable states = 1792
+BDD memory in use = 11554144
+====== BENCHMARK ======
+CODE                   REAL       CPU      USER    SYSTEM
+mcmas-total        0.112022  0.112000  0.108000  0.004000
+  |  check1        0.001053  0.004000  0.004000  0.000000
+  |  check2        0.019517  0.020000  0.020000  0.000000
+  |  reachability  0.078925  0.076000  0.076000  0.000000
+  +- <rest>        0.012527  0.012000  0.008000  0.004000

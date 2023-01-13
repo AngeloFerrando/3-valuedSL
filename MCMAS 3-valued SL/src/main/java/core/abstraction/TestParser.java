@@ -71,38 +71,46 @@ public class TestParser {
         }
         long startTime, endTime, duration;
         CGSModel model = GenerateScheduler.generate(nProcesses);
-//
+
         AbstractionUtils.validateCGS(model);
 
         System.out.println("Number of states in CGS: " + model.getStates().size());
         System.out.println("Number of transitions in CGS: " + model.getTransitions().size());
 
-        if(args.length != 3 || !args[2].equals("-only_abstraction")) {
-            startTime = System.nanoTime();
-            System.out.println("Verdict: " + CGSModel.modelCheck(model, mcmasExecPath));
-            endTime = System.nanoTime();
-            duration = (endTime - startTime) / 1000000;
-            System.out.println("#### Verification time: " + duration + " [ms]");
-        }
+//        if(args.length != 3 || !args[2].equals("-only_abstraction")) {
+//            startTime = System.nanoTime();
+//            System.out.println("Verdict: " + CGSModel.modelCheck(model, mcmasExecPath));
+//            endTime = System.nanoTime();
+//            duration = (endTime - startTime) / 1000000;
+//            System.out.println("#### Verification time: " + duration + " [ms]");
+//        }
 
         startTime = System.nanoTime();
         CGSModel mustModel = model.createAbstraction(CGSModel.Abstraction.Must, (s ->
         {
-            for(int i = 1; i <= nProcesses; i++) {
-                if(s.getLabels().contains("wt"+i+"_tt")) {
+            for(int i = 2; i <= nProcesses; i++) {
+                if(s.getLabels().contains("rs"+i+"_tt")) {
                     return true;
                 }
             }
             return false;
+//            if(s.getLabels().contains("rs"+1+"_tt")) {
+//                return true;
+//            }
+//            return false;
         }));
         CGSModel mayModel = model.createAbstraction(CGSModel.Abstraction.May, (s ->
         {
-            for(int i = 1; i <= nProcesses; i++) {
-                if(s.getLabels().contains("wt"+i+"_tt")) {
+            for(int i = 2; i <= nProcesses; i++) {
+                if(s.getLabels().contains("rs"+i+"_tt")) {
                     return true;
                 }
             }
             return false;
+//            if(s.getLabels().contains("rs"+1+"_tt")) {
+//                return true;
+//            }
+//            return false;
         }));
         endTime = System.nanoTime();
         duration = (endTime - startTime) / 1000000;
