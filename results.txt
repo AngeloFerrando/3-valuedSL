@@ -1,0 +1,98 @@
+Processes: 2
+Number of states in CGS: 9
+Number of transitions in CGS: 40
+## Abstraction
+Number of states in 3-valued CGS: 5
+Number of transitions in 3-valued CGS [must]: 16
+Number of transitions in 3-valued CGS [may]: 18
+#### Abstraction time: 50 [ms]
+Verdict: True
+#### Verification time (SL[1G]): 31 [ms]
+Verdict: True
+#### Verification time (SLK): 26 [ms]
+
+##########################################################
+Processes: 3
+Number of states in CGS: 21
+Number of transitions in CGS: 232
+## Abstraction
+Number of states in 3-valued CGS: 6
+Number of transitions in 3-valued CGS [must]: 24
+Number of transitions in 3-valued CGS [may]: 27
+#### Abstraction time: 15 [ms]
+Verdict: True
+#### Verification time (SL[1G]): 77 [ms]
+Verdict: True
+#### Verification time (SLK): 71 [ms]
+
+##########################################################
+Processes: 4
+Number of states in CGS: 49
+Number of transitions in CGS: 1376
+## Abstraction
+Number of states in 3-valued CGS: 7
+Number of transitions in 3-valued CGS [must]: 34
+Number of transitions in 3-valued CGS [may]: 38
+#### Abstraction time: 30 [ms]
+Verdict: True
+#### Verification time (SL[1G]): 98 [ms]
+Verdict: True
+#### Verification time (SLK): 89 [ms]
+
+##########################################################
+Processes: 5
+Number of states in CGS: 113
+Number of transitions in CGS: 7904
+## Abstraction
+Number of states in 3-valued CGS: 8
+Number of transitions in 3-valued CGS [must]: 46
+Number of transitions in 3-valued CGS [may]: 51
+#### Abstraction time: 109 [ms]
+Verdict: True
+#### Verification time (SL[1G]): 404 [ms]
+Verdict: True
+#### Verification time (SLK): 395 [ms]
+
+##########################################################
+Processes: 6
+Number of states in CGS: 257
+Number of transitions in CGS: 43520
+## Abstraction
+Number of states in 3-valued CGS: 9
+Number of transitions in 3-valued CGS [must]: 60
+Number of transitions in 3-valued CGS [may]: 66
+#### Abstraction time: 654 [ms]
+Verdict: True
+#### Verification time (SL[1G]): 677 [ms]
+Verdict: True
+#### Verification time (SLK): 648 [ms]
+
+##########################################################
+Processes: 7
+Number of states in CGS: 577
+Number of transitions in CGS: 230528
+## Abstraction
+Number of states in 3-valued CGS: 10
+Number of transitions in 3-valued CGS [must]: 76
+Number of transitions in 3-valued CGS [may]: 83
+#### Abstraction time: 5656 [ms]
+Verdict: True
+#### Verification time (SL[1G]): 1663 [ms]
+Verdict: True
+#### Verification time (SLK): 1699 [ms]
+
+##########################################################
+Processes: 8
+Number of states in CGS: 1281
+Number of transitions in CGS: 1182208
+## Abstraction
+Number of states in 3-valued CGS: 11
+Number of transitions in 3-valued CGS [must]: 94
+Number of transitions in 3-valued CGS [may]: 102
+#### Abstraction time: 67304 [ms]
+Verdict: True
+#### Verification time (SL[1G]): 5323 [ms]
+Verdict: True
+#### Verification time (SLK): 5364 [ms]
+
+##########################################################

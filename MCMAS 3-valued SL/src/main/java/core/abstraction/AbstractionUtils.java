@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.stream.Collectors;
 
 import com.google.common.collect.Lists;
@@ -25,22 +26,31 @@ public class AbstractionUtils {
 	private static CGSModel must;
 
 	public static List<StateCluster> getStateClusters(CGSModel CGSModel, Predicate<State> toAbstract) {
-		List<StateCluster> stateClusters = new ArrayList<>();
+		ConcurrentLinkedQueue<StateCluster> stateClusters = new ConcurrentLinkedQueue<>();
+		ConcurrentLinkedQueue<State> childs = new ConcurrentLinkedQueue<>();
 		StateCluster cluster = new StateCluster();
-		CGSModel.getStates().forEach(s -> {
+		CGSModel.getStates().parallelStream().forEach(s -> {
 			if(toAbstract.evaluate(s)) {
-				cluster.addChildState(s);
+				childs.add(s);
 				if(s.isInitial()) {
 					cluster.setInitial(true);
 				}
 			}
 		});
-		stateClusters.add(cluster);
-		for (State state : CGSModel.getStates()) {
-			if(!toAbstract.evaluate(state)) {
-				stateClusters.add(state.clone().toStateCluster());
-			}
+		for(State state : childs) {
+			cluster.addChildState(state);
 		}
+		stateClusters.add(cluster);
+		CGSModel.getStates().parallelStream().forEach( s -> {
+			if(!toAbstract.evaluate(s)) {
+				stateClusters.add(s.clone().toStateCluster());
+			}
+		});
+//		for (State state : CGSModel.getStates()) {
+//			if(!toAbstract.evaluate(state)) {
+//				stateClusters.add(state.clone().toStateCluster());
+//			}
+//		}
 		return stateClusters.stream().distinct().collect(Collectors.toList());
 	}
 

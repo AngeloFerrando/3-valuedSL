@@ -296,30 +296,30 @@ public class GenerateScheduler {
         StringBuilder formula = new StringBuilder();
         formula.append("<<e>> ");
         formula.append("<<x>> ");
-        formula.append("<<y1>>");
-        for(int i = 2; i <= nProcesses; i++) {
-            formula.append("[[y").append(i).append("]] ");
+//        formula.append("<<y1>>");
+        for(int i = 1; i <= nProcesses; i++) {
+            formula.append("<<y").append(i).append(">> ");
         }
         formula.append("(Environment, e) ");
         formula.append("(Arbiter, x) ");
         for(int i = 1; i <= nProcesses; i++) {
             formula.append("(Process").append(i).append(", y").append(i).append(") ");
         }
-        formula.append("F(rs1)");
-//        for(int i = 1; i < nProcesses; i++) {
-//            formula.append("(");
-//            formula.append("rs").append(i);
-////            for(int j = 1; j <= nProcesses; j++) {
-////                if(i != j) {
-////                    formula.append(" and ").append("!rs").append(j);
-////                }
-////            }
-//            formula.append(")");
-//            if(i != nProcesses - 1) {
-//                formula.append(" or ");
-//            }
-//        }
-//        formula.append(")");
+        formula.append("F(");
+        for(int i = 1; i < nProcesses; i++) {
+            formula.append("(");
+            formula.append("rs").append(i);
+            for(int j = 1; j <= nProcesses; j++) {
+                if(i != j) {
+                    formula.append(" and ").append("!rs").append(j);
+                }
+            }
+            formula.append(")");
+            if(i != nProcesses - 1) {
+                formula.append(" or ");
+            }
+        }
+        formula.append(")");
         model.setFormula(formula.toString());
         Group group = new Group();
         group.setName("g");
