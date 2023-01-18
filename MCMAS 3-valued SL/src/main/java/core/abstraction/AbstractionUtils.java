@@ -764,6 +764,9 @@ public class AbstractionUtils {
 		stringBuilder.append("\t");
 //		if (isMayModel)
 //			stringBuilder.append("!(");
+		if(TestParser.sl1g) {
+			stringBuilder.append("#PR ");
+		}
 		stringBuilder.append(CGSModel.getSL());
 //		stringBuilder.append("<").append(CGSModel.getGroup().getName()).append(">").append(CGSModel.getFormula().getSubformula());
 //		if (isMayModel)

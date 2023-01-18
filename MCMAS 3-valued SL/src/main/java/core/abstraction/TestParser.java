@@ -59,12 +59,12 @@ public class TestParser {
     }
 
     public static void runExperiments(int maxNProcesses) throws Exception {
-        String mcmasExecPath1g = "/home/angelo/Desktop/git/3-valuedSL/mcmas-1.3.0/mcmas-sl/MCMAS-SL[1G]/mcmas64";
-        String mcmasExecPathK = "/home/angelo/Desktop/git/3-valuedSL/mcmas-1.3.0/mcmas-sl/MCMAS-SLK/mcmas-slk_64";
+        String mcmasExecPath1g = "../mcmas-1.3.0/mcmas-sl/MCMAS-SL[1G]/mcmas64";
+        String mcmasExecPathK = "../mcmas-1.3.0/mcmas-sl/MCMAS-SLK/mcmas-slk_64";
         FileWriter fw = new FileWriter("results.txt", false);
         fw.write("");
         fw.close();
-        for(int nProcesses = 2; nProcesses <= maxNProcesses; nProcesses++) {
+        for(int nProcesses = 9; nProcesses <= maxNProcesses; nProcesses++) {
             long startTime, endTime, duration;
             CGSModel model = GenerateScheduler.generate(nProcesses);
             AbstractionUtils.validateCGS(model);
@@ -128,19 +128,21 @@ public class TestParser {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-        runExperiments(10);
+    public static void mainExperiments(String[] args) throws Exception {
+        runExperiments(9);
     }
 
-    public static void mainBase(String[] args) throws Exception {
-        String mcmasExecPath = "/home/angelo/Desktop/git/3-valuedSL/mcmas-1.3.0/mcmas-sl/MCMAS-SL[1G]/mcmas64";
+    public static boolean sl1g = true;
+    public static void main(String[] args) throws Exception {
+        String mcmasExecPath = "../mcmas-1.3.0/mcmas-sl/MCMAS-SL[1G]/mcmas64";
         int nProcesses;
         if(args.length != 0) {
             nProcesses = Integer.parseInt(args[0]);
             if (args[1].equals("-1g")) {
-                mcmasExecPath = "/home/angelo/Desktop/git/3-valuedSL/mcmas-1.3.0/mcmas-sl/MCMAS-SL[1G]/mcmas64";
+                mcmasExecPath = "../mcmas-1.3.0/mcmas-sl/MCMAS-SL[1G]/mcmas64";
             } else {
-                mcmasExecPath = "/home/angelo/Desktop/git/3-valuedSL/mcmas-1.3.0/mcmas-sl/MCMAS-SLK/mcmas-slk_64";
+                sl1g = false;
+                mcmasExecPath = "../mcmas-1.3.0/mcmas-sl/MCMAS-SLK/mcmas-slk_64";
             }
         } else {
             nProcesses = 2;
