@@ -64,7 +64,7 @@ public class TestParser {
         FileWriter fw = new FileWriter("results.txt", false);
         fw.write("");
         fw.close();
-        for(int nProcesses = 9; nProcesses <= maxNProcesses; nProcesses++) {
+        for(int nProcesses = 2; nProcesses <= maxNProcesses; nProcesses++) {
             long startTime, endTime, duration;
             CGSModel model = GenerateScheduler.generate(nProcesses);
             AbstractionUtils.validateCGS(model);
@@ -111,11 +111,13 @@ public class TestParser {
             toPrint.append("#### Abstraction time: ").append(duration).append(" [ms]").append("\n");
 
             startTime = System.nanoTime();
+            sl1g = true;
             toPrint.append("Verdict: ").append(CGSModel.modelCheck3(mustModel, mayModel, mcmasExecPath1g)).append("\n");
             endTime = System.nanoTime();
             duration = (endTime - startTime) / 1000000;
             toPrint.append("#### Verification time (SL[1G]): ").append(duration).append(" [ms]").append("\n");
             startTime = System.nanoTime();
+            sl1g = false;
             toPrint.append("Verdict: ").append(CGSModel.modelCheck3(mustModel, mayModel, mcmasExecPathK)).append("\n");
             endTime = System.nanoTime();
             duration = (endTime - startTime) / 1000000;
@@ -130,6 +132,51 @@ public class TestParser {
 
     public static void mainExperiments(String[] args) throws Exception {
         runExperiments(9);
+    }
+
+    private static void test() throws Exception {
+        CGSModel test = new CGSModel();
+        List<State> states = new ArrayList<>();
+        states.add(new State("s1", true, "ap"));
+        states.add(new State("s2", false, "ap"));
+        states.add(new State("s3", false, "bp"));
+        states.add(new State("s4", false, "cp"));
+        test.setStates(states);
+        List<Transition> transitions = new ArrayList<>();
+        List<List<AgentAction>> agentActions = new ArrayList<>();
+        List<AgentAction> agentActions1 = new ArrayList<>();
+        agentActions1.add(new AgentAction("Ag1", "a"));
+        agentActions1.add(new AgentAction("Ag2", "b"));
+        agentActions.add(agentActions1);
+        transitions.add(new Transition("s1", "s3", agentActions));
+        agentActions = new ArrayList<>();
+        agentActions1 = new ArrayList<>();
+        agentActions1.add(new AgentAction("Ag1", "a"));
+        agentActions1.add(new AgentAction("Ag2", "b"));
+        agentActions.add(agentActions1);
+        transitions.add(new Transition("s2", "s3", agentActions));
+        agentActions = new ArrayList<>();
+        agentActions1 = new ArrayList<>();
+        agentActions1.add(new AgentAction("Ag1", "a"));
+        agentActions1.add(new AgentAction("Ag2", "c"));
+        agentActions.add(agentActions1);
+        transitions.add(new Transition("s2", "s4", agentActions));
+        test.setTransitions(transitions);
+        List<Agent> agents = new ArrayList<>();
+        List<String> actions = new ArrayList<>();
+        actions.add("a");
+        agents.add(new Agent("Ag1", actions, new ArrayList<>()));
+        actions = new ArrayList<>();
+        actions.add("b");
+        actions.add("c");
+        agents.add(new Agent("Ag2", actions, new ArrayList<>()));
+        test.setAgents(agents);
+        test.setFormula("<<x>> <<y>> (Ag1, x) (Ag2, y) X p");
+
+        AbstractionUtils.validateCGS(test);
+
+        CGSModel mustTest = test.createAbstraction(CGSModel.Abstraction.Must, (s -> s.getLabels().contains("ap_tt")));
+        CGSModel mayTest = test.createAbstraction(CGSModel.Abstraction.May, (s -> s.getLabels().contains("ap_tt")));
     }
 
     public static boolean sl1g = true;

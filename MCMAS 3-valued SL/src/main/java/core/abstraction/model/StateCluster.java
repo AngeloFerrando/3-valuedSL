@@ -7,6 +7,7 @@ import core.parser.StrategyLogic;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.ListUtils;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.tuple.Pair;
 
 public class StateCluster extends State {
 	
@@ -213,7 +214,7 @@ public class StateCluster extends State {
 							agentActions.add(agentActionList);
 						}
 					}
-					agentActions.addAll(CGSModel.getAgentActionsByStates().get(fromChildState.getName(), toChildState.getName()));
+//					agentActions.addAll(CGSModel.getAgentActionsByStates().get(fromChildState.getName(), toChildState.getName()));
 				}
 			}
 		}
@@ -292,7 +293,7 @@ public class StateCluster extends State {
 							agentActions.add(agentActionList);
 						}
 					}
-					agentActions.addAll(CGSModel.getAgentActionsByStates().get(fromChildState.getName(), toChildState.getName()));
+//					agentActions.addAll(CGSModel.getAgentActionsByStates().get(fromChildState.getName(), toChildState.getName()));
 				}
 			}
 		}
